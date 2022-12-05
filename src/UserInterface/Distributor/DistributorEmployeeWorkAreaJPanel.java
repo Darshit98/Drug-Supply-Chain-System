@@ -57,12 +57,13 @@ public class DistributorEmployeeWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jSplitPane1.setDividerLocation(185);
+        jSplitPane1.setBackground(new java.awt.Color(204, 204, 255));
+        jSplitPane1.setDividerLocation(210);
 
         workContainer.setBackground(new java.awt.Color(102, 153, 255));
         workContainer.setLayout(new java.awt.CardLayout());
 
-        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setText("jLabel1");
 

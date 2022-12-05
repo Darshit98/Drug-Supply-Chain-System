@@ -196,6 +196,8 @@ public class AdministerVaccineToPatientClinicJPanel extends javax.swing.JPanel {
         cbstatus = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -246,8 +248,9 @@ public class AdministerVaccineToPatientClinicJPanel extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(0, 51, 102));
         jLabel9.setText("Batch Number :");
 
+        cbnum.setBackground(new java.awt.Color(0, 0, 102));
         cbnum.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        cbnum.setForeground(new java.awt.Color(0, 0, 102));
+        cbnum.setForeground(new java.awt.Color(255, 255, 255));
         cbnum.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbnum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,7 +261,7 @@ public class AdministerVaccineToPatientClinicJPanel extends javax.swing.JPanel {
         jLabel11.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 51, 102));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel11.setText("Arm");
+        jLabel11.setText("Arm:");
 
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 51, 102));
@@ -289,8 +292,9 @@ public class AdministerVaccineToPatientClinicJPanel extends javax.swing.JPanel {
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel14.setText("Brand:");
 
+        cbbrandlist.setBackground(new java.awt.Color(0, 0, 102));
         cbbrandlist.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        cbbrandlist.setForeground(new java.awt.Color(0, 0, 102));
+        cbbrandlist.setForeground(new java.awt.Color(255, 255, 255));
         cbbrandlist.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbbrandlist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -342,11 +346,7 @@ public class AdministerVaccineToPatientClinicJPanel extends javax.swing.JPanel {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
                         .add(btnback, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 69, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 91, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(txtpname, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 171, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(169, 169, 169))
+                        .add(0, 0, Short.MAX_VALUE))
                     .add(layout.createSequentialGroup()
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -368,6 +368,10 @@ public class AdministerVaccineToPatientClinicJPanel extends javax.swing.JPanel {
                                         .add(0, 0, Short.MAX_VALUE))))
                             .add(layout.createSequentialGroup()
                                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(layout.createSequentialGroup()
+                                        .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 91, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                        .add(txtpname, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 171, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                     .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                                         .add(layout.createSequentialGroup()
                                             .add(185, 185, 185)
@@ -399,6 +403,9 @@ public class AdministerVaccineToPatientClinicJPanel extends javax.swing.JPanel {
                                 .add(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
+
+        layout.linkSize(new java.awt.Component[] {jLabel11, jLabel12, jLabel13, jLabel14, jLabel5, jLabel7}, org.jdesktop.layout.GroupLayout.HORIZONTAL);
+
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
@@ -406,12 +413,12 @@ public class AdministerVaccineToPatientClinicJPanel extends javax.swing.JPanel {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(layout.createSequentialGroup()
                         .add(jLabel1)
-                        .add(46, 46, 46)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                .add(txtpname, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(jLabel2))
-                            .add(btnback, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(btnback, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(13, 13, 13)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(txtpname, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel2))
                         .add(18, 18, 18)
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                             .add(jLabel3)

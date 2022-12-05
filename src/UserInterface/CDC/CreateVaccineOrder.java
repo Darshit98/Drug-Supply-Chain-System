@@ -195,12 +195,14 @@ public class CreateVaccineOrder extends javax.swing.JPanel {
         txt3 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lbl1.setForeground(new java.awt.Color(0, 0, 102));
         lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl1.setText("Create Vaccine Order");
 
-        lbl2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lbl2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl2.setForeground(new java.awt.Color(0, 51, 102));
         lbl2.setText("Manufacturer:");
 
@@ -213,11 +215,11 @@ public class CreateVaccineOrder extends javax.swing.JPanel {
             }
         });
 
-        lbl3.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lbl3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl3.setForeground(new java.awt.Color(0, 51, 102));
         lbl3.setText("Manufacturer Vaccine Catalog:");
 
-        lbl5.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lbl5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl5.setForeground(new java.awt.Color(0, 51, 102));
         lbl5.setText("Vaccine Code:");
 
@@ -252,7 +254,7 @@ public class CreateVaccineOrder extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblmanuf);
 
-        lbl6.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lbl6.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl6.setForeground(new java.awt.Color(0, 51, 102));
         lbl6.setText("Cart:");
 
@@ -276,7 +278,7 @@ public class CreateVaccineOrder extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tbcart);
 
-        lbl7.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lbl7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl7.setForeground(new java.awt.Color(0, 0, 102));
         lbl7.setText("Quantity:");
 
@@ -304,7 +306,7 @@ public class CreateVaccineOrder extends javax.swing.JPanel {
             }
         });
 
-        lbl8.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lbl8.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl8.setForeground(new java.awt.Color(0, 51, 102));
         lbl8.setText("Quantity:");
 
@@ -341,7 +343,7 @@ public class CreateVaccineOrder extends javax.swing.JPanel {
             }
         });
 
-        lbl9.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lbl9.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl9.setForeground(new java.awt.Color(0, 51, 102));
         lbl9.setText("Total Amount:");
 
@@ -351,17 +353,14 @@ public class CreateVaccineOrder extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Separator1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Separator1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(lbl6)
                         .addGap(32, 32, 32)
                         .addComponent(lbl8)
@@ -373,7 +372,7 @@ public class CreateVaccineOrder extends javax.swing.JPanel {
                         .addComponent(lbl9)
                         .addGap(18, 18, 18)
                         .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btn5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -384,38 +383,38 @@ public class CreateVaccineOrder extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(256, 256, 256))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(lbl7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addcount, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(lbl2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(combo1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                         .addComponent(lbl5)
                         .addGap(18, 18, 18)
                         .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(lbl3)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(lbl1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(lbl3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl1)
-                                .addGap(20, 20, 20))
-                            .addComponent(lbl3, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(combo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combo1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lbl5)
                         .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -448,7 +447,7 @@ public class CreateVaccineOrder extends javax.swing.JPanel {
                     .addComponent(btn5)
                     .addComponent(btn4))
                 .addGap(11, 11, 11)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

@@ -84,6 +84,8 @@ public class ManageWarehouseJPanel extends javax.swing.JPanel {
         btn2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lbl1.setForeground(new java.awt.Color(0, 0, 102));
         lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

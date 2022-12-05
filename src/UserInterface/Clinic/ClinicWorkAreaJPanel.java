@@ -60,6 +60,7 @@ public class ClinicWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
+        jSplitPane1.setBackground(new java.awt.Color(204, 204, 255));
         jSplitPane1.setDividerLocation(170);
 
         mainMenujPanel.setBackground(new java.awt.Color(255, 255, 204));
@@ -139,8 +140,10 @@ public class ClinicWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane1.setLeftComponent(mainMenujPanel);
 
-        workContainer.setBackground(new java.awt.Color(102, 153, 255));
+        workContainer.setBackground(new java.awt.Color(204, 204, 255));
         workContainer.setLayout(new java.awt.CardLayout());
+
+        jLabel1.setBackground(new java.awt.Color(204, 204, 255));
         workContainer.add(jLabel1, "card2");
 
         jSplitPane1.setRightComponent(workContainer);
