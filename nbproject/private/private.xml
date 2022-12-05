@@ -3,11 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/Warehouse/WarehouseDirectory.java</file>
-            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/Network/StateNetwork.java</file>
-            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/Enterprise/Enterprise.java</file>
-            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/Network/CityNetwork.java</file>
-            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/Warehouse/Warehouse.java</file>
+            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/UserAccount/UserAccount.java</file>
+            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/UserAccount/UserAccountDirectory.java</file>
+            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/Vaccine/ProviderVaccineInventory.java</file>
+            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/Vaccine/AdministeredVaccineDetails.java</file>
+            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/UserInterface/CDC/VaccineCityDistributionJPanel.java</file>
+            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/Vaccine/VaccineProductCatalog.java</file>
+            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/Vaccine/VaccineDetails.java</file>
+            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/Vaccine/Vaccine.java</file>
+            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/Business/Vaccine/VaccineDirectory.java</file>
+            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/UserInterface/MainFrame.java</file>
+            <file>file:/Users/swinirodrigues/GitHub/AED_Project/src/UserInterface/Clinic/AdministerVaccineToPatientClinicJPanel.java</file>
         </group>
     </open-files>
 </project-private>
