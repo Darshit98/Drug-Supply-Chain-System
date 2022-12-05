@@ -101,6 +101,8 @@ public class StoreVaccinesJPanel extends javax.swing.JPanel {
         bcwarelist = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lbl1.setForeground(new java.awt.Color(0, 0, 102));
         lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -126,7 +128,7 @@ public class StoreVaccinesJPanel extends javax.swing.JPanel {
         });
 
         btn2.setBackground(new java.awt.Color(0, 0, 102));
-        btn2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btn2.setForeground(new java.awt.Color(255, 255, 255));
         btn2.setText("<");
         btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -173,8 +175,9 @@ public class StoreVaccinesJPanel extends javax.swing.JPanel {
         lbl6.setForeground(new java.awt.Color(0, 0, 102));
         lbl6.setText("Warehouse:");
 
+        bcwarelist.setBackground(new java.awt.Color(0, 0, 102));
         bcwarelist.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        bcwarelist.setForeground(new java.awt.Color(0, 0, 102));
+        bcwarelist.setForeground(new java.awt.Color(255, 255, 255));
         bcwarelist.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

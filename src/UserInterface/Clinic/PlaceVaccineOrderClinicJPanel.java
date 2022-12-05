@@ -190,7 +190,6 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
         lbl2 = new javax.swing.JLabel();
         cbmanu = new javax.swing.JComboBox();
         lbl3 = new javax.swing.JLabel();
-        lbl4 = new javax.swing.JLabel();
         lbl5 = new javax.swing.JLabel();
         txt1 = new javax.swing.JTextField();
         btn1 = new javax.swing.JButton();
@@ -214,6 +213,8 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         cbordertype = new javax.swing.JComboBox();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lbl1.setForeground(new java.awt.Color(0, 0, 102));
         lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -223,8 +224,9 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
         lbl2.setForeground(new java.awt.Color(0, 0, 102));
         lbl2.setText("Manufacturer:");
 
+        cbmanu.setBackground(new java.awt.Color(0, 0, 102));
         cbmanu.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        cbmanu.setForeground(new java.awt.Color(0, 0, 102));
+        cbmanu.setForeground(new java.awt.Color(255, 255, 255));
         cbmanu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbmanu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,13 +238,9 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
         lbl3.setForeground(new java.awt.Color(0, 0, 102));
         lbl3.setText("Manufacturer Vaccine Catalog:");
 
-        lbl4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl4.setForeground(new java.awt.Color(0, 0, 102));
-        lbl4.setText("Search Vaccine:");
-
         lbl5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl5.setForeground(new java.awt.Color(0, 0, 102));
-        lbl5.setText("Vaccine Code:");
+        lbl5.setText("Search Vaccine By Code:");
 
         txt1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
@@ -276,7 +274,9 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
         tblvacc.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblvacc);
 
-        lbl6.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
+
+        lbl6.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl6.setForeground(new java.awt.Color(0, 0, 102));
         lbl6.setText("Cart:");
 
@@ -299,7 +299,7 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tblcart);
 
-        lbl7.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lbl7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl7.setForeground(new java.awt.Color(0, 0, 102));
         lbl7.setText("Quantity:");
 
@@ -329,7 +329,7 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
             }
         });
 
-        lbl8.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lbl8.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl8.setForeground(new java.awt.Color(0, 0, 102));
         lbl8.setText("Quantity:");
 
@@ -355,14 +355,14 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
             }
         });
 
-        lbl9.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lbl9.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl9.setForeground(new java.awt.Color(0, 0, 102));
         lbl9.setText("Total Amount of Order:");
 
         txt3.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txt3.setEnabled(false);
 
-        lbl10.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        lbl10.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl10.setForeground(new java.awt.Color(0, 0, 102));
         lbl10.setText("Set Contract: ");
 
@@ -414,14 +414,11 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cbmanu, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(139, 139, 139)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl4)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(2, 2, 2)
-                                .addComponent(btn1)))
+                        .addComponent(lbl5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)
+                        .addComponent(btn1)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn4)
@@ -449,12 +446,9 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lbl3))
                     .addComponent(btn1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lbl4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl5)
-                            .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbl5)
+                        .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -700,7 +694,6 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lbl10;
     private javax.swing.JLabel lbl2;
     private javax.swing.JLabel lbl3;
-    private javax.swing.JLabel lbl4;
     private javax.swing.JLabel lbl5;
     private javax.swing.JLabel lbl6;
     private javax.swing.JLabel lbl7;

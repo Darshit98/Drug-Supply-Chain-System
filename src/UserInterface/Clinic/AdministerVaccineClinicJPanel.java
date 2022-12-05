@@ -101,6 +101,8 @@ public class AdministerVaccineClinicJPanel extends javax.swing.JPanel {
         btn1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lbl1.setForeground(new java.awt.Color(0, 51, 102));
         lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -154,6 +156,8 @@ public class AdministerVaccineClinicJPanel extends javax.swing.JPanel {
 
         txt5.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         txt5.setEnabled(false);
+
+        Separator1.setForeground(new java.awt.Color(0, 0, 102));
 
         btn1.setBackground(new java.awt.Color(0, 0, 102));
         btn1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
@@ -211,6 +215,9 @@ public class AdministerVaccineClinicJPanel extends javax.swing.JPanel {
                         .addGap(101, 101, 101)))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lbl2, lbl3, lbl5, lbl7});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()

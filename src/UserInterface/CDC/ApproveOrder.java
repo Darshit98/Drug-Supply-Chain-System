@@ -111,6 +111,7 @@ public class ApproveOrder extends javax.swing.JPanel {
         lbl6 = new javax.swing.JLabel();
         txt5 = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N

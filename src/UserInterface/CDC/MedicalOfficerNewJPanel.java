@@ -53,7 +53,8 @@ public class MedicalOfficerNewJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jSplitPane1.setDividerLocation(170);
+        jSplitPane1.setBackground(new java.awt.Color(204, 204, 255));
+        jSplitPane1.setDividerLocation(180);
 
         workContainer.setBackground(new java.awt.Color(204, 204, 255));
         workContainer.setLayout(new java.awt.CardLayout());

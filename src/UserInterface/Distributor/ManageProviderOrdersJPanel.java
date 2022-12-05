@@ -151,6 +151,8 @@ public class ManageProviderOrdersJPanel extends javax.swing.JPanel {
         btn3 = new javax.swing.JButton();
         btn4 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lbl1.setForeground(new java.awt.Color(0, 0, 102));
         lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
