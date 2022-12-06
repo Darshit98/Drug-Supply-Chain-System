@@ -217,7 +217,7 @@ public class MainFrame extends javax.swing.JFrame {
         String username = txtUsername.getText();
         if(username.trim().equalsIgnoreCase(""))
         {
-            JOptionPane.showMessageDialog(null, "Username can't be blank..!!");
+            JOptionPane.showMessageDialog(null, "Please enter Username..!!");
             return;
             
         }
@@ -225,7 +225,7 @@ public class MainFrame extends javax.swing.JFrame {
         String password = String.valueOf(passwordCharArray);
         if(password.trim().equalsIgnoreCase(""))
         {
-            JOptionPane.showMessageDialog(null, "Password can't be blank..!!");
+            JOptionPane.showMessageDialog(null, "Please enter Password..!!");
             return;
             
         }
