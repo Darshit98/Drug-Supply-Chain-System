@@ -12,6 +12,15 @@ import Business.Organization.Organization;
 import Business.Person.Patient;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.AdministeredVaccineDetails;
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -88,6 +97,7 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblvaccl = new javax.swing.JTable();
         btnref = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -130,6 +140,17 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
             }
         });
         add(btnref, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 90, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 102));
+        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Download Certificate");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 300, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnrefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrefActionPerformed
@@ -137,9 +158,80 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
         populateTable();
     }//GEN-LAST:event_btnrefActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        String path = "";
+        JFileChooser jFile = new JFileChooser();
+        jFile.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int x = jFile.showSaveDialog(this);
+        
+        if(x == JFileChooser.APPROVE_OPTION)
+        {
+            path = jFile.getSelectedFile().getPath();
+        }
+        
+        Document doc = new Document();
+        try {
+            PdfWriter.getInstance(doc, new FileOutputStream(path+"/certificate.pdf"));
+            
+            doc.open();
+            
+            PdfPTable tblcertificate = new PdfPTable(9);
+            
+            //Adding Headers
+            
+            tblcertificate.addCell("Vaccine Code");
+            tblcertificate.addCell("Vaccine Name");
+            tblcertificate.addCell("Branch");
+            tblcertificate.addCell("Batch Number");
+            tblcertificate.addCell("Vaccine ID");
+            tblcertificate.addCell("Date");
+            tblcertificate.addCell("Site Route");
+            tblcertificate.addCell("Dose Number");
+            tblcertificate.addCell("Status");
+            
+            for(int i=0; i< tblvaccl.getRowCount(); i++)
+            {
+                String VaccineCode = tblvaccl.getValueAt(i, 0).toString();
+                String VaccineName = tblvaccl.getValueAt(i, 1).toString();
+                String Branch = tblvaccl.getValueAt(i, 2).toString();
+                String BatchNumber = tblvaccl.getValueAt(i, 3).toString();
+                String VaccineID = tblvaccl.getValueAt(i, 4).toString();
+                String Date = tblvaccl.getValueAt(i, 5).toString();
+                String SiteRoute = tblvaccl.getValueAt(i, 6).toString();
+                String DoseNumber = tblvaccl.getValueAt(i, 7).toString();
+                String status = tblvaccl.getValueAt(i, 8).toString();
+                
+                tblcertificate.addCell(VaccineCode);
+                tblcertificate.addCell(VaccineName);
+                tblcertificate.addCell(Branch);
+                tblcertificate.addCell(BatchNumber);
+                tblcertificate.addCell(VaccineID);
+                tblcertificate.addCell(Date);
+                tblcertificate.addCell(SiteRoute);
+                tblcertificate.addCell(DoseNumber);
+                tblcertificate.addCell(status);
+            }
+            
+            doc.add(tblcertificate);
+            
+            
+            
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(PatientAdministeredVaccineListJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(PatientAdministeredVaccineListJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        doc.close();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnref;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblvaccl;
