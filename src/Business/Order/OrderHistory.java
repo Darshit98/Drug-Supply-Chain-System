@@ -4,10 +4,41 @@
  */
 package Business.Order;
 
+import java.util.ArrayList;
 /**
  *
  * @author riyavirani
  */
 public class OrderHistory {
+    
+    private ArrayList<Order> History;
+
+    public OrderHistory() {
+        History = new ArrayList<>();
+        
+    }
+
+    public ArrayList<Order> getOrderHistory() {
+        return History;
+    }
+    
+    public Order addNewOrder(){
+        Order order = new Order();
+        History.add(order);
+        return order;
+    }
+    
+    public Order addOrder(Order order){
+        
+       
+        History.add(order);
+        return order;
+    }
+    
+    
+    public void removeOrder(Order order){
+        History.remove(order);
+        
+    }
     
 }
