@@ -36,56 +36,58 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dcldate = new com.toedter.calendar.JDateChooser();
-        jLabel5 = new javax.swing.JLabel();
-        txtcodedis = new javax.swing.JTextField();
-        txtdname = new javax.swing.JTextField();
-        btnadddis = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        btnback = new javax.swing.JButton();
+        jdateUpdateDate = new com.toedter.calendar.JDateChooser();
+        lblLastUpdateDate = new javax.swing.JLabel();
+        txtDiseaseCode = new javax.swing.JTextField();
+        txtDiseaseName = new javax.swing.JTextField();
+        btnAddDiseaseInformation = new javax.swing.JButton();
+        lblTitle = new javax.swing.JLabel();
+        lblDiseaseCode = new javax.swing.JLabel();
+        lblDiseaseName = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
-        dcldate.setDateFormatString(" MMM, d yyyy");
+        setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("Last Updated on:");
+        jdateUpdateDate.setDateFormatString(" MMM, d yyyy");
 
-        btnadddis.setBackground(new java.awt.Color(0, 0, 102));
-        btnadddis.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnadddis.setForeground(new java.awt.Color(255, 255, 255));
-        btnadddis.setText("Add Disease Info");
-        btnadddis.addActionListener(new java.awt.event.ActionListener() {
+        lblLastUpdateDate.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblLastUpdateDate.setForeground(new java.awt.Color(0, 0, 102));
+        lblLastUpdateDate.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblLastUpdateDate.setText("Last Updated on:");
+
+        btnAddDiseaseInformation.setBackground(new java.awt.Color(0, 0, 102));
+        btnAddDiseaseInformation.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnAddDiseaseInformation.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddDiseaseInformation.setText("Add Disease Info");
+        btnAddDiseaseInformation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnadddisActionPerformed(evt);
+                btnAddDiseaseInformationActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Add New Disease Information");
+        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(0, 0, 102));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Add New Disease Information");
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("Code:");
+        lblDiseaseCode.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblDiseaseCode.setForeground(new java.awt.Color(0, 0, 102));
+        lblDiseaseCode.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblDiseaseCode.setText("Disease Code:");
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("Disease Name:");
+        lblDiseaseName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblDiseaseName.setForeground(new java.awt.Color(0, 0, 102));
+        lblDiseaseName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblDiseaseName.setText("Disease Name:");
 
-        btnback.setBackground(new java.awt.Color(0, 0, 102));
-        btnback.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnback.setForeground(new java.awt.Color(255, 255, 255));
-        btnback.setText("<");
-        btnback.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(0, 0, 102));
+        btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbackActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
@@ -99,19 +101,19 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(171, 171, 171)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblLastUpdateDate)
+                                    .addComponent(lblDiseaseCode, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblDiseaseName, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtdname, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtcodedis, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(dcldate, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnadddis, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtDiseaseName, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDiseaseCode, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jdateUpdateDate, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnAddDiseaseInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 223, Short.MAX_VALUE))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -119,7 +121,7 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
                                 .addComponent(jLabel4))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -127,45 +129,45 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(lblTitle)
                 .addGap(18, 18, 18)
-                .addComponent(btnback)
+                .addComponent(btnBack)
                 .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtcodedis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblDiseaseCode)
+                    .addComponent(txtDiseaseCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtdname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblDiseaseName)
+                    .addComponent(txtDiseaseName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(dcldate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblLastUpdateDate)
+                    .addComponent(jdateUpdateDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnadddis)
+                .addComponent(btnAddDiseaseInformation)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel4)
-                .addGap(80, 80, 80))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnadddisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadddisActionPerformed
+    private void btnAddDiseaseInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDiseaseInformationActionPerformed
         // TODO add your handling code here:
-        String diseaseCode = txtcodedis.getText();
+        String diseaseCode = txtDiseaseCode.getText();
         if(diseaseCode.trim().equalsIgnoreCase(""))
         {JOptionPane.showMessageDialog(null, "Please enter a disease Code");
             return;
 
         }
-        String diseaseName = txtdname.getText();
+        String diseaseName = txtDiseaseName.getText();
         if(diseaseName.trim().equalsIgnoreCase(""))
         {JOptionPane.showMessageDialog(null, "Please enter a disease Name");
             return;
 
         }
 
-        Date lastUpdatedDate = dcldate.getDate();
+        Date lastUpdatedDate = jdateUpdateDate.getDate();
 
         for(Disease d : business.getDiseaseDirectory().getdiseaseDirectory())
         {
@@ -181,26 +183,26 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
         disease.setDiseaseName(diseaseName);
         disease.setLastUpdatedTime(lastUpdatedDate);
 
-    }//GEN-LAST:event_btnadddisActionPerformed
+    }//GEN-LAST:event_btnAddDiseaseInformationActionPerformed
 
-    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         workContainer.remove(this);
         CardLayout layout = (CardLayout) workContainer.getLayout();
         layout.previous(workContainer);
-    }//GEN-LAST:event_btnbackActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnadddis;
-    private javax.swing.JButton btnback;
-    private com.toedter.calendar.JDateChooser dcldate;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton btnAddDiseaseInformation;
+    private javax.swing.JButton btnBack;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField txtcodedis;
-    private javax.swing.JTextField txtdname;
+    private com.toedter.calendar.JDateChooser jdateUpdateDate;
+    private javax.swing.JLabel lblDiseaseCode;
+    private javax.swing.JLabel lblDiseaseName;
+    private javax.swing.JLabel lblLastUpdateDate;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTextField txtDiseaseCode;
+    private javax.swing.JTextField txtDiseaseName;
     // End of variables declaration//GEN-END:variables
 }

@@ -22,45 +22,43 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+              <EmptySpace pref="106" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnmangecdc" max="32767" attributes="0"/>
-                  <Component id="btnmandist" max="32767" attributes="0"/>
-                  <Component id="btnmanprov" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnmandept" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnMangeFDAAdmin" linkSize="1" max="32767" attributes="0"/>
+                  <Component id="btnMangeDistributorAdmin" linkSize="1" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="106" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btnManageProviderAdmin" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnManageSHAdmin" linkSize="1" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="107" max="32767" attributes="0"/>
           </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabel2" min="-2" pref="892" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="297" max="-2" attributes="0"/>
-          </Group>
-          <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
+          <Component id="lblTitle" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnmangecdc" min="-2" pref="23" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="btnmandist" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="btnmandept" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="btnmanprov" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabel2" min="-2" pref="488" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btnMangeFDAAdmin" linkSize="2" pref="66" max="32767" attributes="0"/>
+                  <Component id="btnManageSHAdmin" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnMangeDistributorAdmin" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnManageProviderAdmin" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="281" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="lblTitle">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="24" style="1"/>
@@ -72,7 +70,7 @@
         <Property name="text" type="java.lang.String" value="Manage User Account"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnmangecdc">
+    <Component class="javax.swing.JButton" name="btnMangeFDAAdmin">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -83,13 +81,13 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Manage CDC Admin"/>
+        <Property name="text" type="java.lang.String" value="Manage FDA Admin"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmangecdcActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMangeFDAAdminActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnmandist">
+    <Component class="javax.swing.JButton" name="btnMangeDistributorAdmin">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -103,10 +101,10 @@
         <Property name="text" type="java.lang.String" value="Manage Distributor Admin"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmandistActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMangeDistributorAdminActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnmanprov">
+    <Component class="javax.swing.JButton" name="btnManageProviderAdmin">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -120,10 +118,10 @@
         <Property name="text" type="java.lang.String" value="Manage Provider Admin"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmanprovActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageProviderAdminActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnmandept">
+    <Component class="javax.swing.JButton" name="btnManageSHAdmin">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -134,19 +132,11 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Manage Local Health Admin"/>
+        <Property name="text" type="java.lang.String" value="Manage State Health Admin"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmandeptActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageSHAdminActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/UserInterface/ICONS/11122021icons/002.gif"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

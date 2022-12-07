@@ -29,14 +29,14 @@ public class ManageStateJPanel extends javax.swing.JPanel {
         this.workContainer = workContainer;
         this.business = business;
         populateTable();
-        cbaddedstatelist.removeAllItems();
+        comboBoxAddedStateList.removeAllItems();
         populateStateComboBox();
         
     }
     
     private void populateTable(){
         
-        DefaultTableModel model = (DefaultTableModel) tblstatelist.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblStateDetails.getModel();
         model.setRowCount(0);
         
         for(StateNetwork network : business.getStateList())
@@ -51,15 +51,15 @@ public class ManageStateJPanel extends javax.swing.JPanel {
     private void populateStateComboBox(){
         
 
-        cbaddedstatelist.addItem("California");
-        cbaddedstatelist.addItem("Colorado");
-        cbaddedstatelist.addItem("Illinois");
-        cbaddedstatelist.addItem("Maine");
-        cbaddedstatelist.addItem("Maryland"); 
-        cbaddedstatelist.addItem("Massachusetts");
-        cbaddedstatelist.addItem("New Jersey");        
-        cbaddedstatelist.addItem("New York");     
-        cbaddedstatelist.addItem("Texas");
+        comboBoxAddedStateList.addItem("California");
+        comboBoxAddedStateList.addItem("Colorado");
+        comboBoxAddedStateList.addItem("Illinois");
+        comboBoxAddedStateList.addItem("Maine");
+        comboBoxAddedStateList.addItem("Maryland"); 
+        comboBoxAddedStateList.addItem("Massachusetts");
+        comboBoxAddedStateList.addItem("New Jersey");        
+        comboBoxAddedStateList.addItem("New York");     
+        comboBoxAddedStateList.addItem("Texas");
       
     }
     
@@ -72,26 +72,25 @@ public class ManageStateJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblstatelist = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        cbaddedstatelist = new javax.swing.JComboBox();
-        btnadd = new javax.swing.JButton();
-        btnback = new javax.swing.JButton();
-        btnremove = new javax.swing.JButton();
+        tblStateDetails = new javax.swing.JTable();
+        lblStateName = new javax.swing.JLabel();
+        comboBoxAddedStateList = new javax.swing.JComboBox();
+        btnAddState = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        btnRemoveState = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(102, 153, 255));
+        setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Manage States");
+        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(0, 0, 102));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Manage States");
 
-        tblstatelist.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        tblstatelist.setModel(new javax.swing.table.DefaultTableModel(
+        tblStateDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        tblStateDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -107,54 +106,51 @@ public class ManageStateJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblstatelist.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblstatelist);
-        if (tblstatelist.getColumnModel().getColumnCount() > 0) {
-            tblstatelist.getColumnModel().getColumn(0).setResizable(false);
+        tblStateDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblStateDetails);
+        if (tblStateDetails.getColumnModel().getColumnCount() > 0) {
+            tblStateDetails.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel3.setText("State Name:");
+        lblStateName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblStateName.setForeground(new java.awt.Color(0, 0, 102));
+        lblStateName.setText("State Name:");
 
-        cbaddedstatelist.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        cbaddedstatelist.setForeground(new java.awt.Color(0, 0, 102));
-        cbaddedstatelist.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxAddedStateList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        comboBoxAddedStateList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxAddedStateList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        btnadd.setBackground(new java.awt.Color(0, 0, 102));
-        btnadd.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnadd.setForeground(new java.awt.Color(255, 255, 255));
-        btnadd.setText("Add State");
-        btnadd.addActionListener(new java.awt.event.ActionListener() {
+        btnAddState.setBackground(new java.awt.Color(0, 0, 102));
+        btnAddState.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnAddState.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddState.setText("Add State");
+        btnAddState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnaddActionPerformed(evt);
+                btnAddStateActionPerformed(evt);
             }
         });
 
-        btnback.setBackground(new java.awt.Color(0, 0, 102));
-        btnback.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnback.setForeground(new java.awt.Color(255, 255, 255));
-        btnback.setText("<");
-        btnback.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(0, 0, 102));
+        btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbackActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
-        btnremove.setBackground(new java.awt.Color(0, 0, 102));
-        btnremove.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnremove.setForeground(new java.awt.Color(255, 255, 255));
-        btnremove.setText("Remove");
-        btnremove.addActionListener(new java.awt.event.ActionListener() {
+        btnRemoveState.setBackground(new java.awt.Color(0, 0, 102));
+        btnRemoveState.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnRemoveState.setForeground(new java.awt.Color(255, 255, 255));
+        btnRemoveState.setText("Remove");
+        btnRemoveState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnremoveActionPerformed(evt);
+                btnRemoveStateActionPerformed(evt);
             }
         });
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
-
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/ICONS/11122021icons/state2.gif"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -164,22 +160,20 @@ public class ManageStateJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnremove, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnRemoveState, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cbaddedstatelist, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnadd))
-                                .addComponent(btnback)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblStateName)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(comboBoxAddedStateList, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnAddState))
+                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -187,79 +181,76 @@ public class ManageStateJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(lblTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnback)
+                .addComponent(btnBack)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
-                .addComponent(btnremove)
+                .addComponent(btnRemoveState)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(cbaddedstatelist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnadd))
-                .addGap(47, 47, 47)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                    .addComponent(lblStateName)
+                    .addComponent(comboBoxAddedStateList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddState))
+                .addGap(254, 254, 254))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
+    private void btnAddStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddStateActionPerformed
         // TODO add your handling code here:
         
         //check if the state exists
         for(StateNetwork s: business.getStateList())
         {
-            if(s.getStateName().equalsIgnoreCase(String.valueOf(cbaddedstatelist.getSelectedItem())))
+            if(s.getStateName().equalsIgnoreCase(String.valueOf(comboBoxAddedStateList.getSelectedItem())))
             {
                 JOptionPane.showMessageDialog(null, "State exists!");
             return;
             }
         }
         
-        StateNetwork state = business.addNewState(String.valueOf(cbaddedstatelist.getSelectedItem()));
+        StateNetwork state = business.addNewState(String.valueOf(comboBoxAddedStateList.getSelectedItem()));
        
         state.getLocalHealthDepartment().setName(state.getStateName());
         state.setStatePopulation(0);
         state.setVaccinesLeftForState(state.getStatePopulation());
         populateTable();
-    }//GEN-LAST:event_btnaddActionPerformed
+    }//GEN-LAST:event_btnAddStateActionPerformed
 
-    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         workContainer.remove(this);
         CardLayout layout = (CardLayout) workContainer.getLayout();
         layout.previous(workContainer);
         
-    }//GEN-LAST:event_btnbackActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnremoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnremoveActionPerformed
+    private void btnRemoveStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveStateActionPerformed
         // TODO add your handling code here:
-        int row = tblstatelist.getSelectedRow();
+        int row = tblStateDetails.getSelectedRow();
         if(row<0) {
             JOptionPane.showMessageDialog(null, "Please select a State from table");
             return;
         }
         
-        StateNetwork state = (StateNetwork)tblstatelist.getValueAt(row, 0);
+        StateNetwork state = (StateNetwork)tblStateDetails.getValueAt(row, 0);
         business.removeState(state);
         populateTable();
-    }//GEN-LAST:event_btnremoveActionPerformed
+    }//GEN-LAST:event_btnRemoveStateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnadd;
-    private javax.swing.JButton btnback;
-    private javax.swing.JButton btnremove;
-    private javax.swing.JComboBox cbaddedstatelist;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton btnAddState;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnRemoveState;
+    private javax.swing.JComboBox comboBoxAddedStateList;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable tblstatelist;
+    private javax.swing.JLabel lblStateName;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblStateDetails;
     // End of variables declaration//GEN-END:variables
 }

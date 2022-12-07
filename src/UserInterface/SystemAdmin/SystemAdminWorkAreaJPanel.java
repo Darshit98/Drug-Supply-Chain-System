@@ -44,129 +44,118 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jSplitPane1 = new javax.swing.JSplitPane();
         workContainer = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         mainMenuContainer = new javax.swing.JPanel();
-        btnmanstate = new javax.swing.JButton();
-        btnmancity = new javax.swing.JButton();
-        btnmanmanuf = new javax.swing.JButton();
-        btnmanprovi = new javax.swing.JButton();
-        btnmanvacc = new javax.swing.JButton();
-        btnmandisease = new javax.swing.JButton();
-        btnmanacct = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btnManageState = new javax.swing.JButton();
+        btnManageCity = new javax.swing.JButton();
+        btnManageManufacturer = new javax.swing.JButton();
+        btnManageProvider = new javax.swing.JButton();
+        btnManageDrugCatalog = new javax.swing.JButton();
+        btnManageDiseaseCatalog = new javax.swing.JButton();
+        btnManageUserAccount = new javax.swing.JButton();
+        lblSysAdmin = new javax.swing.JLabel();
 
+        setForeground(new java.awt.Color(204, 204, 255));
         setLayout(new java.awt.BorderLayout());
 
-        jSplitPane1.setDividerLocation(200);
+        jSplitPane1.setDividerLocation(210);
+        jSplitPane1.setForeground(new java.awt.Color(204, 204, 255));
 
         workContainer.setBackground(new java.awt.Color(102, 153, 255));
         workContainer.setLayout(new java.awt.CardLayout());
 
-        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/ICONS/11122021icons/sysadmin.jpg"))); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 640, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jLabel1)
-                .addContainerGap(93, Short.MAX_VALUE))
+            .addGap(0, 563, Short.MAX_VALUE)
         );
 
         workContainer.add(jPanel1, "card2");
 
         jSplitPane1.setRightComponent(workContainer);
 
-        mainMenuContainer.setBackground(new java.awt.Color(102, 153, 255));
+        mainMenuContainer.setBackground(new java.awt.Color(255, 255, 204));
 
-        btnmanstate.setBackground(new java.awt.Color(0, 0, 102));
-        btnmanstate.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnmanstate.setForeground(new java.awt.Color(255, 255, 255));
-        btnmanstate.setText("Manage States ");
-        btnmanstate.addActionListener(new java.awt.event.ActionListener() {
+        btnManageState.setBackground(new java.awt.Color(0, 0, 102));
+        btnManageState.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnManageState.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageState.setText("Manage States ");
+        btnManageState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmanstateActionPerformed(evt);
+                btnManageStateActionPerformed(evt);
             }
         });
 
-        btnmancity.setBackground(new java.awt.Color(0, 0, 102));
-        btnmancity.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnmancity.setForeground(new java.awt.Color(255, 255, 255));
-        btnmancity.setText("Manage Cities");
-        btnmancity.addActionListener(new java.awt.event.ActionListener() {
+        btnManageCity.setBackground(new java.awt.Color(0, 0, 102));
+        btnManageCity.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnManageCity.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageCity.setText("Manage Cities");
+        btnManageCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmancityActionPerformed(evt);
+                btnManageCityActionPerformed(evt);
             }
         });
 
-        btnmanmanuf.setBackground(new java.awt.Color(0, 0, 102));
-        btnmanmanuf.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnmanmanuf.setForeground(new java.awt.Color(255, 255, 255));
-        btnmanmanuf.setText("Manage Manufacturers");
-        btnmanmanuf.addActionListener(new java.awt.event.ActionListener() {
+        btnManageManufacturer.setBackground(new java.awt.Color(0, 0, 102));
+        btnManageManufacturer.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnManageManufacturer.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageManufacturer.setText("Manage Manufacturers");
+        btnManageManufacturer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmanmanufActionPerformed(evt);
+                btnManageManufacturerActionPerformed(evt);
             }
         });
 
-        btnmanprovi.setBackground(new java.awt.Color(0, 0, 102));
-        btnmanprovi.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnmanprovi.setForeground(new java.awt.Color(255, 255, 255));
-        btnmanprovi.setText("Manage Providers");
-        btnmanprovi.addActionListener(new java.awt.event.ActionListener() {
+        btnManageProvider.setBackground(new java.awt.Color(0, 0, 102));
+        btnManageProvider.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnManageProvider.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageProvider.setText("Manage Providers");
+        btnManageProvider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmanproviActionPerformed(evt);
+                btnManageProviderActionPerformed(evt);
             }
         });
 
-        btnmanvacc.setBackground(new java.awt.Color(0, 0, 102));
-        btnmanvacc.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnmanvacc.setForeground(new java.awt.Color(255, 255, 255));
-        btnmanvacc.setText("Manage Vaccine Catalog");
-        btnmanvacc.addActionListener(new java.awt.event.ActionListener() {
+        btnManageDrugCatalog.setBackground(new java.awt.Color(0, 0, 102));
+        btnManageDrugCatalog.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnManageDrugCatalog.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageDrugCatalog.setText("Manage Drug Catalog");
+        btnManageDrugCatalog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmanvaccActionPerformed(evt);
+                btnManageDrugCatalogActionPerformed(evt);
             }
         });
 
-        btnmandisease.setBackground(new java.awt.Color(0, 0, 102));
-        btnmandisease.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnmandisease.setForeground(new java.awt.Color(255, 255, 255));
-        btnmandisease.setText("Manage Disease Catalog");
-        btnmandisease.addActionListener(new java.awt.event.ActionListener() {
+        btnManageDiseaseCatalog.setBackground(new java.awt.Color(0, 0, 102));
+        btnManageDiseaseCatalog.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnManageDiseaseCatalog.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageDiseaseCatalog.setText("Manage Disease Catalog");
+        btnManageDiseaseCatalog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmandiseaseActionPerformed(evt);
+                btnManageDiseaseCatalogActionPerformed(evt);
             }
         });
 
-        btnmanacct.setBackground(new java.awt.Color(0, 0, 102));
-        btnmanacct.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnmanacct.setForeground(new java.awt.Color(255, 255, 255));
-        btnmanacct.setText("Manage User Accounts");
-        btnmanacct.addActionListener(new java.awt.event.ActionListener() {
+        btnManageUserAccount.setBackground(new java.awt.Color(0, 0, 102));
+        btnManageUserAccount.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnManageUserAccount.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageUserAccount.setText("Manage User Accounts");
+        btnManageUserAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmanacctActionPerformed(evt);
+                btnManageUserAccountActionPerformed(evt);
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("SYSTEM ADMIN");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/ICONS/11122021icons/sysmiddle_150x150.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        lblSysAdmin.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        lblSysAdmin.setForeground(new java.awt.Color(0, 0, 102));
+        lblSysAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSysAdmin.setText("SYSTEM ADMIN");
 
         javax.swing.GroupLayout mainMenuContainerLayout = new javax.swing.GroupLayout(mainMenuContainer);
         mainMenuContainer.setLayout(mainMenuContainerLayout);
@@ -177,47 +166,41 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(mainMenuContainerLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(mainMenuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnmanvacc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnmandisease, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnmanacct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnmanmanuf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnmanprovi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(mainMenuContainerLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(btnManageDrugCatalog, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnManageDiseaseCatalog, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnManageUserAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnManageManufacturer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnManageProvider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(mainMenuContainerLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(mainMenuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnmanstate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnmancity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(btnManageState, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnManageCity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(mainMenuContainerLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(lblSysAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         mainMenuContainerLayout.setVerticalGroup(
             mainMenuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuContainerLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblSysAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
-                .addComponent(btnmanstate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnmancity)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnmanmanuf)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnmanprovi)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnmanvacc)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnmandisease)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnmanacct)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnManageState)
+                .addGap(18, 18, 18)
+                .addComponent(btnManageCity)
+                .addGap(18, 18, 18)
+                .addComponent(btnManageManufacturer)
+                .addGap(18, 18, 18)
+                .addComponent(btnManageProvider)
+                .addGap(18, 18, 18)
+                .addComponent(btnManageDiseaseCatalog)
+                .addGap(18, 18, 18)
+                .addComponent(btnManageDrugCatalog)
+                .addGap(18, 18, 18)
+                .addComponent(btnManageUserAccount)
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(mainMenuContainer);
@@ -225,76 +208,74 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         add(jSplitPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnmanacctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanacctActionPerformed
+    private void btnManageUserAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageUserAccountActionPerformed
         // TODO add your handling code here:
         ManageUserAccountJPanel panel = new ManageUserAccountJPanel(workContainer, business);
         workContainer.add("ManageUserAccountJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btnmanacctActionPerformed
+    }//GEN-LAST:event_btnManageUserAccountActionPerformed
 
-    private void btnmandiseaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmandiseaseActionPerformed
+    private void btnManageDiseaseCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageDiseaseCatalogActionPerformed
         // TODO add your handling code here:
         ManageDiseaseCatalogJPanel panel = new ManageDiseaseCatalogJPanel(workContainer, business);
         workContainer.add("ManageDiseaseCatalogJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btnmandiseaseActionPerformed
+    }//GEN-LAST:event_btnManageDiseaseCatalogActionPerformed
 
-    private void btnmanvaccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanvaccActionPerformed
+    private void btnManageDrugCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageDrugCatalogActionPerformed
         // TODO add your handling code here:
-        ManageVaccineCatalogJPanel panel = new ManageVaccineCatalogJPanel(workContainer, business);
+        ManageDrugCatalogJPanel panel = new ManageDrugCatalogJPanel(workContainer, business);
         workContainer.add("ManageVaccineCatalogJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btnmanvaccActionPerformed
+    }//GEN-LAST:event_btnManageDrugCatalogActionPerformed
 
-    private void btnmanproviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanproviActionPerformed
+    private void btnManageProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageProviderActionPerformed
         // TODO add your handling code here:
-        ManageProviderJPanel panel = new ManageProviderJPanel(workContainer, business);
+        ManageProviderDetailsJPanel panel = new ManageProviderDetailsJPanel(workContainer, business);
         workContainer.add("ManageProviderJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btnmanproviActionPerformed
+    }//GEN-LAST:event_btnManageProviderActionPerformed
 
-    private void btnmanmanufActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanmanufActionPerformed
+    private void btnManageManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageManufacturerActionPerformed
         // TODO add your handling code here:
-        ManageManufacturersJPanel panel = new ManageManufacturersJPanel(workContainer, business);
+        ManageManufacturerDetailsJPanel panel = new ManageManufacturerDetailsJPanel(workContainer, business);
         workContainer.add("ManageManufacturersJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btnmanmanufActionPerformed
+    }//GEN-LAST:event_btnManageManufacturerActionPerformed
 
-    private void btnmancityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmancityActionPerformed
+    private void btnManageCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageCityActionPerformed
         // TODO add your handling code here:
-        ManageCityJPanel panel = new ManageCityJPanel(workContainer, business);
+        ManageCityListJPanel panel = new ManageCityListJPanel(workContainer, business);
         workContainer.add("ManageCityJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btnmancityActionPerformed
+    }//GEN-LAST:event_btnManageCityActionPerformed
 
-    private void btnmanstateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanstateActionPerformed
+    private void btnManageStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageStateActionPerformed
         // TODO add your handling code here:
         ManageStateJPanel panel = new ManageStateJPanel(workContainer, business);
         workContainer.add("ManageStateJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btnmanstateActionPerformed
+    }//GEN-LAST:event_btnManageStateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnmanacct;
-    private javax.swing.JButton btnmancity;
-    private javax.swing.JButton btnmandisease;
-    private javax.swing.JButton btnmanmanuf;
-    private javax.swing.JButton btnmanprovi;
-    private javax.swing.JButton btnmanstate;
-    private javax.swing.JButton btnmanvacc;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JButton btnManageCity;
+    private javax.swing.JButton btnManageDiseaseCatalog;
+    private javax.swing.JButton btnManageDrugCatalog;
+    private javax.swing.JButton btnManageManufacturer;
+    private javax.swing.JButton btnManageProvider;
+    private javax.swing.JButton btnManageState;
+    private javax.swing.JButton btnManageUserAccount;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JLabel lblSysAdmin;
     private javax.swing.JPanel mainMenuContainer;
     private javax.swing.JPanel workContainer;
     // End of variables declaration//GEN-END:variables

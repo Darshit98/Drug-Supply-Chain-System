@@ -31,7 +31,7 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
     
      private void populateTable(){
         
-        DefaultTableModel model = (DefaultTableModel) tbldislist.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblDiseaseDetailsList.getModel();
         model.setRowCount(0);
         
         for(Disease disease : business.getDiseaseDirectory().getdiseaseDirectory())
@@ -56,22 +56,23 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbldislist = new javax.swing.JTable();
+        tblDiseaseDetailsList = new javax.swing.JTable();
         btnaddis = new javax.swing.JButton();
-        btnremovedis = new javax.swing.JButton();
-        btnback = new javax.swing.JButton();
-        btnref = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        btnRemoveDisease = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Manage Disease Catalog");
+        setBackground(new java.awt.Color(204, 204, 255));
 
-        tbldislist.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        tbldislist.setModel(new javax.swing.table.DefaultTableModel(
+        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(0, 0, 102));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Manage Disease Catalog");
+
+        tblDiseaseDetailsList.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        tblDiseaseDetailsList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -87,8 +88,8 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tbldislist.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tbldislist);
+        tblDiseaseDetailsList.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblDiseaseDetailsList);
 
         btnaddis.setBackground(new java.awt.Color(0, 0, 102));
         btnaddis.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -100,33 +101,33 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnremovedis.setBackground(new java.awt.Color(0, 0, 102));
-        btnremovedis.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnremovedis.setForeground(new java.awt.Color(255, 255, 255));
-        btnremovedis.setText("Remove");
-        btnremovedis.addActionListener(new java.awt.event.ActionListener() {
+        btnRemoveDisease.setBackground(new java.awt.Color(0, 0, 102));
+        btnRemoveDisease.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnRemoveDisease.setForeground(new java.awt.Color(255, 255, 255));
+        btnRemoveDisease.setText("Remove");
+        btnRemoveDisease.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnremovedisActionPerformed(evt);
+                btnRemoveDiseaseActionPerformed(evt);
             }
         });
 
-        btnback.setBackground(new java.awt.Color(0, 0, 102));
-        btnback.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnback.setForeground(new java.awt.Color(255, 255, 255));
-        btnback.setText("<");
-        btnback.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(0, 0, 102));
+        btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbackActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
-        btnref.setBackground(new java.awt.Color(0, 0, 102));
-        btnref.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnref.setForeground(new java.awt.Color(255, 255, 255));
-        btnref.setText("Refresh");
-        btnref.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setBackground(new java.awt.Color(0, 0, 102));
+        btnRefresh.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
+        btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnrefActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
 
@@ -137,43 +138,36 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnremovedis)
+                        .addComponent(btnRemoveDisease)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnaddis))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnref)))
+                        .addGap(291, 291, 291)
+                        .addComponent(btnRefresh)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(278, 278, 278)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(btnref))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnback)))
+                .addComponent(lblTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnBack)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnRefresh)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnaddis)
-                    .addComponent(btnremovedis))
-                .addGap(35, 35, 35)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnRemoveDisease))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -186,41 +180,40 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
         layout.next(workContainer);
     }//GEN-LAST:event_btnaddisActionPerformed
 
-    private void btnremovedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnremovedisActionPerformed
+    private void btnRemoveDiseaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveDiseaseActionPerformed
         // TODO add your handling code here:
 
-        int row = tbldislist.getSelectedRow();
+        int row = tblDiseaseDetailsList.getSelectedRow();
         if(row<0) {
             JOptionPane.showMessageDialog(null, "Please select a Disease from table");
             return;
         }
 
-        Disease disease = (Disease)tbldislist.getValueAt(row, 0);
+        Disease disease = (Disease)tblDiseaseDetailsList.getValueAt(row, 0);
         business.getDiseaseDirectory().removeDisease(disease);
         populateTable();
-    }//GEN-LAST:event_btnremovedisActionPerformed
+    }//GEN-LAST:event_btnRemoveDiseaseActionPerformed
 
-    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         workContainer.remove(this);
         CardLayout layout = (CardLayout) workContainer.getLayout();
         layout.previous(workContainer);
-    }//GEN-LAST:event_btnbackActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnrefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrefActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         // TODO add your handling code here:
         populateTable();
-    }//GEN-LAST:event_btnrefActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnRefresh;
+    private javax.swing.JButton btnRemoveDisease;
     private javax.swing.JButton btnaddis;
-    private javax.swing.JButton btnback;
-    private javax.swing.JButton btnref;
-    private javax.swing.JButton btnremovedis;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tbldislist;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblDiseaseDetailsList;
     // End of variables declaration//GEN-END:variables
 }
