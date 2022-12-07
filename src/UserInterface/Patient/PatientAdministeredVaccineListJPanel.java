@@ -16,12 +16,15 @@ import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
+import java.awt.print.PrinterException;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -48,8 +51,8 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
     private void populateTable()
     {
         
-         int rowCount = tblvaccl.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblvaccl.getModel();
+         int rowCount = tblImmunizationRecord.getRowCount();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblImmunizationRecord.getModel();
         
         for(int i=rowCount-1 ; i>=0; i--){
             defaulttabelmodel.removeRow(i);
@@ -95,7 +98,7 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblvaccl = new javax.swing.JTable();
+        tblImmunizationRecord = new javax.swing.JTable();
         btnref = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
@@ -105,11 +108,11 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Administered Vaccine List");
+        jLabel1.setText("Immunization Record");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 996, -1));
 
-        tblvaccl.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        tblvaccl.setModel(new javax.swing.table.DefaultTableModel(
+        tblImmunizationRecord.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        tblImmunizationRecord.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -125,8 +128,8 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblvaccl.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblvaccl);
+        tblImmunizationRecord.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblImmunizationRecord);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 1000, 154));
 
@@ -177,6 +180,12 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
             
             doc.open();
             
+             MessageFormat header=new MessageFormat("Immunization Certificate");
+            MessageFormat footer=new MessageFormat("page{0,number,integer}");
+            
+            
+            tblImmunizationRecord.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+            
             PdfPTable tblcertificate = new PdfPTable(9);
             
             //Adding Headers
@@ -191,17 +200,17 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
             tblcertificate.addCell("Dose Number");
             tblcertificate.addCell("Status");
             
-            for(int i=0; i< tblvaccl.getRowCount(); i++)
+            for(int i=0; i< tblImmunizationRecord.getRowCount(); i++)
             {
-                String VaccineCode = tblvaccl.getValueAt(i, 0).toString();
-                String VaccineName = tblvaccl.getValueAt(i, 1).toString();
-                String Branch = tblvaccl.getValueAt(i, 2).toString();
-                String BatchNumber = tblvaccl.getValueAt(i, 3).toString();
-                String VaccineID = tblvaccl.getValueAt(i, 4).toString();
-                String Date = tblvaccl.getValueAt(i, 5).toString();
-                String SiteRoute = tblvaccl.getValueAt(i, 6).toString();
-                String DoseNumber = tblvaccl.getValueAt(i, 7).toString();
-                String status = tblvaccl.getValueAt(i, 8).toString();
+                String VaccineCode = tblImmunizationRecord.getValueAt(i, 0).toString();
+                String VaccineName = tblImmunizationRecord.getValueAt(i, 1).toString();
+                String Branch = tblImmunizationRecord.getValueAt(i, 2).toString();
+                String BatchNumber = tblImmunizationRecord.getValueAt(i, 3).toString();
+                String VaccineID = tblImmunizationRecord.getValueAt(i, 4).toString();
+                String Date = tblImmunizationRecord.getValueAt(i, 5).toString();
+                String SiteRoute = tblImmunizationRecord.getValueAt(i, 6).toString();
+                String DoseNumber = tblImmunizationRecord.getValueAt(i, 7).toString();
+                String status = tblImmunizationRecord.getValueAt(i, 8).toString();
                 
                 tblcertificate.addCell(VaccineCode);
                 tblcertificate.addCell(VaccineName);
@@ -223,6 +232,8 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
             Logger.getLogger(PatientAdministeredVaccineListJPanel.class.getName()).log(Level.SEVERE, null, ex);
         } catch (DocumentException ex) {
             Logger.getLogger(PatientAdministeredVaccineListJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (PrinterException ex) {
+            Logger.getLogger(PatientAdministeredVaccineListJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         doc.close();
@@ -234,6 +245,6 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblvaccl;
+    private javax.swing.JTable tblImmunizationRecord;
     // End of variables declaration//GEN-END:variables
 }

@@ -51,8 +51,8 @@ public class ManageClinicOrdersJPanel extends javax.swing.JPanel {
     
     private void populateOrderTable(){
         
-        int rowCount = tblorder.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblorder.getModel();
+        int rowCount = tblOrderDetails.getRowCount();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblOrderDetails.getModel();
         
         for(int i=rowCount-1 ; i>=0; i--){
             defaulttabelmodel.removeRow(i);
@@ -110,26 +110,25 @@ public class ManageClinicOrdersJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
+        lblOrderStatus = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblorder = new javax.swing.JTable();
-        btnview = new javax.swing.JButton();
-        btnref = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        tblOrderDetails = new javax.swing.JTable();
+        btnViewDetails = new javax.swing.JButton();
+        btnRefresh = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(102, 153, 255));
+        setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Manage orders from clinics");
+        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(0, 0, 102));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Manage orders from Clinics");
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel2.setText("Order Status:");
+        lblOrderStatus.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblOrderStatus.setForeground(new java.awt.Color(0, 0, 102));
+        lblOrderStatus.setText("Order Status:");
 
-        tblorder.setModel(new javax.swing.table.DefaultTableModel(
+        tblOrderDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -145,30 +144,28 @@ public class ManageClinicOrdersJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblorder.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblorder);
+        tblOrderDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblOrderDetails);
 
-        btnview.setBackground(new java.awt.Color(0, 0, 102));
-        btnview.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnview.setForeground(new java.awt.Color(255, 255, 255));
-        btnview.setText("View details");
-        btnview.addActionListener(new java.awt.event.ActionListener() {
+        btnViewDetails.setBackground(new java.awt.Color(0, 0, 102));
+        btnViewDetails.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnViewDetails.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewDetails.setText("View details");
+        btnViewDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnviewActionPerformed(evt);
+                btnViewDetailsActionPerformed(evt);
             }
         });
 
-        btnref.setBackground(new java.awt.Color(0, 0, 102));
-        btnref.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnref.setForeground(new java.awt.Color(255, 255, 255));
-        btnref.setText("Refresh");
-        btnref.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setBackground(new java.awt.Color(0, 0, 102));
+        btnRefresh.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
+        btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnrefActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/ICONS/11122021icons/order1_200x200.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -177,73 +174,66 @@ public class ManageClinicOrdersJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(lblOrderStatus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnref))
+                        .addComponent(btnRefresh))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnview)))
+                        .addComponent(btnViewDetails)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(lblTitle)
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(btnref))
+                    .addComponent(lblOrderStatus)
+                    .addComponent(btnRefresh))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnview)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addComponent(btnViewDetails)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnrefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrefActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         // TODO add your handling code here:
         populateOrderTable();
-    }//GEN-LAST:event_btnrefActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
-    private void btnviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewActionPerformed
+    private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         // TODO add your handling code here:
-         int selectedRow = tblorder.getSelectedRow();
+         int selectedRow = tblOrderDetails.getSelectedRow();
 
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select an Order from table");
             return;
         }
         
-        ProviderVaccineOrderWorkRequest request = (ProviderVaccineOrderWorkRequest)tblorder.getValueAt(selectedRow, 0);
+        ProviderVaccineOrderWorkRequest request = (ProviderVaccineOrderWorkRequest)tblOrderDetails.getValueAt(selectedRow, 0);
         
-        ViewDetailsOfClinicOrderJPanel panel = new ViewDetailsOfClinicOrderJPanel(workContainer, request, state);
+        ClinicOrderDetailsJPanel panel = new ClinicOrderDetailsJPanel(workContainer, request, state);
         workContainer.add("ViewDetailsOfPlacedOrderJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
         
         
         
-    }//GEN-LAST:event_btnviewActionPerformed
+    }//GEN-LAST:event_btnViewDetailsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnref;
-    private javax.swing.JButton btnview;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton btnRefresh;
+    private javax.swing.JButton btnViewDetails;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblorder;
+    private javax.swing.JLabel lblOrderStatus;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblOrderDetails;
     // End of variables declaration//GEN-END:variables
 }

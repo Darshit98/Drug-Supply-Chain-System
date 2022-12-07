@@ -11,7 +11,7 @@ import Business.Network.StateNetwork;
 import Business.Organization.HospitalOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import UserInterface.Provider.ProviderWorkAreaJPanel;
+import UserInterface.Provider.ProviderOperationWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -22,7 +22,7 @@ public class ProviderRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, Organization organization, EcoSystem business, StateNetwork state) {
-        return new ProviderWorkAreaJPanel(userProcessContainer, account, (HospitalEnterprise)enterprise, (HospitalOrganization)organization, business, state);
+        return new ProviderOperationWorkAreaJPanel(userProcessContainer, account, (HospitalEnterprise)enterprise, (HospitalOrganization)organization, business, state);
     }
     
 }
