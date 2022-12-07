@@ -39,46 +39,48 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
     private final HospitalEnterprise enterprise;
     private final UserAccount userAccount;
     
+    DefaultTableModel tblmodel;
+    
     
     public PatientAdministeredVaccineListJPanel(JPanel workContainer,HospitalEnterprise enterprise, UserAccount userAccount ) {
         initComponents();
         this.workContainer = workContainer;
         this.enterprise = enterprise;
         this.userAccount = userAccount;
-        populateTable();
+        populatePatientTable();
     }
     
-    private void populateTable()
+    private void populatePatientTable()
     {
         
          int rowCount = tblImmunizationRecord.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblImmunizationRecord.getModel();
+        tblmodel = (DefaultTableModel)tblImmunizationRecord.getModel();
         
         for(int i=rowCount-1 ; i>=0; i--){
-            defaulttabelmodel.removeRow(i);
+            tblmodel.removeRow(i);
         }
         Patient patient =(Patient)userAccount.getPerson();
         
         
-             for(Organization org: enterprise.getOrganizationDirectory().getOrganizationList())
+             for(Organization organize: enterprise.getOrganizationDirectory().getOrganizationList())
         {
-            if(org instanceof HospitalOrganization)
+            if(organize instanceof HospitalOrganization)
             {
-                HospitalOrganization hospOrg = (HospitalOrganization)org;
-                for(AdministeredVaccineDetails vaccine: hospOrg.getClinic().getAdministeredVaccineList())
+                HospitalOrganization hospitalOrg = (HospitalOrganization)organize;
+                for(AdministeredVaccineDetails vaccine: hospitalOrg.getClinic().getAdministeredVaccineList())
                 {     
                     if(!(vaccine.getVaccineProduct()== null) && !(vaccine.getPatient()==null) && vaccine.getPatient().equals(patient))
-                    {Object[] row = new Object[9];
-                    row[0]=vaccine.getVaccineProduct();
-                    row[1]=vaccine;
-                    row[2]=vaccine.getVaccineProduct().getManufacturerName();
-                    row[3]=vaccine.getVaccineProduct().getBatchId();
-                    row[4]=vaccine.getVaccineProduct().getVaccineId();
-                    row[5]=vaccine.getDate();
-                    row[6]=vaccine.getSiteRoute();
-                    row[7]=vaccine.getDoseNumber();
-                    row[8]=vaccine.getshotstatus();
-                    defaulttabelmodel.addRow(row);
+                    {Object[] rowData = new Object[9];
+                    rowData[0]=vaccine.getVaccineProduct();
+                    rowData[1]=vaccine;
+                    rowData[2]=vaccine.getVaccineProduct().getManufacturerName();
+                    rowData[3]=vaccine.getVaccineProduct().getBatchId();
+                    rowData[4]=vaccine.getVaccineProduct().getVaccineId();
+                    rowData[5]=vaccine.getDate();
+                    rowData[6]=vaccine.getSiteRoute();
+                    rowData[7]=vaccine.getDoseNumber();
+                    rowData[8]=vaccine.getshotstatus();
+                    tblmodel.addRow(rowData);
                     
                     }
                 }
@@ -158,7 +160,7 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
 
     private void btnrefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrefActionPerformed
         // TODO add your handling code here:
-        populateTable();
+        populatePatientTable();
     }//GEN-LAST:event_btnrefActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

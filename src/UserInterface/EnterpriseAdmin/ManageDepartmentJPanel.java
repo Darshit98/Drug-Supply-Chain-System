@@ -4,7 +4,6 @@
  */
 package UserInterface.EnterpriseAdmin;
 
-import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.HospitalEnterprise;
 import Business.Enterprise.LocalHealthDepartment;
@@ -30,77 +29,82 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ManageDepartmentJPanel extends javax.swing.JPanel {
 
-    private JPanel workContainer;
-    private Enterprise enterprise;
+    private final JPanel workContainer;
+    private final Enterprise enterprise;
     /**
      * Creates new form ManageDepartmentJPanel
+     * @param workContainer
+     * @param enterprise
      */
+    
+    DefaultTableModel tblModel;
+            
     public ManageDepartmentJPanel(JPanel workContainer, Enterprise enterprise ) {
         initComponents();
         this.workContainer = workContainer;
         this.enterprise = enterprise;
-        populateTable();
+        populateOrganizationTable();
         populateCombo();
-        txt1.setVisible(false);
-            lbl4.setVisible(false);
+        txtClinicName.setVisible(false);
+            lblClinicName.setVisible(false);
         if(enterprise instanceof HospitalEnterprise)
         {
-            txt1.setVisible(true);
-            lbl4.setVisible(true);
+            txtClinicName.setVisible(true);
+            lblClinicName.setVisible(true);
                 
         }
         
     }
     
     private void populateCombo(){
-        cborglist.removeAllItems();
+        comboBoxOrganizationList.removeAllItems();
         if(enterprise instanceof CDC)
         {   
-            cborglist.addItem(Organization.OrganizationType.CDCOrg);
-            cborglist.addItem(Organization.OrganizationType.MedicalOrganization);
+            comboBoxOrganizationList.addItem(Organization.OrganizationType.CDCOrg);
+            comboBoxOrganizationList.addItem(Organization.OrganizationType.MedicalOrganization);
         }
         if(enterprise instanceof Manufacturer)
         {
-            cborglist.addItem(Organization.OrganizationType.ManufactureOrg);
+            comboBoxOrganizationList.addItem(Organization.OrganizationType.ManufactureOrg);
         }
         if(enterprise instanceof Distributor)
         {
-            cborglist.addItem(Organization.OrganizationType.DistributorOrg);
+            comboBoxOrganizationList.addItem(Organization.OrganizationType.DistributorOrg);
             
         }
         if( enterprise instanceof LocalHealthDepartment)
         {
-            cborglist.addItem(Organization.OrganizationType.LocalHealthDepartmentOrg);
+            comboBoxOrganizationList.addItem(Organization.OrganizationType.LocalHealthDepartmentOrg);
         }
         
         if( enterprise instanceof HospitalEnterprise)
         {
-            cborglist.addItem(Organization.OrganizationType.HospitalOrg);
-            cborglist.addItem(Organization.OrganizationType.PatientOrganization);
-            cborglist.addItem(Organization.OrganizationType.ClinicOrganization);
+            comboBoxOrganizationList.addItem(Organization.OrganizationType.HospitalOrg);
+            comboBoxOrganizationList.addItem(Organization.OrganizationType.PatientOrganization);
+            comboBoxOrganizationList.addItem(Organization.OrganizationType.ClinicOrganization);
         }
         
        
     }
     
-    private void populateTable(){
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel) tblorg.getModel();
+    private void populateOrganizationTable(){
+        tblModel = (DefaultTableModel) tblOrganizationDetails.getModel();
         
-        defaulttabelmodel.setRowCount(0);
+        tblModel.setRowCount(0);
         
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList())
         {
-            Object[] row = new Object[2];
-            row[0] = organization.getOrganizationID();
+            Object[] rowData = new Object[2];
+            rowData[0] = organization.getOrganizationID();
             if(organization instanceof ClinicOrganization)
             {
                 ClinicOrganization satOrg =(ClinicOrganization)organization;
-                row[1] = satOrg.getClincName()+"Clinic";
+                rowData[1] = satOrg.getClincName()+"Clinic";
             }
             else
-            row[1] = organization.getName();
+            rowData[1] = organization.getName();
             
-            defaulttabelmodel.addRow(row);
+            tblModel.addRow(rowData);
         }
     }
 
@@ -114,25 +118,28 @@ public class ManageDepartmentJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl1 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblorg = new javax.swing.JTable();
-        btn1 = new javax.swing.JButton();
-        lbl2 = new javax.swing.JLabel();
-        cborglist = new javax.swing.JComboBox();
-        btn2 = new javax.swing.JButton();
+        tblOrganizationDetails = new javax.swing.JTable();
+        btnBack = new javax.swing.JButton();
+        lblOrganizationType = new javax.swing.JLabel();
+        comboBoxOrganizationList = new javax.swing.JComboBox();
+        btnAddOrganization = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        lbl3 = new javax.swing.JLabel();
-        lbl4 = new javax.swing.JLabel();
-        txt1 = new javax.swing.JTextField();
+        lblAddOrganization = new javax.swing.JLabel();
+        lblClinicName = new javax.swing.JLabel();
+        txtClinicName = new javax.swing.JTextField();
 
-        lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        lbl1.setForeground(new java.awt.Color(0, 0, 102));
-        lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl1.setText("Manage Organization");
+        setBackground(new java.awt.Color(204, 204, 255));
 
-        tblorg.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        tblorg.setModel(new javax.swing.table.DefaultTableModel(
+        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(0, 0, 102));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Manage Organization");
+
+        tblOrganizationDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        tblOrganizationDetails.setForeground(new java.awt.Color(0, 0, 102));
+        tblOrganizationDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -155,114 +162,119 @@ public class ManageDepartmentJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblorg.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblorg);
+        tblOrganizationDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblOrganizationDetails);
 
-        btn1.setBackground(new java.awt.Color(0, 0, 102));
-        btn1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn1.setText("<");
-        btn1.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(0, 0, 102));
+        btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
-        lbl2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl2.setForeground(new java.awt.Color(0, 0, 102));
-        lbl2.setText("Organization Type ");
+        lblOrganizationType.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblOrganizationType.setForeground(new java.awt.Color(0, 0, 102));
+        lblOrganizationType.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblOrganizationType.setText("Organization Type:");
 
-        cborglist.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        cborglist.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxOrganizationList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        comboBoxOrganizationList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxOrganizationList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        btn2.setBackground(new java.awt.Color(0, 0, 102));
-        btn2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn2.setForeground(new java.awt.Color(255, 255, 255));
-        btn2.setText("Add Organization");
-        btn2.addActionListener(new java.awt.event.ActionListener() {
+        btnAddOrganization.setBackground(new java.awt.Color(0, 0, 102));
+        btnAddOrganization.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnAddOrganization.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddOrganization.setText("Add Organization");
+        btnAddOrganization.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2ActionPerformed(evt);
+                btnAddOrganizationActionPerformed(evt);
             }
         });
 
         jSeparator1.setForeground(new java.awt.Color(0, 51, 102));
 
-        lbl3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl3.setForeground(new java.awt.Color(0, 0, 102));
-        lbl3.setText("Add Organization:");
+        lblAddOrganization.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblAddOrganization.setForeground(new java.awt.Color(0, 0, 102));
+        lblAddOrganization.setText("Add Organization:");
 
-        lbl4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl4.setForeground(new java.awt.Color(0, 0, 102));
-        lbl4.setText(" Clinic Name:");
+        lblClinicName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblClinicName.setForeground(new java.awt.Color(0, 0, 102));
+        lblClinicName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblClinicName.setText(" Clinic Name:");
 
-        txt1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtClinicName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSeparator1)
-                            .addComponent(btn1)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbl4)
-                            .addComponent(lbl2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cborglist, 0, 160, Short.MAX_VALUE)
-                            .addComponent(txt1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl3)
-                            .addComponent(btn2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblAddOrganization)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblClinicName)
+                                    .addComponent(lblOrganizationType))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnAddOrganization, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(comboBoxOrganizationList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtClinicName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblClinicName, lblOrganizationType});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbl1)
+                .addComponent(lblTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn1)
+                .addComponent(btnBack)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbl3)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl2)
-                    .addComponent(cborglist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblAddOrganization)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl4)
-                    .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn2)
-                .addContainerGap(114, Short.MAX_VALUE))
+                    .addComponent(lblOrganizationType)
+                    .addComponent(comboBoxOrganizationList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblClinicName)
+                    .addComponent(txtClinicName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnAddOrganization)
+                .addContainerGap(117, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         workContainer.remove(this);
         CardLayout layout = (CardLayout) workContainer.getLayout();
         layout.previous(workContainer);
-    }//GEN-LAST:event_btn1ActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+    private void btnAddOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrganizationActionPerformed
         // TODO add your handling code here:
 
-        Organization.OrganizationType type = (Organization.OrganizationType) cborglist.getSelectedItem();
+        Organization.OrganizationType type = (Organization.OrganizationType) comboBoxOrganizationList.getSelectedItem();
         //check if organization exists
 
         //
@@ -272,13 +284,13 @@ public class ManageDepartmentJPanel extends javax.swing.JPanel {
         if( enterprise instanceof CDC)
         {
 
-            for(Organization org : enterprise.getOrganizationDirectory().getOrganizationList())
+            for(Organization organize : enterprise.getOrganizationDirectory().getOrganizationList())
             {
-                if(org instanceof CDCOrganization)
+                if(organize instanceof CDCOrganization)
                 {
                     corg=true;
                 }
-                if(org instanceof medicalOrganization)
+                if(organize instanceof medicalOrganization)
                 {
                     morg=true;
                 }
@@ -335,7 +347,7 @@ public class ManageDepartmentJPanel extends javax.swing.JPanel {
         boolean patientOrg=false;
         if( enterprise instanceof HospitalEnterprise)
         {
-            String satClinicName = txt1.getText();
+            String satClinicName = txtClinicName.getText();
 
             for(Organization org : enterprise.getOrganizationDirectory().getOrganizationList())
             {
@@ -362,29 +374,29 @@ public class ManageDepartmentJPanel extends javax.swing.JPanel {
             {
                 ClinicOrganization satOrg = (ClinicOrganization)enterprise.getOrganizationDirectory().createOrganization(type);
                 satOrg.setClincName(satClinicName);
-                populateTable();
+                populateOrganizationTable();
                 return;
             }
 
         }
 
         enterprise.getOrganizationDirectory().createOrganization(type);
-        populateTable();
+        populateOrganizationTable();
 
-    }//GEN-LAST:event_btn2ActionPerformed
+    }//GEN-LAST:event_btnAddOrganizationActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn2;
-    private javax.swing.JComboBox cborglist;
+    private javax.swing.JButton btnAddOrganization;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JComboBox comboBoxOrganizationList;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lbl1;
-    private javax.swing.JLabel lbl2;
-    private javax.swing.JLabel lbl3;
-    private javax.swing.JLabel lbl4;
-    private javax.swing.JTable tblorg;
-    private javax.swing.JTextField txt1;
+    private javax.swing.JLabel lblAddOrganization;
+    private javax.swing.JLabel lblClinicName;
+    private javax.swing.JLabel lblOrganizationType;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblOrganizationDetails;
+    private javax.swing.JTextField txtClinicName;
     // End of variables declaration//GEN-END:variables
 }

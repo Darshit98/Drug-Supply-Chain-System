@@ -24,6 +24,8 @@ public class ManageStateJPanel extends javax.swing.JPanel {
     private final JPanel workContainer;
     private final EcoSystem business;
     
+    DefaultTableModel tblModel;
+    
     public ManageStateJPanel(JPanel workContainer, EcoSystem business ) {
         initComponents();
         this.workContainer = workContainer;
@@ -36,14 +38,14 @@ public class ManageStateJPanel extends javax.swing.JPanel {
     
     private void populateTable(){
         
-        DefaultTableModel model = (DefaultTableModel) tblStateDetails.getModel();
-        model.setRowCount(0);
+        tblModel = (DefaultTableModel) tblStateDetails.getModel();
+        tblModel.setRowCount(0);
         
-        for(StateNetwork network : business.getStateList())
+        for(StateNetwork stateNet : business.getStateList())
         {
-            Object[] row = new Object[1];
-            row[0] = network;
-            model.addRow(row);
+            Object[] rowData = new Object[1];
+            rowData[0] = stateNet;
+            tblModel.addRow(rowData);
         }
         
     }
@@ -60,6 +62,12 @@ public class ManageStateJPanel extends javax.swing.JPanel {
         comboBoxAddedStateList.addItem("New Jersey");        
         comboBoxAddedStateList.addItem("New York");     
         comboBoxAddedStateList.addItem("Texas");
+        comboBoxAddedStateList.addItem("Utah");        
+        comboBoxAddedStateList.addItem("Arizona");     
+        comboBoxAddedStateList.addItem("Alaska");
+        comboBoxAddedStateList.addItem("Washington");        
+        comboBoxAddedStateList.addItem("Florida");     
+        comboBoxAddedStateList.addItem("Georgia");
       
     }
     
@@ -203,11 +211,11 @@ public class ManageStateJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         //check if the state exists
-        for(StateNetwork s: business.getStateList())
+        for(StateNetwork stateNet: business.getStateList())
         {
-            if(s.getStateName().equalsIgnoreCase(String.valueOf(comboBoxAddedStateList.getSelectedItem())))
+            if(stateNet.getStateName().equalsIgnoreCase(String.valueOf(comboBoxAddedStateList.getSelectedItem())))
             {
-                JOptionPane.showMessageDialog(null, "State exists!");
+                JOptionPane.showMessageDialog(null, "State already exists!");
             return;
             }
         }

@@ -28,6 +28,8 @@ public class ViewInventoryJPanel extends javax.swing.JPanel {
     private final HospitalEnterprise hospitalEnterprise;
     private final HospitalOrganization hospitalOrganization;
     private Clinic clinic;
+    
+    DefaultTableModel tblModel;
 
     public ViewInventoryJPanel(JPanel workContainer, EcoSystem business, HospitalEnterprise hospitalEnterprise, HospitalOrganization hospitalOrganization) {
         initComponents();
@@ -42,14 +44,14 @@ public class ViewInventoryJPanel extends javax.swing.JPanel {
     private void populateOrderTable() {
 
         int rowCount = tbldetails.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel) tbldetails.getModel();
+        tblModel = (DefaultTableModel) tbldetails.getModel();
 
         for (int i = rowCount - 1; i >= 0; i--) {
-            defaulttabelmodel.removeRow(i);
+            tblModel.removeRow(i);
         }
-        for (Organization org : hospitalEnterprise.getOrganizationDirectory().getOrganizationList()) {
-            if (org instanceof HospitalOrganization) {
-                HospitalOrganization hospOrg = (HospitalOrganization) org;
+        for (Organization organize : hospitalEnterprise.getOrganizationDirectory().getOrganizationList()) {
+            if (organize instanceof HospitalOrganization) {
+                HospitalOrganization hospOrg = (HospitalOrganization) organize;
                 for (VaccineDetails product : hospOrg.getClinic().getVaccineInventoryClinic()) {
                     Object[] row = new Object[7];
 
@@ -62,7 +64,7 @@ public class ViewInventoryJPanel extends javax.swing.JPanel {
                     row[6] = product.getManufactureDate();
            
 
-                    defaulttabelmodel.addRow(row);
+                    tblModel.addRow(row);
 
                 }
             }

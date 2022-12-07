@@ -33,36 +33,36 @@ public class ManageManufactureAdminUserAccountJPanel extends javax.swing.JPanel 
     private final Manufacturer manufacturer;
     private final EcoSystem business;
     
-    
+    DefaultTableModel tblModel;
     
     public ManageManufactureAdminUserAccountJPanel(JPanel workContainer,Manufacturer manufacturer, EcoSystem business ) {
         initComponents();
         this.workContainer = workContainer;
         this.manufacturer = manufacturer;
         this.business = business;
-        populateTable();
+        populateManufacturerDetailsTable();
         
         
     }
     
-    private void populateTable(){
+    private void populateManufacturerDetailsTable(){
         int rowCount = tblManufacturerDetails.getRowCount();
-         DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblManufacturerDetails.getModel();
+         tblModel = (DefaultTableModel)tblManufacturerDetails.getModel();
         
         //delete rows
         for(int i=rowCount-1 ; i>=0; i--){
-            defaulttabelmodel.removeRow(i);
+            tblModel.removeRow(i);
         }
         
-        for(UserAccount ua : manufacturer.getUserAccountDirectory().getUserAccountList()){
+        for(UserAccount useracc : manufacturer.getUserAccountDirectory().getUserAccountList()){
             
-            if(ua.getRole() instanceof EnterpriseAdminRole){
+            if(useracc.getRole() instanceof EnterpriseAdminRole){
                 Object[] row = new Object[3];
-                row[0]=ua;
-                row[1]=ua.getPassword();
-                row[2]=String.valueOf(ua.getPerson().getFirstName()+ " "+ ua.getPerson().getLastName());
+                row[0]=useracc;
+                row[1]=useracc.getPassword();
+                row[2]=String.valueOf(useracc.getPerson().getFirstName()+ " "+ useracc.getPerson().getLastName());
             
-            defaulttabelmodel.addRow(row);
+            tblModel.addRow(row);
             
             }
             
@@ -103,9 +103,9 @@ public class ManageManufactureAdminUserAccountJPanel extends javax.swing.JPanel 
                 
                 if(flag == false)
                 {
-                    for(Organization org: manufacturer.getOrganizationDirectory().getOrganizationList())
+                    for(Organization organize: manufacturer.getOrganizationDirectory().getOrganizationList())
                 {
-                    flag = org.getUserAccountDirectory().checkIfUserAccountExists(username);
+                    flag = organize.getUserAccountDirectory().checkIfUserAccountExists(username);
                     if(flag == true)
                         break;
                 }
@@ -156,8 +156,8 @@ public class ManageManufactureAdminUserAccountJPanel extends javax.swing.JPanel 
                         for (Enterprise hospital : city.getEnterpriseDirectory().getEnterpriseDirectory()) {
                             flag = hospital.getUserAccountDirectory().checkIfUserAccountExists(username);
                             if (flag == false) {
-                                for (Organization o : hospital.getOrganizationDirectory().getOrganizationList()) {
-                                    flag = o.getUserAccountDirectory().checkIfUserAccountExists(username);
+                                for (Organization organize : hospital.getOrganizationDirectory().getOrganizationList()) {
+                                    flag = organize.getUserAccountDirectory().checkIfUserAccountExists(username);
 
                                     if (flag == true) {
                                         
@@ -418,9 +418,9 @@ public class ManageManufactureAdminUserAccountJPanel extends javax.swing.JPanel 
             return;
         }
         
-        UserAccount ua = (UserAccount)tblManufacturerDetails.getValueAt(row, 0);
-        manufacturer.getUserAccountDirectory().removeUserAccount(ua);
-        populateTable();
+        UserAccount userAcc = (UserAccount)tblManufacturerDetails.getValueAt(row, 0);
+        manufacturer.getUserAccountDirectory().removeUserAccount(userAcc);
+        populateManufacturerDetailsTable();
         
         
     }//GEN-LAST:event_btnRemoveAdminActionPerformed
@@ -432,41 +432,41 @@ public class ManageManufactureAdminUserAccountJPanel extends javax.swing.JPanel 
         String firstName = txtFirstName.getText();
         if(firstName.trim().equalsIgnoreCase(""))
         {
-            JOptionPane.showMessageDialog(null, "Please enter First Name!");
+            JOptionPane.showMessageDialog(null, "First Name cannot be blank..!!");
             return;
         }
         String lastName = txtLastName.getText();
         if(lastName.trim().equalsIgnoreCase(""))
         {
-            JOptionPane.showMessageDialog(null, "Please enter Last Name!");
+            JOptionPane.showMessageDialog(null, "Last Name cannot be blank..!!");
             return;
         }
         String username = txtUserName.getText();
         if(username.trim().equalsIgnoreCase(""))
         {
-            JOptionPane.showMessageDialog(null, "Please enter Username!");
+            JOptionPane.showMessageDialog(null, "Username cannot be blank..!!");
             return;
         }
         String password = txtPassword.getText();
         if(password.trim().equalsIgnoreCase(""))
         {
-            JOptionPane.showMessageDialog(null, "Please enter Password!");
+            JOptionPane.showMessageDialog(null, "Password cannot be blank..!!");
             return;
         }
         
         boolean check = checkIfUserAccountExists(username);
         if(check == true)
         {
-            JOptionPane.showMessageDialog(null, "Username exists, please choose a different username!");
+            JOptionPane.showMessageDialog(null, "Username taken, choose different username!");
             return;
         }
         
         
-        EnterpriseAdminPerson admin = (EnterpriseAdminPerson) manufacturer.getPersonDirectory().createPerson(firstName, lastName, Role.RoleType.EnterpriseAdmin);
+        EnterpriseAdminPerson enterpriseAdmin = (EnterpriseAdminPerson) manufacturer.getPersonDirectory().createPerson(firstName, lastName, Role.RoleType.EnterpriseAdmin);
         
-        manufacturer.getUserAccountDirectory().createUserAccount(username, password, admin, new EnterpriseAdminRole());
+        manufacturer.getUserAccountDirectory().createUserAccount(username, password, enterpriseAdmin, new EnterpriseAdminRole());
         
-        populateTable();
+        populateManufacturerDetailsTable();
         
         
     }//GEN-LAST:event_btnCreateAdminActionPerformed

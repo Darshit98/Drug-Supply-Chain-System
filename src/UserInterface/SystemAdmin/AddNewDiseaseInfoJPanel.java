@@ -20,6 +20,8 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
     private final EcoSystem business;
     /**
      * Creates new form AddNewDiseaseInfoJPanel
+     * @param workContainer
+     * @param business
      */
     public AddNewDiseaseInfoJPanel(JPanel workContainer, EcoSystem business) {
         initComponents();
@@ -45,7 +47,6 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
         lblDiseaseCode = new javax.swing.JLabel();
         lblDiseaseName = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -115,14 +116,9 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
                                 .addGap(0, 223, Short.MAX_VALUE))
                             .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(116, 116, 116)
-                                .addComponent(jLabel4))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap()
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 628, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -146,9 +142,7 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
                     .addComponent(jdateUpdateDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnAddDiseaseInformation)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -156,24 +150,26 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         String diseaseCode = txtDiseaseCode.getText();
         if(diseaseCode.trim().equalsIgnoreCase(""))
-        {JOptionPane.showMessageDialog(null, "Please enter a disease Code");
+        {
+            JOptionPane.showMessageDialog(null, "Please enter a disease Code");
             return;
 
         }
         String diseaseName = txtDiseaseName.getText();
         if(diseaseName.trim().equalsIgnoreCase(""))
-        {JOptionPane.showMessageDialog(null, "Please enter a disease Name");
+        {
+            JOptionPane.showMessageDialog(null, "Please enter a disease Name");
             return;
 
         }
 
         Date lastUpdatedDate = jdateUpdateDate.getDate();
 
-        for(Disease d : business.getDiseaseDirectory().getdiseaseDirectory())
+        for(Disease disease : business.getDiseaseDirectory().getdiseaseDirectory())
         {
-            if(d.getDiseaseCode().equalsIgnoreCase(diseaseCode) && d.getDiseaseName().equalsIgnoreCase(diseaseName))
+            if(disease.getDiseaseCode().equalsIgnoreCase(diseaseCode) && disease.getDiseaseName().equalsIgnoreCase(diseaseName))
             {
-                JOptionPane.showMessageDialog(null, "Disease exists!");
+                JOptionPane.showMessageDialog(null, "Disease already exists!");
                 return;
             }
         }
@@ -196,7 +192,6 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddDiseaseInformation;
     private javax.swing.JButton btnBack;
-    private javax.swing.JLabel jLabel4;
     private com.toedter.calendar.JDateChooser jdateUpdateDate;
     private javax.swing.JLabel lblDiseaseCode;
     private javax.swing.JLabel lblDiseaseName;

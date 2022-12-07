@@ -30,6 +30,8 @@ public class ProcessOrdersJPanel extends javax.swing.JPanel {
     private final VaccineOrderWorkRequest vaccineWorkRequest;
     private final Manufacturer manufacturer;
     private final EcoSystem business;
+    
+    DefaultTableModel tblModel;
 
     public ProcessOrdersJPanel(JPanel workContainer, VaccineOrderWorkRequest vaccineWorkRequest, Manufacturer manufacturer, EcoSystem business) {
         initComponents();
@@ -45,18 +47,18 @@ public class ProcessOrdersJPanel extends javax.swing.JPanel {
 
     private void populateTable() {
 
-        DefaultTableModel model = (DefaultTableModel) tblOrderDetails.getModel();
+        tblModel = (DefaultTableModel) tblOrderDetails.getModel();
 
-        model.setRowCount(0);
+        tblModel.setRowCount(0);
 
         for (OrderItem orderItem : vaccineWorkRequest.getVaccineOrder().getItemList()) {
-            Object[] row = new Object[4];
-            row[0] = orderItem.getVaccineDetails().getVaccineDefinition().getVaccineCode();
-            row[1] = orderItem.getVaccineDetails().getVaccineDefinition().getVaccineName();
-            row[2] = orderItem.getQuantity();
-            row[3] = orderItem.getVaccineDetails().getVaccinePrice() * orderItem.getQuantity();
+            Object[] rowData = new Object[4];
+            rowData[0] = orderItem.getVaccineDetails().getVaccineDefinition().getVaccineCode();
+            rowData[1] = orderItem.getVaccineDetails().getVaccineDefinition().getVaccineName();
+            rowData[2] = orderItem.getQuantity();
+            rowData[3] = orderItem.getVaccineDetails().getVaccinePrice() * orderItem.getQuantity();
 
-            model.addRow(row);
+            tblModel.addRow(rowData);
         }
     }
 
@@ -222,7 +224,7 @@ public class ProcessOrdersJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         if(vaccineWorkRequest.getStatus().equalsIgnoreCase("Shipped") || vaccineWorkRequest.getStatus().equalsIgnoreCase("Stored"))
          {
-             JOptionPane.showMessageDialog(null, "Order already shipped!");
+             JOptionPane.showMessageDialog(null, "Order is already shipped..!!");
              return;
          }
         

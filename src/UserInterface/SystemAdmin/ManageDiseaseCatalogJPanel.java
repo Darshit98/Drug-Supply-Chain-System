@@ -19,29 +19,32 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
 
     private final JPanel workContainer;
     private final EcoSystem business;
+    
+    DefaultTableModel tblModel;
     /**
      * Creates new form ManageDiseaseCatalogJPanel
+     * @param workContainer
      */
     public ManageDiseaseCatalogJPanel(JPanel workContainer, EcoSystem business) {
         initComponents();
         this.workContainer = workContainer;
         this.business = business;
-        populateTable();
+        populateDiseaseDetailsTable();
     }
     
-     private void populateTable(){
+     private void populateDiseaseDetailsTable(){
         
-        DefaultTableModel model = (DefaultTableModel) tblDiseaseDetailsList.getModel();
-        model.setRowCount(0);
+        tblModel = (DefaultTableModel) tblDiseaseDetailsList.getModel();
+        tblModel.setRowCount(0);
         
         for(Disease disease : business.getDiseaseDirectory().getdiseaseDirectory())
         {
-            Object[] row = new Object[3];
-            row[0] = disease;
-            row[1] = disease.getDiseaseName();
-            row[2] = disease.getLastUpdatedTime();
+            Object[] rowData = new Object[3];
+            rowData[0] = disease;
+            rowData[1] = disease.getDiseaseName();
+            rowData[2] = disease.getLastUpdatedTime();
             
-            model.addRow(row);
+            tblModel.addRow(rowData);
         }
         
     }
@@ -59,7 +62,7 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDiseaseDetailsList = new javax.swing.JTable();
-        btnaddis = new javax.swing.JButton();
+        btnAddDisease = new javax.swing.JButton();
         btnRemoveDisease = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
@@ -91,13 +94,13 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
         tblDiseaseDetailsList.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblDiseaseDetailsList);
 
-        btnaddis.setBackground(new java.awt.Color(0, 0, 102));
-        btnaddis.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnaddis.setForeground(new java.awt.Color(255, 255, 255));
-        btnaddis.setText("Add Disease");
-        btnaddis.addActionListener(new java.awt.event.ActionListener() {
+        btnAddDisease.setBackground(new java.awt.Color(0, 0, 102));
+        btnAddDisease.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnAddDisease.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddDisease.setText("Add Disease");
+        btnAddDisease.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnaddisActionPerformed(evt);
+                btnAddDiseaseActionPerformed(evt);
             }
         });
 
@@ -146,7 +149,7 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRemoveDisease)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnaddis))
+                        .addComponent(btnAddDisease))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(291, 291, 291)
                         .addComponent(btnRefresh)))
@@ -165,20 +168,20 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnaddis)
+                    .addComponent(btnAddDisease)
                     .addComponent(btnRemoveDisease))
                 .addContainerGap(127, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnaddisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddisActionPerformed
+    private void btnAddDiseaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDiseaseActionPerformed
         // TODO add your handling code here:
 
-        AddNewDiseaseInfoJPanel panel = new AddNewDiseaseInfoJPanel(workContainer, business);
-        workContainer.add("AddNewDiseaseInfoJPanel", panel);
+        AddNewDiseaseInfoJPanel diseasePanel = new AddNewDiseaseInfoJPanel(workContainer, business);
+        workContainer.add("AddNewDiseaseInfoJPanel", diseasePanel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btnaddisActionPerformed
+    }//GEN-LAST:event_btnAddDiseaseActionPerformed
 
     private void btnRemoveDiseaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveDiseaseActionPerformed
         // TODO add your handling code here:
@@ -191,7 +194,7 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
 
         Disease disease = (Disease)tblDiseaseDetailsList.getValueAt(row, 0);
         business.getDiseaseDirectory().removeDisease(disease);
-        populateTable();
+        populateDiseaseDetailsTable();
     }//GEN-LAST:event_btnRemoveDiseaseActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -203,15 +206,15 @@ public class ManageDiseaseCatalogJPanel extends javax.swing.JPanel {
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         // TODO add your handling code here:
-        populateTable();
+        populateDiseaseDetailsTable();
     }//GEN-LAST:event_btnRefreshActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddDisease;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnRemoveDisease;
-    private javax.swing.JButton btnaddis;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTable tblDiseaseDetailsList;

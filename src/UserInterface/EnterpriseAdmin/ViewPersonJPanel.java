@@ -23,18 +23,21 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     /**
      * Creates new form ViewPersonJPanel
+     * @param workContainer
+     * @param person
+     * @param org
      */
     public ViewPersonJPanel(JPanel workContainer,Person person,Organization org  ) {
         initComponents();
         this.person =person;
         this.workContainer = workContainer;
         this.org = org;
-        txtfname.setText(person.getFirstName());
-        txtlname.setText(person.getLastName());
-        txtemail.setText(person.getEmail());
-        txtphone.setText(String.valueOf(person.getPhone()));
-        dcdob.setDate(person.getDateOfBirth());
-        txtdepat.setText(org.getName());
+        txtFirstName.setText(person.getFirstName());
+        txtLastName.setText(person.getLastName());
+        txtEmail.setText(person.getEmail());
+        txtPhone.setText(String.valueOf(person.getPhone()));
+        jDateDOB.setDate(person.getDateOfBirth());
+        txtDepartment.setText(org.getName());
         
         
     }
@@ -48,191 +51,191 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl1 = new javax.swing.JLabel();
-        txtphone = new javax.swing.JTextField();
-        lbl2 = new javax.swing.JLabel();
-        lbl3 = new javax.swing.JLabel();
-        lbl4 = new javax.swing.JLabel();
-        txtfname = new javax.swing.JTextField();
-        txtlname = new javax.swing.JTextField();
-        dcdob = new com.toedter.calendar.JDateChooser();
-        lbl5 = new javax.swing.JLabel();
-        btnmodify = new javax.swing.JButton();
-        txtemail = new javax.swing.JTextField();
-        btnback = new javax.swing.JButton();
-        lbl6 = new javax.swing.JLabel();
-        lbl7 = new javax.swing.JLabel();
-        txtdepat = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        lblPhone = new javax.swing.JLabel();
+        txtPhone = new javax.swing.JTextField();
+        lblViewUpdatePerson = new javax.swing.JLabel();
+        lblDateOfBirth = new javax.swing.JLabel();
+        lblFirstName = new javax.swing.JLabel();
+        txtFirstName = new javax.swing.JTextField();
+        txtLastName = new javax.swing.JTextField();
+        jDateDOB = new com.toedter.calendar.JDateChooser();
+        lblLastName = new javax.swing.JLabel();
+        btnUpdatePerson = new javax.swing.JButton();
+        txtEmail = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
+        lblEmail = new javax.swing.JLabel();
+        lblDepartment = new javax.swing.JLabel();
+        txtDepartment = new javax.swing.JTextField();
 
-        lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl1.setForeground(new java.awt.Color(0, 0, 102));
-        lbl1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbl1.setText("Phone:");
+        setBackground(new java.awt.Color(204, 204, 255));
 
-        lbl2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        lbl2.setForeground(new java.awt.Color(0, 0, 102));
-        lbl2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl2.setText("View/Update Person");
+        lblPhone.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblPhone.setForeground(new java.awt.Color(0, 0, 102));
+        lblPhone.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblPhone.setText("Phone:");
 
-        lbl3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl3.setForeground(new java.awt.Color(0, 0, 102));
-        lbl3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbl3.setText("Date of Birth:");
+        lblViewUpdatePerson.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblViewUpdatePerson.setForeground(new java.awt.Color(0, 0, 102));
+        lblViewUpdatePerson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblViewUpdatePerson.setText("View/Update Person");
 
-        lbl4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl4.setForeground(new java.awt.Color(0, 0, 102));
-        lbl4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbl4.setText("First Name: ");
+        lblDateOfBirth.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblDateOfBirth.setForeground(new java.awt.Color(0, 0, 102));
+        lblDateOfBirth.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblDateOfBirth.setText("Date of Birth:");
 
-        txtfname.addActionListener(new java.awt.event.ActionListener() {
+        lblFirstName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblFirstName.setForeground(new java.awt.Color(0, 0, 102));
+        lblFirstName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblFirstName.setText("First Name: ");
+
+        txtFirstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtfnameActionPerformed(evt);
+                txtFirstNameActionPerformed(evt);
             }
         });
 
-        lbl5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl5.setForeground(new java.awt.Color(0, 0, 102));
-        lbl5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbl5.setText("Last Name: ");
+        lblLastName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblLastName.setForeground(new java.awt.Color(0, 0, 102));
+        lblLastName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblLastName.setText("Last Name: ");
 
-        btnmodify.setBackground(new java.awt.Color(0, 0, 102));
-        btnmodify.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnmodify.setForeground(new java.awt.Color(255, 255, 255));
-        btnmodify.setText("Update Person");
-        btnmodify.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdatePerson.setBackground(new java.awt.Color(0, 0, 102));
+        btnUpdatePerson.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnUpdatePerson.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdatePerson.setText("Update Person");
+        btnUpdatePerson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmodifyActionPerformed(evt);
+                btnUpdatePersonActionPerformed(evt);
             }
         });
 
-        btnback.setBackground(new java.awt.Color(0, 0, 102));
-        btnback.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnback.setForeground(new java.awt.Color(255, 255, 255));
-        btnback.setText("<");
-        btnback.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(0, 0, 102));
+        btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbackActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
-        lbl6.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl6.setForeground(new java.awt.Color(0, 0, 102));
-        lbl6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbl6.setText("Email:");
+        lblEmail.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(0, 0, 102));
+        lblEmail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblEmail.setText("Email:");
 
-        lbl7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl7.setForeground(new java.awt.Color(0, 0, 102));
-        lbl7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbl7.setText("Department:");
+        lblDepartment.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblDepartment.setForeground(new java.awt.Color(0, 0, 102));
+        lblDepartment.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblDepartment.setText("Department:");
 
-        txtdepat.setEnabled(false);
+        txtDepartment.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(jLabel7))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(lbl2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(12, 12, 12)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnmodify, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnUpdatePerson, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
+                        .addContainerGap(119, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbl7, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblLastName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPhone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDateOfBirth, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblFirstName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtdepat)
-                            .addComponent(dcdob, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                            .addComponent(txtphone)
-                            .addComponent(txtemail)
-                            .addComponent(txtlname)
-                            .addComponent(txtfname))))
-                .addGap(121, 121, 121))
+                            .addComponent(txtDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDateDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(127, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(lblViewUpdatePerson, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+                .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jDateDOB, txtDepartment, txtEmail, txtFirstName, txtLastName, txtPhone});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbl2)
+                .addComponent(lblViewUpdatePerson)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnback)
+                .addComponent(btnBack)
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl4)
-                            .addComponent(txtfname))
+                            .addComponent(lblFirstName)
+                            .addComponent(txtFirstName))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl5)
-                            .addComponent(txtlname))
+                            .addComponent(lblLastName)
+                            .addComponent(txtLastName))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl6)
-                            .addComponent(txtemail))
+                            .addComponent(lblEmail)
+                            .addComponent(txtEmail))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl1)
-                            .addComponent(txtphone))
+                            .addComponent(lblPhone)
+                            .addComponent(txtPhone))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lbl3))
+                        .addComponent(lblDateOfBirth))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(135, 135, 135)
-                        .addComponent(dcdob, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jDateDOB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl7)
-                    .addComponent(txtdepat))
+                    .addComponent(lblDepartment)
+                    .addComponent(txtDepartment))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnmodify)
-                .addGap(52, 52, 52)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnUpdatePerson)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtfnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfnameActionPerformed
+    private void txtFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtfnameActionPerformed
+    }//GEN-LAST:event_txtFirstNameActionPerformed
 
-    private void btnmodifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmodifyActionPerformed
+    private void btnUpdatePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatePersonActionPerformed
         // TODO add your handling code here:
         try{
-            long phone = Long.parseLong(txtphone.getText());
+            long phone = Long.parseLong(txtPhone.getText());
 
-            String firstName = txtfname.getText();
+            String firstName = txtFirstName.getText();
             if(firstName.trim().equalsIgnoreCase(""))
             {
                 JOptionPane.showMessageDialog(null, "Please enter First Name");
                 return;
             }
-            String lastName = txtlname.getText();
+            String lastName = txtLastName.getText();
             if(lastName.trim().equalsIgnoreCase(""))
             {
                 JOptionPane.showMessageDialog(null, "Please enter Last Name");
                 return;
             }
-            String email = txtemail.getText();
+            String email = txtEmail.getText();
 
-            Date dob = dcdob.getDate();
+            Date dob = jDateDOB.getDate();
 
             person.setFirstName(firstName);
             person.setLastName(lastName);
@@ -242,34 +245,33 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, "Please enter numeric value for phone");
-            return;
+            //return;
         }
-    }//GEN-LAST:event_btnmodifyActionPerformed
+    }//GEN-LAST:event_btnUpdatePersonActionPerformed
 
-    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         workContainer.remove(this);
         CardLayout layout = (CardLayout) workContainer.getLayout();
         layout.previous(workContainer);
-    }//GEN-LAST:event_btnbackActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnback;
-    private javax.swing.JButton btnmodify;
-    private com.toedter.calendar.JDateChooser dcdob;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel lbl1;
-    private javax.swing.JLabel lbl2;
-    private javax.swing.JLabel lbl3;
-    private javax.swing.JLabel lbl4;
-    private javax.swing.JLabel lbl5;
-    private javax.swing.JLabel lbl6;
-    private javax.swing.JLabel lbl7;
-    private javax.swing.JTextField txtdepat;
-    private javax.swing.JTextField txtemail;
-    private javax.swing.JTextField txtfname;
-    private javax.swing.JTextField txtlname;
-    private javax.swing.JTextField txtphone;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnUpdatePerson;
+    private com.toedter.calendar.JDateChooser jDateDOB;
+    private javax.swing.JLabel lblDateOfBirth;
+    private javax.swing.JLabel lblDepartment;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblFirstName;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblPhone;
+    private javax.swing.JLabel lblViewUpdatePerson;
+    private javax.swing.JTextField txtDepartment;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtFirstName;
+    private javax.swing.JTextField txtLastName;
+    private javax.swing.JTextField txtPhone;
     // End of variables declaration//GEN-END:variables
 }

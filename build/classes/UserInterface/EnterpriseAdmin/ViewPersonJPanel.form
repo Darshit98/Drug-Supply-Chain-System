@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="cc" red="cc" type="rgb"/>
+    </Property>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -16,49 +21,45 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
-              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="btnback" min="-2" pref="64" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Component id="lbl2" alignment="0" max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="btnBack" min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnmodify" min="-2" pref="179" max="-2" attributes="0"/>
+                      <Component id="btnUpdatePerson" min="-2" pref="179" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                      <EmptySpace pref="119" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lbl7" alignment="1" min="-2" pref="113" max="-2" attributes="0"/>
-                          <Component id="lbl5" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
-                          <Component id="lbl6" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
-                          <Component id="lbl1" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
-                          <Component id="lbl3" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
-                          <Component id="lbl4" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                          <Component id="lblDepartment" alignment="1" min="-2" pref="113" max="-2" attributes="0"/>
+                          <Component id="lblLastName" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                          <Component id="lblEmail" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                          <Component id="lblPhone" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                          <Component id="lblDateOfBirth" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                          <Component id="lblFirstName" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtdepat" alignment="0" max="32767" attributes="0"/>
-                          <Component id="dcdob" alignment="0" pref="82" max="32767" attributes="0"/>
-                          <Component id="txtphone" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtemail" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtlname" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtfname" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtDepartment" linkSize="1" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                          <Component id="jDateDOB" linkSize="1" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                          <Component id="txtPhone" linkSize="1" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
+                          <Component id="txtEmail" linkSize="1" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
+                          <Component id="txtLastName" linkSize="1" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
+                          <Component id="txtFirstName" linkSize="1" min="-2" pref="95" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="121" pref="121" max="-2" attributes="0"/>
+              <EmptySpace pref="127" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="lblViewUpdatePerson" pref="461" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,55 +67,53 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="lbl2" min="-2" max="-2" attributes="0"/>
+              <Component id="lblViewUpdatePerson" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="btnback" min="-2" max="-2" attributes="0"/>
+              <Component id="btnBack" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbl4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtfname" alignment="3" max="32767" attributes="0"/>
+                          <Component id="lblFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtFirstName" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbl5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtlname" alignment="3" max="32767" attributes="0"/>
+                          <Component id="lblLastName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtLastName" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbl6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtemail" alignment="3" max="32767" attributes="0"/>
+                          <Component id="lblEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEmail" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbl1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtphone" alignment="3" max="32767" attributes="0"/>
+                          <Component id="lblPhone" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtPhone" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbl3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblDateOfBirth" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="135" pref="135" max="-2" attributes="0"/>
-                      <Component id="dcdob" max="32767" attributes="0"/>
+                      <Component id="jDateDOB" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbl7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtdepat" alignment="3" max="32767" attributes="0"/>
+                  <Component id="lblDepartment" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDepartment" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-              <Component id="btnmodify" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-              <Component id="jLabel7" min="-2" pref="248" max="-2" attributes="0"/>
+              <Component id="btnUpdatePerson" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lbl1">
+    <Component class="javax.swing.JLabel" name="lblPhone">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
@@ -126,9 +125,9 @@
         <Property name="text" type="java.lang.String" value="Phone:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtphone">
+    <Component class="javax.swing.JTextField" name="txtPhone">
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl2">
+    <Component class="javax.swing.JLabel" name="lblViewUpdatePerson">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="24" style="1"/>
@@ -140,7 +139,7 @@
         <Property name="text" type="java.lang.String" value="View/Update Person"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl3">
+    <Component class="javax.swing.JLabel" name="lblDateOfBirth">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
@@ -152,7 +151,7 @@
         <Property name="text" type="java.lang.String" value="Date of Birth:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl4">
+    <Component class="javax.swing.JLabel" name="lblFirstName">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
@@ -164,16 +163,16 @@
         <Property name="text" type="java.lang.String" value="First Name: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtfname">
+    <Component class="javax.swing.JTextField" name="txtFirstName">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtfnameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFirstNameActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtlname">
+    <Component class="javax.swing.JTextField" name="txtLastName">
     </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="dcdob">
+    <Component class="com.toedter.calendar.JDateChooser" name="jDateDOB">
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl5">
+    <Component class="javax.swing.JLabel" name="lblLastName">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
@@ -185,7 +184,7 @@
         <Property name="text" type="java.lang.String" value="Last Name: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnmodify">
+    <Component class="javax.swing.JButton" name="btnUpdatePerson">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -199,12 +198,12 @@
         <Property name="text" type="java.lang.String" value="Update Person"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmodifyActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdatePersonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtemail">
+    <Component class="javax.swing.JTextField" name="txtEmail">
     </Component>
-    <Component class="javax.swing.JButton" name="btnback">
+    <Component class="javax.swing.JButton" name="btnBack">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -218,10 +217,10 @@
         <Property name="text" type="java.lang.String" value="&lt;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnbackActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl6">
+    <Component class="javax.swing.JLabel" name="lblEmail">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
@@ -233,7 +232,7 @@
         <Property name="text" type="java.lang.String" value="Email:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl7">
+    <Component class="javax.swing.JLabel" name="lblDepartment">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
@@ -245,12 +244,10 @@
         <Property name="text" type="java.lang.String" value="Department:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtdepat">
+    <Component class="javax.swing.JTextField" name="txtDepartment">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
     </Component>
   </SubComponents>
 </Form>
