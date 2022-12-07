@@ -37,7 +37,7 @@ public class ProcessOrdersJPanel extends javax.swing.JPanel {
         this.vaccineWorkRequest = vaccineWorkRequest;
         this.manufacturer = manufacturer;
         this.business = business;
-        txtornum.setText(String.valueOf(vaccineWorkRequest.getVaccineOrder().getOrderNumber()));
+        txtOrderNumber.setText(String.valueOf(vaccineWorkRequest.getVaccineOrder().getOrderNumber()));
         populateTable();
         calculateTotalAmount();
 
@@ -45,7 +45,7 @@ public class ProcessOrdersJPanel extends javax.swing.JPanel {
 
     private void populateTable() {
 
-        DefaultTableModel model = (DefaultTableModel) tbldetails.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblOrderDetails.getModel();
 
         model.setRowCount(0);
 
@@ -67,7 +67,7 @@ public class ProcessOrdersJPanel extends javax.swing.JPanel {
             totalAmount = totalAmount + (orderItem.getVaccineDetails().getVaccinePrice() * orderItem.getQuantity());
         }
 
-        txtamt.setText(String.valueOf(totalAmount));
+        txtTotalAmount.setText(String.valueOf(totalAmount));
     }
 
     /**
@@ -79,35 +79,35 @@ public class ProcessOrdersJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
+        lblDetails = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbldetails = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        txtornum = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txtamt = new javax.swing.JTextField();
-        btnship = new javax.swing.JButton();
-        btnback = new javax.swing.JButton();
+        tblOrderDetails = new javax.swing.JTable();
+        lblOrderNumber = new javax.swing.JLabel();
+        txtOrderNumber = new javax.swing.JTextField();
+        lblTotalAmount = new javax.swing.JLabel();
+        txtTotalAmount = new javax.swing.JTextField();
+        btnShipOrder = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Process Orders");
+        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(0, 0, 102));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Process Orders");
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel2.setText("Details:");
+        lblDetails.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblDetails.setForeground(new java.awt.Color(0, 0, 102));
+        lblDetails.setText("Details:");
 
-        tbldetails.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        tbldetails.setModel(new javax.swing.table.DefaultTableModel(
+        tblOrderDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        tblOrderDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Vaccine Code", "Vaccine Name", "Quantity", "Total Amount"
+                "Drug Code", "Drug Name", "Quantity", "Total Amount"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -118,42 +118,42 @@ public class ProcessOrdersJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tbldetails.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tbldetails);
-        if (tbldetails.getColumnModel().getColumnCount() > 0) {
-            tbldetails.getColumnModel().getColumn(2).setResizable(false);
-            tbldetails.getColumnModel().getColumn(3).setResizable(false);
+        tblOrderDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblOrderDetails);
+        if (tblOrderDetails.getColumnModel().getColumnCount() > 0) {
+            tblOrderDetails.getColumnModel().getColumn(2).setResizable(false);
+            tblOrderDetails.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel3.setText("Order Number:");
+        lblOrderNumber.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblOrderNumber.setForeground(new java.awt.Color(0, 0, 102));
+        lblOrderNumber.setText("Order Number:");
 
-        txtornum.setEnabled(false);
+        txtOrderNumber.setEnabled(false);
 
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel4.setText("Total Amount of Order: ");
+        lblTotalAmount.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblTotalAmount.setForeground(new java.awt.Color(0, 0, 102));
+        lblTotalAmount.setText("Total Amount of Order: ");
 
-        txtamt.setEnabled(false);
+        txtTotalAmount.setEnabled(false);
 
-        btnship.setBackground(new java.awt.Color(0, 0, 102));
-        btnship.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnship.setForeground(new java.awt.Color(255, 255, 255));
-        btnship.setText("Ship Order");
-        btnship.addActionListener(new java.awt.event.ActionListener() {
+        btnShipOrder.setBackground(new java.awt.Color(0, 0, 102));
+        btnShipOrder.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnShipOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnShipOrder.setText("Ship Order");
+        btnShipOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnshipActionPerformed(evt);
+                btnShipOrderActionPerformed(evt);
             }
         });
 
-        btnback.setBackground(new java.awt.Color(0, 0, 102));
-        btnback.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnback.setForeground(new java.awt.Color(255, 255, 255));
-        btnback.setText("<");
-        btnback.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(0, 0, 102));
+        btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbackActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
@@ -164,61 +164,61 @@ public class ProcessOrdersJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(lblDetails)
                                 .addGap(334, 334, 334)
-                                .addComponent(jLabel3)
+                                .addComponent(lblOrderNumber)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtornum, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 331, Short.MAX_VALUE))
+                                .addComponent(txtOrderNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                        .addComponent(lblTotalAmount)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtamt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTotalAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnship, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnShipOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnback)
+                .addComponent(btnBack)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(txtornum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblOrderNumber)
+                            .addComponent(txtOrderNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(lblDetails)
                         .addGap(5, 5, 5)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtamt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnship))
-                .addContainerGap(756, Short.MAX_VALUE))
+                    .addComponent(lblTotalAmount)
+                    .addComponent(txtTotalAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnShipOrder))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         workContainer.remove(this);
         CardLayout layout = (CardLayout) workContainer.getLayout();
         layout.previous(workContainer);
-    }//GEN-LAST:event_btnbackActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnshipActionPerformed
+    private void btnShipOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShipOrderActionPerformed
         // TODO add your handling code here:
         if(vaccineWorkRequest.getStatus().equalsIgnoreCase("Shipped") || vaccineWorkRequest.getStatus().equalsIgnoreCase("Stored"))
          {
@@ -239,19 +239,19 @@ public class ProcessOrdersJPanel extends javax.swing.JPanel {
             
             JOptionPane.showMessageDialog(null, "Order Sent to Distributor");
 
-    }//GEN-LAST:event_btnshipActionPerformed
+    }//GEN-LAST:event_btnShipOrderActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnback;
-    private javax.swing.JButton btnship;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnShipOrder;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tbldetails;
-    private javax.swing.JTextField txtamt;
-    private javax.swing.JTextField txtornum;
+    private javax.swing.JLabel lblDetails;
+    private javax.swing.JLabel lblOrderNumber;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblTotalAmount;
+    private javax.swing.JTable tblOrderDetails;
+    private javax.swing.JTextField txtOrderNumber;
+    private javax.swing.JTextField txtTotalAmount;
     // End of variables declaration//GEN-END:variables
 }
