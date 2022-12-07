@@ -214,6 +214,9 @@ public class ViewDetailsOfPlacedOrderJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnback, lblContract, lblOrderCost, lblOrderDetails, lblOrderNumber, txtContractDetails, txtOrderNumber, txtTotalOrderAmount});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed

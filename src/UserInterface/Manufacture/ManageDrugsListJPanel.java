@@ -14,7 +14,11 @@ import Business.Vaccine.VaccineDetails;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.RowFilter;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -35,6 +39,7 @@ public class ManageDrugsListJPanel extends javax.swing.JPanel {
         this.manufacturer = manufacturer;
         this.business = business;
         populateTable();
+        searchInTable();
         
     }
     
@@ -98,6 +103,37 @@ public class ManageDrugsListJPanel extends javax.swing.JPanel {
     }
     }
     
+    private void searchInTable(){
+        DefaultTableModel model = (DefaultTableModel) tblDrugDetails.getModel();
+        TableRowSorter sorter = new TableRowSorter<>(model);
+        tblDrugDetails.setRowSorter(sorter);
+        txtSearch.getDocument().addDocumentListener(new DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                search(txtSearch.getText()); 
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                search(txtSearch.getText());
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                search(txtSearch.getText());
+            }
+
+            private void search(String str) {
+                if (str.length() == 0) {
+                    sorter.setRowFilter(null);
+                } else {
+                    sorter.setRowFilter(RowFilter.regexFilter(str));
+                }
+            }
+            
+        });
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -113,10 +149,9 @@ public class ManageDrugsListJPanel extends javax.swing.JPanel {
         tblDrugDetails = new javax.swing.JTable();
         btnRefresh = new javax.swing.JButton();
         lblSearch = new javax.swing.JLabel();
-        txtDrugCode = new javax.swing.JTextField();
+        txtSearch = new javax.swing.JTextField();
         btnRemovevaccDrug = new javax.swing.JButton();
         btnAddDrug = new javax.swing.JButton();
-        btnSearch = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -157,7 +192,7 @@ public class ManageDrugsListJPanel extends javax.swing.JPanel {
 
         lblSearch.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lblSearch.setForeground(new java.awt.Color(0, 0, 102));
-        lblSearch.setText("Search Drug By Code:");
+        lblSearch.setText("Type to Search:");
 
         btnRemovevaccDrug.setBackground(new java.awt.Color(0, 0, 102));
         btnRemovevaccDrug.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -179,39 +214,24 @@ public class ManageDrugsListJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnSearch.setBackground(new java.awt.Color(0, 0, 102));
-        btnSearch.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
-        btnSearch.setText("Search");
-        btnSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnRemovevaccDrug)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnAddDrug))))
+                        .addComponent(btnRemovevaccDrug)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAddDrug))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(lblSearch)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDrugCode, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRefresh)))
                 .addContainerGap())
         );
@@ -223,8 +243,7 @@ public class ManageDrugsListJPanel extends javax.swing.JPanel {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSearch)
-                    .addComponent(txtDrugCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch)
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRefresh))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -234,14 +253,10 @@ public class ManageDrugsListJPanel extends javax.swing.JPanel {
                     .addComponent(btnAddDrug))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-    }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:  
-        String searchCode= txtDrugCode.getText();
-        searchVaccine(searchCode);
- 
-    }//GEN-LAST:event_btnSearchActionPerformed
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnRefresh, lblSearch, txtSearch});
+
+    }// </editor-fold>//GEN-END:initComponents
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         // TODO add your handling code here:
@@ -287,11 +302,10 @@ public class ManageDrugsListJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnAddDrug;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnRemovevaccDrug;
-    private javax.swing.JButton btnSearch;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblSearch;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTable tblDrugDetails;
-    private javax.swing.JTextField txtDrugCode;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

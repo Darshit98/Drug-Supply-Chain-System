@@ -211,6 +211,9 @@ public class ProcessOrdersJPanel extends javax.swing.JPanel {
                     .addComponent(btnShipOrder))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnShipOrder, lblDetails, lblOrderNumber, lblTotalAmount, txtOrderNumber, txtTotalAmount});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

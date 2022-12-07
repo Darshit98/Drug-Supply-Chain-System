@@ -131,7 +131,7 @@ public class CDCEmployee extends javax.swing.JPanel {
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         // TODO add your handling code here:
-        CreateVaccineOrder panel = new CreateVaccineOrder(workContainer, cdc, business, cdcOrg,userAccount);
+        PlaceDrugOrder panel = new PlaceDrugOrder(workContainer, cdc, business, cdcOrg,userAccount);
         workContainer.add("CreateVaccineOrderJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);

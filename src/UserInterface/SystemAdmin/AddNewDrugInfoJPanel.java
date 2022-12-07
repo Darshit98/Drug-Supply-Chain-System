@@ -184,6 +184,9 @@ public class AddNewDrugInfoJPanel extends javax.swing.JPanel {
                 .addComponent(btnAddDrug)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAddDrug, comboBoxDiseaseList, jDateLastUpdate, txtDrugCode, txtDrugName});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrugActionPerformed

@@ -126,8 +126,11 @@ public class EnterStatePopulationJPanel extends javax.swing.JPanel {
                     .addComponent(btnModifyPopulation))
                 .addGap(46, 46, 46)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnModifyPopulation, lblCurrentPopulation, lblUpdatePopulation, txtCurrentPopulation, txtUpdatePopulation});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCurrentPopulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCurrentPopulationActionPerformed

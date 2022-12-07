@@ -22,7 +22,11 @@ import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.RowFilter;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 /**
  *
  * @author darsh
@@ -39,11 +43,11 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
     private final ArrayList<OrderItem> cartOrder;
     private boolean isCheckout;
     private final StateNetwork state;
-    /**
-     * Creates new form PlaceVaccineOrderClinicJPanel
-     */
-     public PlaceVaccineOrderClinicJPanel(JPanel workContainer, HospitalEnterprise hospital,ClinicOrganization clinicOrg,UserAccount userAccount , EcoSystem business, StateNetwork state) {
+    
+    
+    public PlaceVaccineOrderClinicJPanel(JPanel workContainer, HospitalEnterprise hospital,ClinicOrganization clinicOrg,UserAccount userAccount , EcoSystem business, StateNetwork state) {
         initComponents();
+        searchInTable();
         this.workContainer = workContainer;
         this.userAccount = userAccount;
         this.hospital = hospital;
@@ -51,13 +55,42 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
         this.state = state;
         populateManufacturerComboBox();
         this.isCheckout = false;
-        
-         cartOrder = new ArrayList<OrderItem>();
-         
-         if(isCheckout == false){
+        cartOrder = new ArrayList<OrderItem>();
+        if(isCheckout == false){
              tempOrder = new Order();
-         }
+        }
    
+    }
+     
+    private void searchInTable(){
+        DefaultTableModel model = (DefaultTableModel) tblDrugg.getModel();
+        TableRowSorter sorter = new TableRowSorter<>(model);
+        tblDrugg.setRowSorter(sorter);
+        txtSearch.getDocument().addDocumentListener(new DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                search(txtSearch.getText()); 
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                search(txtSearch.getText());
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                search(txtSearch.getText());
+            }
+
+            private void search(String str) {
+                if (str.length() == 0) {
+                    sorter.setRowFilter(null);
+                } else {
+                    sorter.setRowFilter(RowFilter.regexFilter(str));
+                }
+            }
+            
+        });
     }
 
     private void populateManufacturerComboBox() {
@@ -70,8 +103,8 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
     
     private void displayManufacturerVaccines(){
         
-        int rowCount = tblvacc.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblvacc.getModel();
+        int rowCount = tblDrugg.getRowCount();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblDrugg.getModel();
         
         for(int i=rowCount-1 ; i>=0; i--){
             defaulttabelmodel.removeRow(i);
@@ -103,50 +136,7 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
         }
    
     }
-    
-    
-    private void searchVaccineProducts(String vaccineCode){
-        
-        int rowCount = tblvacc.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblvacc.getModel();
-        
-        for(int i=rowCount-1 ; i>=0; i--){
-            defaulttabelmodel.removeRow(i);
-        }
-        
-        
-        for(Manufacturer manufacturer: business.getManufacturerDirectory().getManufacturerDirectory())
-        {
-             ManufactureOrganization manufacureOrg = null;
-        for(Organization org : manufacturer.getOrganizationDirectory().getOrganizationList())
-        {   if(org instanceof ManufactureOrganization)
-        {   manufacureOrg = (ManufactureOrganization)org;
-            for(VaccineDetails vaccine : manufacureOrg.getVaccineProductCatalog().getVaccineProductList())
-            {
-                if(vaccineCode.equalsIgnoreCase(vaccine.getVaccineDefinition().getVaccineCode()))
-                {
-                Object[] row = new Object[6];
-            
-                row[0] = vaccine;
-                row[1] = vaccine.getVaccineDefinition().getVaccineName();
-                row[2] = vaccine.getVaccineId();
-                row[3] = vaccine.getBatchId();
-                row[4] = vaccine.getVaccinePrice();
-                row[5] = vaccine.getManufactureDate();
-                
-                defaulttabelmodel.addRow(row);
-                }
-            }
-        }
-            
-        }
-            
-            
-        }
-        
-   
-    }
-    
+      
     
     private void refreshCartTable(){
         
@@ -191,10 +181,9 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
         cbmanu = new javax.swing.JComboBox();
         lbl3 = new javax.swing.JLabel();
         lbl5 = new javax.swing.JLabel();
-        txt1 = new javax.swing.JTextField();
-        btn1 = new javax.swing.JButton();
+        txtSearch = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblvacc = new javax.swing.JTable();
+        tblDrugg = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         lbl6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -240,22 +229,11 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
 
         lbl5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl5.setForeground(new java.awt.Color(0, 0, 102));
-        lbl5.setText("Search Vaccine By Code:");
+        lbl5.setText("Type to Search:");
 
-        txt1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtSearch.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
-        btn1.setBackground(new java.awt.Color(0, 0, 102));
-        btn1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn1.setForeground(new java.awt.Color(255, 255, 255));
-        btn1.setText("Search");
-        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
-            }
-        });
-
-        tblvacc.setModel(new javax.swing.table.DefaultTableModel(
+        tblDrugg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -271,8 +249,8 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblvacc.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblvacc);
+        tblDrugg.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblDrugg);
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
@@ -416,17 +394,14 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
                         .addGap(139, 139, 139)
                         .addComponent(lbl5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addComponent(btn1)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(txtSearch))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn4)
                         .addGap(78, 78, 78)
                         .addComponent(lbl10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cbordertype, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btn5, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -445,10 +420,9 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
                             .addComponent(cbmanu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lbl3))
-                    .addComponent(btn1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lbl5)
-                        .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -486,24 +460,16 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
         displayManufacturerVaccines();
     }//GEN-LAST:event_cbmanuActionPerformed
 
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        // TODO add your handling code here:
-
-        String vaccineCode = txt1.getText();
-        searchVaccineProducts(vaccineCode);
-
-    }//GEN-LAST:event_btn1ActionPerformed
-
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         // TODO add your handling code here:
         int quantity = (Integer) spvacccount.getValue();
 
-        int selectRow = tblvacc.getSelectedRow();
+        int selectRow = tblDrugg.getSelectedRow();
         if (selectRow < 0) {
             JOptionPane.showMessageDialog(null, "Kindly select a Vaccine First!");
             return;
         }
-        VaccineDetails product = (VaccineDetails) tblvacc.getValueAt(selectRow, 0);
+        VaccineDetails product = (VaccineDetails) tblDrugg.getValueAt(selectRow, 0);
         
         
         //condition for -ve 
@@ -679,7 +645,6 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
     private javax.swing.JButton btn2;
     private javax.swing.JButton btn3;
     private javax.swing.JButton btn4;
@@ -700,10 +665,10 @@ public class PlaceVaccineOrderClinicJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lbl8;
     private javax.swing.JLabel lbl9;
     private javax.swing.JSpinner spvacccount;
+    private javax.swing.JTable tblDrugg;
     private javax.swing.JTable tblcart;
-    private javax.swing.JTable tblvacc;
-    private javax.swing.JTextField txt1;
     private javax.swing.JTextField txt2;
     private javax.swing.JTextField txt3;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

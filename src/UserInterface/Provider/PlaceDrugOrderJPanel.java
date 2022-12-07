@@ -22,7 +22,11 @@ import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.RowFilter;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -46,6 +50,7 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
 
     public PlaceDrugOrderJPanel(JPanel workContainer, HospitalEnterprise hospital,HospitalOrganization hospitalOrg,UserAccount userAccount , EcoSystem business, StateNetwork state) {
         initComponents();
+        searchInTable();
         this.workContainer = workContainer;
         this.userAccount = userAccount;
         this.hospital = hospital;
@@ -62,6 +67,37 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
         
         
         
+    }
+    
+    private void searchInTable(){
+        DefaultTableModel model = (DefaultTableModel) tblManufacturerDetails.getModel();
+        TableRowSorter sorter = new TableRowSorter<>(model);
+        tblManufacturerDetails.setRowSorter(sorter);
+        txtSearch.getDocument().addDocumentListener(new DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                search(txtSearch.getText()); 
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                search(txtSearch.getText());
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                search(txtSearch.getText());
+            }
+
+            private void search(String str) {
+                if (str.length() == 0) {
+                    sorter.setRowFilter(null);
+                } else {
+                    sorter.setRowFilter(RowFilter.regexFilter(str));
+                }
+            }
+            
+        });
     }
 
     private void populateManufacturerComboBox() {
@@ -201,8 +237,7 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
         comboBoxManufacturerList = new javax.swing.JComboBox();
         lblManufacturerDrugCatalog = new javax.swing.JLabel();
         lblDrugCode = new javax.swing.JLabel();
-        txtDrugCode = new javax.swing.JTextField();
-        btnSearch = new javax.swing.JButton();
+        txtSearch = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblManufacturerDetails = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
@@ -248,17 +283,7 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
 
         lblDrugCode.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lblDrugCode.setForeground(new java.awt.Color(0, 0, 102));
-        lblDrugCode.setText("Drug Code:");
-
-        btnSearch.setBackground(new java.awt.Color(0, 0, 102));
-        btnSearch.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
-        btnSearch.setText("Search");
-        btnSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchActionPerformed(evt);
-            }
-        });
+        lblDrugCode.setText("Type to Search:");
 
         tblManufacturerDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         tblManufacturerDetails.setModel(new javax.swing.table.DefaultTableModel(
@@ -388,17 +413,17 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
                     .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblManufacturerDrugCatalog)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblManufacturer)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(comboBoxManufacturerList, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblDrugCode)
+                                .addComponent(comboBoxManufacturerList, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblManufacturerDrugCatalog)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblDrugCode)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDrugCode, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearch))
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblCart)
@@ -444,12 +469,10 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
                             .addComponent(lblManufacturer)
                             .addComponent(comboBoxManufacturerList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblManufacturerDrugCatalog)
-                            .addComponent(btnSearch)))
+                        .addComponent(lblManufacturerDrugCatalog))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblDrugCode)
-                        .addComponent(txtDrugCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -477,6 +500,11 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
                     .addComponent(comboBoxTypeOfOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnModify, lblCart, lblOrderAmount, lblQuantityModify, txtQuantityCount, txtTotalAmount});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAddToCart, lblDrugCode, lblManufacturerDrugCatalog, lblQuantity, spinCount, txtSearch});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToCartActionPerformed
@@ -699,15 +727,6 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
         displayManufacturerVaccines();
     }//GEN-LAST:event_comboBoxManufacturerListActionPerformed
 
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
-        
-        String vaccineCode = txtDrugCode.getText();
-        searchVaccineProducts(vaccineCode);
-        
-        
-    }//GEN-LAST:event_btnSearchActionPerformed
-
     private void comboBoxTypeOfOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxTypeOfOrderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBoxTypeOfOrderActionPerformed
@@ -718,7 +737,6 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnCheckoutCart;
     private javax.swing.JButton btnModify;
     private javax.swing.JButton btnRemoveFromCart;
-    private javax.swing.JButton btnSearch;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox comboBoxManufacturerList;
     private javax.swing.JComboBox comboBoxTypeOfOrder;
@@ -737,8 +755,8 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
     private javax.swing.JSpinner spinCount;
     private javax.swing.JTable tblCartDetails;
     private javax.swing.JTable tblManufacturerDetails;
-    private javax.swing.JTextField txtDrugCode;
     private javax.swing.JTextField txtQuantityCount;
+    private javax.swing.JTextField txtSearch;
     private javax.swing.JTextField txtTotalAmount;
     // End of variables declaration//GEN-END:variables
 }

@@ -54,7 +54,7 @@ public class MainFrame extends javax.swing.JFrame {
         btnLoginUser = new javax.swing.JButton();
         btnLogoutUser = new javax.swing.JButton();
         container = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        welcomeScreen = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lbl5100 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -64,6 +64,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1500, 900));
 
         jSplitPane1.setDividerLocation(210);
 
@@ -123,7 +124,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(loginPanelLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(lblWelcomePage)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
                 .addComponent(lblUsernameField)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -131,18 +132,18 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(lblPasswordField)
                 .addGap(16, 16, 16)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
                 .addComponent(btnLoginUser)
                 .addGap(18, 18, 18)
                 .addComponent(btnLogoutUser)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(295, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(loginPanel);
 
         container.setLayout(new java.awt.CardLayout());
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        welcomeScreen.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -161,19 +162,19 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/ceiv.jpg"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout welcomeScreenLayout = new javax.swing.GroupLayout(welcomeScreen);
+        welcomeScreen.setLayout(welcomeScreenLayout);
+        welcomeScreenLayout.setHorizontalGroup(
+            welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, welcomeScreenLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, welcomeScreenLayout.createSequentialGroup()
                         .addComponent(lbl5100)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -181,15 +182,15 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        welcomeScreenLayout.setVerticalGroup(
+            welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(welcomeScreenLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel1)
                 .addGap(47, 47, 47)
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
                 .addGap(35, 35, 35)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl5100)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -201,7 +202,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(61, 61, 61))
         );
 
-        container.add(jPanel2, "card2");
+        container.add(welcomeScreen, "card2");
 
         jSplitPane1.setRightComponent(container);
 
@@ -390,9 +391,10 @@ public class MainFrame extends javax.swing.JFrame {
         
         JPanel blankJP = new JPanel();
         //blankJP.setBackground(new java.awt.Color(102, 153, 255));
-        container.add("blank", blankJP);
+        //container.add("blank", blankJP);
+        container.add(welcomeScreen, "welcomeScreen");
         CardLayout crdLyt = (CardLayout) container.getLayout();
-        crdLyt.next(container);
+        crdLyt.show(container,"welcomeScreen");
         
         dB40Util.storeSystem(business);
     }//GEN-LAST:event_btnLogoutUserActionPerformed
@@ -444,7 +446,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lbl5100;
     private javax.swing.JLabel lblPasswordField;
@@ -453,5 +454,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsername;
+    private javax.swing.JPanel welcomeScreen;
     // End of variables declaration//GEN-END:variables
 }

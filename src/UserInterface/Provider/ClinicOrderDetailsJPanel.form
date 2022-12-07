@@ -68,24 +68,24 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="lblOrder" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtOrderDetail" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblOrder" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtOrderDetail" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="lblOrderCost" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtTotalAmount" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblOrderCost" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtTotalAmount" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="lblOrderNumber" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtOrderNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblOrderNumber" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtOrderNumber" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="lblOrderDetails" min="-2" max="-2" attributes="0"/>
+              <Component id="lblOrderDetails" linkSize="1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="200" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="btnForwardOrderToLHD" min="-2" max="-2" attributes="0"/>
+              <Component id="btnForwardOrderToLHD" linkSize="1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
