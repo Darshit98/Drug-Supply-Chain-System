@@ -91,19 +91,18 @@ public class ProviderAdminJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl1 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblvaccine = new javax.swing.JTable();
-        btn1 = new javax.swing.JButton();
-        btn2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btnRefresh = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
-        lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        lbl1.setForeground(new java.awt.Color(0, 0, 102));
-        lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl1.setText("Administered Vaccine List");
+        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(0, 0, 102));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Administered Drug List");
 
         tblvaccine.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         tblvaccine.setModel(new javax.swing.table.DefaultTableModel(
@@ -111,7 +110,7 @@ public class ProviderAdminJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Vaccine Code", "Vaccine Name", "Brand", "Batch Number", "Vaccine Id", "Patient", "Date", "SiteRoute", "Dose Number", "Status"
+                "Medicine Code", "Medicine Name", "Brand", "Batch Number", "Medicine ID", "Patient", "Date", "SiteRoute", "Dose Number", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -125,23 +124,23 @@ public class ProviderAdminJPanel extends javax.swing.JPanel {
         tblvaccine.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblvaccine);
 
-        btn1.setBackground(new java.awt.Color(0, 0, 102));
-        btn1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn1.setForeground(new java.awt.Color(255, 255, 255));
-        btn1.setText("Refresh");
-        btn1.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh.setBackground(new java.awt.Color(0, 0, 102));
+        btnRefresh.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
+        btnRefresh.setText("Refresh");
+        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
+                btnRefreshActionPerformed(evt);
             }
         });
 
-        btn2.setBackground(new java.awt.Color(0, 0, 102));
-        btn2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        btn2.setForeground(new java.awt.Color(255, 255, 255));
-        btn2.setText("<");
-        btn2.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(0, 0, 102));
+        btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2ActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
@@ -154,55 +153,48 @@ public class ProviderAdminJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
+                            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE))
                         .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(195, 195, 195))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn1)
+                        .addComponent(btnRefresh)
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbl1)
-                .addGap(25, 25, 25)
+                .addComponent(lblTitle)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn1)
-                    .addComponent(btn2))
+                    .addComponent(btnRefresh)
+                    .addComponent(btnBack))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+    private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         // TODO add your handling code here:
         populateTable();
-    }//GEN-LAST:event_btn1ActionPerformed
+    }//GEN-LAST:event_btnRefreshActionPerformed
 
-    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         workContainer.remove(this);
         CardLayout layout = (CardLayout) workContainer.getLayout();
         layout.previous(workContainer);
-    }//GEN-LAST:event_btn2ActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnRefresh;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lbl1;
+    private javax.swing.JLabel lblTitle;
     private javax.swing.JTable tblvaccine;
     // End of variables declaration//GEN-END:variables
 }

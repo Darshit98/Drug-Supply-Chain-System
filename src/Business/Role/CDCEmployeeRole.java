@@ -11,7 +11,7 @@ import Business.Network.StateNetwork;
 import Business.Organization.CDCOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import UserInterface.CDC.CDCEmployee;
+import UserInterface.CDC.FDAEmployee;
 import javax.swing.JPanel;
 
 /**
@@ -22,7 +22,7 @@ public class CDCEmployeeRole extends Role{
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, Organization organization, EcoSystem business, StateNetwork state) {
-        return new CDCEmployee(userProcessContainer, account, (CDC)enterprise, (CDCOrganization)organization, business);
+        return new FDAEmployee(userProcessContainer, account, (CDC)enterprise, (CDCOrganization)organization, business);
     }
     
 }

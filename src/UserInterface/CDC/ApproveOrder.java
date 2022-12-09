@@ -40,8 +40,8 @@ public class ApproveOrder extends javax.swing.JPanel {
         this.request =request;
         this.cdcOrg = cdcOrg;
         txt5.setText(String.valueOf(request.getreqState()));
-        txt2.setText(String.valueOf(request.getreqState().getStatePopulation()));
-        txt3.setText(String.valueOf(request.getreqState().getVaccinesLeftForState()));
+        txtStatePopulation.setText(String.valueOf(request.getreqState().getStatePopulation()));
+        txtMedicineStock.setText(String.valueOf(request.getreqState().getVaccinesLeftForState()));
         txt1.setText(String.valueOf(request.getVaccineOrder().getOrderNumber()));
         displayContractDetails();
         populateTable();
@@ -51,11 +51,11 @@ public class ApproveOrder extends javax.swing.JPanel {
     private void displayContractDetails(){
         
         if(request.ishalfmonthContract())
-            txt4.setText("Half Monthly");
+            txtOrderType.setText("Half Monthly");
         if(request.isfullMonthContract())
-            txt4.setText("Monthly");
+            txtOrderType.setText("Monthly");
         if(request.isasReq())
-            txt4.setText("As Required");
+            txtOrderType.setText("As Required");
         
     }
     
@@ -95,50 +95,51 @@ public class ApproveOrder extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl1 = new javax.swing.JLabel();
-        lbl2 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
+        lblOrderNumber = new javax.swing.JLabel();
         txt1 = new javax.swing.JTextField();
-        lbl3 = new javax.swing.JLabel();
-        txt2 = new javax.swing.JTextField();
-        lbl4 = new javax.swing.JLabel();
-        txt3 = new javax.swing.JTextField();
+        lblStatePopulation = new javax.swing.JLabel();
+        txtStatePopulation = new javax.swing.JTextField();
+        lblMedicineLeftForState = new javax.swing.JLabel();
+        txtMedicineStock = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblvacciine = new javax.swing.JTable();
         btn1 = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
-        txt4 = new javax.swing.JTextField();
-        llbl5 = new javax.swing.JLabel();
-        lbl6 = new javax.swing.JLabel();
+        txtOrderType = new javax.swing.JTextField();
+        lblOrderType = new javax.swing.JLabel();
+        lblState = new javax.swing.JLabel();
         txt5 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl1.setText("Approve Orders");
-        add(lbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 673, -1));
+        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(0, 0, 102));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Approve Orders");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 673, -1));
 
-        lbl2.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        lbl2.setText("Order Number:");
-        add(lbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 90, -1));
+        lblOrderNumber.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        lblOrderNumber.setText("Order Number:");
+        add(lblOrderNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 90, -1));
 
         txt1.setEnabled(false);
-        add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 100, -1));
+        add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 100, -1));
 
-        lbl3.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        lbl3.setText("State Population:");
-        add(lbl3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 130, -1));
+        lblStatePopulation.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        lblStatePopulation.setText("State Population:");
+        add(lblStatePopulation, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 130, -1));
 
-        txt2.setEnabled(false);
-        add(txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 90, -1));
+        txtStatePopulation.setEnabled(false);
+        add(txtStatePopulation, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 90, -1));
 
-        lbl4.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        lbl4.setText("Vaccines left for State:");
-        add(lbl4, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 150, 150, -1));
+        lblMedicineLeftForState.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        lblMedicineLeftForState.setText("Medicines left for State:");
+        add(lblMedicineLeftForState, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 150, 150, -1));
 
-        txt3.setEnabled(false);
-        add(txt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 90, -1));
+        txtMedicineStock.setEnabled(false);
+        add(txtMedicineStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 90, -1));
 
         tblvacciine.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         tblvacciine.setModel(new javax.swing.table.DefaultTableModel(
@@ -146,7 +147,7 @@ public class ApproveOrder extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Vaccine Code", "Vaccine Name", "Vaccine id", "Lot Number", "Price", "Quantity", "Manufacture date", "Amount"
+                "Medicine Code", "Medicine Name", "Medicine ID", "Lot Number", "Price", "Quantity", "Manufacture date", "Amount"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -163,7 +164,7 @@ public class ApproveOrder extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 673, 207));
 
         btn1.setBackground(new java.awt.Color(0, 0, 102));
-        btn1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btn1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btn1.setForeground(new java.awt.Color(255, 255, 255));
         btn1.setText("<");
         btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -175,7 +176,7 @@ public class ApproveOrder extends javax.swing.JPanel {
         add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 90, 30));
 
         btn2.setBackground(new java.awt.Color(0, 0, 102));
-        btn2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btn2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btn2.setForeground(new java.awt.Color(255, 255, 255));
         btn2.setText("Approve");
         btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -186,19 +187,19 @@ public class ApproveOrder extends javax.swing.JPanel {
         });
         add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 120, -1));
 
-        txt4.setEnabled(false);
-        add(txt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(566, 100, 120, -1));
+        txtOrderType.setEnabled(false);
+        add(txtOrderType, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 120, -1));
 
-        llbl5.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        llbl5.setText("Order type:");
-        add(llbl5, new org.netbeans.lib.awtextra.AbsoluteConstraints(489, 110, 70, -1));
+        lblOrderType.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        lblOrderType.setText("Order type:");
+        add(lblOrderType, new org.netbeans.lib.awtextra.AbsoluteConstraints(489, 110, 70, -1));
 
-        lbl6.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        lbl6.setText("State:");
-        add(lbl6, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 110, 80, -1));
+        lblState.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        lblState.setText("State:");
+        add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 110, 80, -1));
 
         txt5.setEnabled(false);
-        add(txt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 100, -1));
+        add(txt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 100, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
@@ -257,17 +258,17 @@ if(request.getStatus().equalsIgnoreCase("CDC Approved") ||request.getStatus().eq
     private javax.swing.JButton btn1;
     private javax.swing.JButton btn2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lbl1;
-    private javax.swing.JLabel lbl2;
-    private javax.swing.JLabel lbl3;
-    private javax.swing.JLabel lbl4;
-    private javax.swing.JLabel lbl6;
-    private javax.swing.JLabel llbl5;
+    private javax.swing.JLabel lblMedicineLeftForState;
+    private javax.swing.JLabel lblOrderNumber;
+    private javax.swing.JLabel lblOrderType;
+    private javax.swing.JLabel lblState;
+    private javax.swing.JLabel lblStatePopulation;
+    private javax.swing.JLabel lblTitle;
     private javax.swing.JTable tblvacciine;
     private javax.swing.JTextField txt1;
-    private javax.swing.JTextField txt2;
-    private javax.swing.JTextField txt3;
-    private javax.swing.JTextField txt4;
     private javax.swing.JTextField txt5;
+    private javax.swing.JTextField txtMedicineStock;
+    private javax.swing.JTextField txtOrderType;
+    private javax.swing.JTextField txtStatePopulation;
     // End of variables declaration//GEN-END:variables
 }

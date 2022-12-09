@@ -17,16 +17,21 @@ import javax.swing.JPanel;
  */
 public class MedicalOfficerNewJPanel extends javax.swing.JPanel {
 
-    private JPanel userProcessContainer;
-    private UserAccount userAccount;
-    private EcoSystem business;
-    private CDC cdcEnterprise;
-    private medicalOrganization mo;
+    private final JPanel userProcessContainer;
+    private final UserAccount userAccount;
+    private final EcoSystem business;
+    private final CDC cdcEnterprise;
+    private final medicalOrganization mo;
     private CDC cdc;
     private CDCOrganization cdcOrg; 
     
     /**
      * Creates new form MedicalOfficerNewJPanel
+     * @param userProcessContainer
+     * @param userAccount
+     * @param business
+     * @param cdcEnterprise
+     * @param mo
      */
     public MedicalOfficerNewJPanel(JPanel userProcessContainer, UserAccount userAccount,EcoSystem business,CDC cdcEnterprise,medicalOrganization mo ) {
         initComponents();
@@ -49,12 +54,12 @@ public class MedicalOfficerNewJPanel extends javax.swing.JPanel {
         jSplitPane1 = new javax.swing.JSplitPane();
         workContainer = new javax.swing.JPanel();
         mainMenu = new javax.swing.JPanel();
-        btnviewdistribtn = new javax.swing.JButton();
+        btnViewDrugDistribution = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
         jSplitPane1.setBackground(new java.awt.Color(204, 204, 255));
-        jSplitPane1.setDividerLocation(180);
+        jSplitPane1.setDividerLocation(200);
 
         workContainer.setBackground(new java.awt.Color(204, 204, 255));
         workContainer.setLayout(new java.awt.CardLayout());
@@ -62,14 +67,14 @@ public class MedicalOfficerNewJPanel extends javax.swing.JPanel {
 
         mainMenu.setBackground(new java.awt.Color(255, 255, 204));
 
-        btnviewdistribtn.setBackground(new java.awt.Color(0, 0, 102));
-        btnviewdistribtn.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnviewdistribtn.setForeground(new java.awt.Color(255, 255, 255));
-        btnviewdistribtn.setText("View Vaccine Data");
-        btnviewdistribtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnviewdistribtn.addActionListener(new java.awt.event.ActionListener() {
+        btnViewDrugDistribution.setBackground(new java.awt.Color(0, 0, 102));
+        btnViewDrugDistribution.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnViewDrugDistribution.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewDrugDistribution.setText("View Drug Distribution");
+        btnViewDrugDistribution.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnViewDrugDistribution.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnviewdistribtnActionPerformed(evt);
+                btnViewDrugDistributionActionPerformed(evt);
             }
         });
 
@@ -79,15 +84,15 @@ public class MedicalOfficerNewJPanel extends javax.swing.JPanel {
             mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnviewdistribtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnViewDrugDistribution, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         mainMenuLayout.setVerticalGroup(
             mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuLayout.createSequentialGroup()
                 .addGap(99, 99, 99)
-                .addComponent(btnviewdistribtn)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addComponent(btnViewDrugDistribution)
+                .addContainerGap(89, Short.MAX_VALUE))
         );
 
         jSplitPane1.setTopComponent(mainMenu);
@@ -95,17 +100,17 @@ public class MedicalOfficerNewJPanel extends javax.swing.JPanel {
         add(jSplitPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnviewdistribtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewdistribtnActionPerformed
+    private void btnViewDrugDistributionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDrugDistributionActionPerformed
         // TODO add your handling code here:
-        VaccineStateDistributionJPanel panel = new VaccineStateDistributionJPanel(workContainer,userAccount, business, cdc, cdcOrg);
+        DrugStateDistributionJPanel panel = new DrugStateDistributionJPanel(workContainer,userAccount, business, cdc, cdcOrg);
         workContainer.add("VaccineStateDistributionJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btnviewdistribtnActionPerformed
+    }//GEN-LAST:event_btnViewDrugDistributionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnviewdistribtn;
+    private javax.swing.JButton btnViewDrugDistribution;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JPanel workContainer;

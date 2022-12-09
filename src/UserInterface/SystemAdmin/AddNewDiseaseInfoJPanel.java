@@ -179,6 +179,12 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
         disease.setDiseaseName(diseaseName);
         disease.setLastUpdatedTime(lastUpdatedDate);
 
+        JOptionPane.showMessageDialog(null, "Disease added!");
+        txtDiseaseCode.setText("");
+        txtDiseaseName.setText("");
+        jdateUpdateDate.setDate(null);
+        
+        
     }//GEN-LAST:event_btnAddDiseaseInformationActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

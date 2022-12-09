@@ -178,11 +178,11 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
         
         Document doc = new Document();
         try {
-            PdfWriter.getInstance(doc, new FileOutputStream(path+"/certificate.pdf"));
+            //PdfWriter.getInstance(doc, new FileOutputStream(path+"/certificate.pdf"));
             
             doc.open();
             
-             MessageFormat header=new MessageFormat("Immunization Certificate");
+            MessageFormat header=new MessageFormat("Immunization Certificate");
             MessageFormat footer=new MessageFormat("page{0,number,integer}");
             
             
@@ -230,8 +230,6 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
             
             
             
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(PatientAdministeredVaccineListJPanel.class.getName()).log(Level.SEVERE, null, ex);
         } catch (DocumentException ex) {
             Logger.getLogger(PatientAdministeredVaccineListJPanel.class.getName()).log(Level.SEVERE, null, ex);
         } catch (PrinterException ex) {

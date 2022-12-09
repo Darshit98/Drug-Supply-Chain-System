@@ -24,12 +24,12 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lbl1" max="32767" attributes="0"/>
+                  <Component id="lblTitle" max="32767" attributes="0"/>
                   <Component id="Separator1" alignment="0" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                   <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="lbl6" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCart" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Component id="lbl8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
@@ -37,18 +37,18 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btn3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="lbl9" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblTotalAmount" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                      <Component id="txt3" min="-2" pref="104" max="-2" attributes="0"/>
+                      <Component id="txtTotalAmount" min="-2" pref="104" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="btn5" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnRemove" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="btn4" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCancelOrder" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btn6" min="-2" pref="137" max="-2" attributes="0"/>
+                              <Component id="btnCheckout" min="-2" pref="137" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel1" min="-2" pref="137" max="-2" attributes="0"/>
@@ -58,23 +58,23 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="lbl7" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblQuantity" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="addcount" min="-2" pref="72" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btn2" min="-2" pref="112" max="-2" attributes="0"/>
+                      <Component id="btnAddToCart" min="-2" pref="112" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="lbl2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblManufacturer" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="combo1" min="-2" pref="178" max="-2" attributes="0"/>
+                      <Component id="comboBoxManufacturerList" min="-2" pref="178" max="-2" attributes="0"/>
                       <EmptySpace pref="176" max="32767" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSearch" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                       <Component id="txtSearch" min="-2" pref="111" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="lbl3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblDrugCatalog" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -86,25 +86,25 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="lbl1" min="-2" max="-2" attributes="0"/>
+              <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Component id="lbl3" linkSize="1" min="-2" max="-2" attributes="0"/>
+              <Component id="lblDrugCatalog" linkSize="1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="combo1" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxManufacturerList" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                       <Component id="txtSearch" linkSize="1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="lbl2" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel2" linkSize="1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="lblManufacturer" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSearch" linkSize="1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="150" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbl7" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblQuantity" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="addcount" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn2" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAddToCart" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="Separator1" min="-2" pref="10" max="-2" attributes="0"/>
@@ -112,32 +112,32 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="txt2" linkSize="3" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbl6" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCart" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn3" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbl8" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                      <Component id="txt3" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbl9" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtTotalAmount" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblTotalAmount" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="150" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btn6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCheckout" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnRemove" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancelOrder" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-              <Component id="jLabel1" pref="5" max="32767" attributes="0"/>
+              <Component id="jLabel1" pref="1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lbl1">
+    <Component class="javax.swing.JLabel" name="lblTitle">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="24" style="1"/>
@@ -149,7 +149,7 @@
         <Property name="text" type="java.lang.String" value="Place Drug Order"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl2">
+    <Component class="javax.swing.JLabel" name="lblManufacturer">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
@@ -160,13 +160,16 @@
         <Property name="text" type="java.lang.String" value="Manufacturer:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="combo1">
+    <Component class="javax.swing.JComboBox" name="comboBoxManufacturerList">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="10" style="0"/>
+          <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="33" red="0" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -178,10 +181,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="combo1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxManufacturerListActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl3">
+    <Component class="javax.swing.JLabel" name="lblDrugCatalog">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
@@ -214,13 +217,47 @@
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="6" rowCount="0">
-                <Column editable="false" title="Vaccine Code" type="java.lang.Object"/>
-                <Column editable="false" title="Vaccine Name" type="java.lang.Object"/>
+                <Column editable="false" title="Medicine Code" type="java.lang.Object"/>
+                <Column editable="false" title="Medicine Name" type="java.lang.Object"/>
                 <Column editable="false" title="Brand" type="java.lang.Object"/>
                 <Column editable="false" title="Price" type="java.lang.Object"/>
                 <Column editable="false" title="Availability" type="java.lang.Object"/>
                 <Column editable="false" title="Manufacture date" type="java.lang.Object"/>
               </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
             </Property>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -230,8 +267,16 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JSeparator" name="Separator1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl6">
+    <Component class="javax.swing.JLabel" name="lblCart">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
@@ -249,7 +294,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="tbcart">
+        <Component class="javax.swing.JTable" name="tblCartDetails">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="10" style="0"/>
@@ -259,14 +304,53 @@
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="7" rowCount="0">
-                <Column editable="false" title="Vaccine Code" type="java.lang.Object"/>
-                <Column editable="false" title="Vaccine Name" type="java.lang.Object"/>
+                <Column editable="false" title="Medicine Code" type="java.lang.Object"/>
+                <Column editable="false" title="Medicine Name" type="java.lang.Object"/>
                 <Column editable="false" title="Brand" type="java.lang.Object"/>
                 <Column editable="false" title="Price" type="java.lang.Object"/>
                 <Column editable="false" title="Quantity" type="java.lang.Object"/>
                 <Column editable="false" title="Manufacture date" type="java.lang.Object"/>
                 <Column editable="false" title="Amount" type="java.lang.Object"/>
               </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
             </Property>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -275,7 +359,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="lbl7">
+    <Component class="javax.swing.JLabel" name="lblQuantity">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
@@ -293,7 +377,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btn2">
+    <Component class="javax.swing.JButton" name="btnAddToCart">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -310,7 +394,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddToCartActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txt2">
@@ -346,7 +430,7 @@
         <Property name="text" type="java.lang.String" value="Quantity:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btn4">
+    <Component class="javax.swing.JButton" name="btnCancelOrder">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -363,10 +447,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelOrderActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btn5">
+    <Component class="javax.swing.JButton" name="btnRemove">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -383,10 +467,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btn6">
+    <Component class="javax.swing.JButton" name="btnCheckout">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
@@ -403,10 +487,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn6ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCheckoutActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl9">
+    <Component class="javax.swing.JLabel" name="lblTotalAmount">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
@@ -417,14 +501,14 @@
         <Property name="text" type="java.lang.String" value="Total Amount:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt3">
+    <Component class="javax.swing.JTextField" name="txtTotalAmount">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="lblSearch">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>

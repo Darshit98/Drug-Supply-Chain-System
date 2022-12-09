@@ -154,8 +154,9 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         lblDepartment.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblDepartment.setText("Department:");
 
+        comboBoxDepartmentList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxDepartmentList.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        comboBoxDepartmentList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxDepartmentList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxDepartmentList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBoxDepartmentList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
