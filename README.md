@@ -19,3 +19,6 @@ The events mentioned below happen in sequence –
 6. Once the order is approved by the FDA officer, the distributor is permitted to ship the same to the providers.  
 7. The providers add the received drugs to their inventory. 
 8. The providers can then administer this drug to the patients. 
+
+ObjectModel.png
+
