@@ -70,7 +70,7 @@ public class ProviderOperationWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jSplitPane1.setBackground(new java.awt.Color(204, 204, 255));
+        jSplitPane1.setBackground(new java.awt.Color(0, 0, 102));
         jSplitPane1.setDividerLocation(240);
 
         workContainer.setBackground(new java.awt.Color(102, 153, 255));
@@ -138,7 +138,7 @@ public class ProviderOperationWorkAreaJPanel extends javax.swing.JPanel {
         btnViewAdministerDrug.setBackground(new java.awt.Color(0, 0, 102));
         btnViewAdministerDrug.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btnViewAdministerDrug.setForeground(new java.awt.Color(255, 255, 255));
-        btnViewAdministerDrug.setText("View Administered Drugs");
+        btnViewAdministerDrug.setText("View Immunized Patients");
         btnViewAdministerDrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewAdministerDrugActionPerformed(evt);

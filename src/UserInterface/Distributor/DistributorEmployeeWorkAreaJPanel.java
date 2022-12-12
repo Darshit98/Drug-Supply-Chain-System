@@ -23,6 +23,11 @@ public class DistributorEmployeeWorkAreaJPanel extends javax.swing.JPanel {
     private final EcoSystem business;
     /**
      * Creates new form DistributorEmployeeWorkAreaJPanel
+     * @param userProcessContainer
+     * @param userAccount
+     * @param enterprise
+     * @param distributorOrg
+     * @param business
      */
     public DistributorEmployeeWorkAreaJPanel(JPanel userProcessContainer,UserAccount userAccount,Distributor enterprise,DistributorOrganization distributorOrg,EcoSystem business ) {
         initComponents();
@@ -47,17 +52,15 @@ public class DistributorEmployeeWorkAreaJPanel extends javax.swing.JPanel {
         workContainer = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         mainMenu = new javax.swing.JPanel();
-        lbl1 = new javax.swing.JLabel();
-        btn1 = new javax.swing.JButton();
-        btn2 = new javax.swing.JButton();
-        btn3 = new javax.swing.JButton();
-        lbl2 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btnManageWareHouse = new javax.swing.JButton();
+        btnManufactureShippedOrder = new javax.swing.JButton();
+        btnProviderOrder = new javax.swing.JButton();
+        lblDistributor = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
-        jSplitPane1.setBackground(new java.awt.Color(204, 204, 255));
-        jSplitPane1.setDividerLocation(210);
+        jSplitPane1.setBackground(new java.awt.Color(0, 0, 102));
+        jSplitPane1.setDividerLocation(240);
 
         workContainer.setBackground(new java.awt.Color(102, 153, 255));
         workContainer.setLayout(new java.awt.CardLayout());
@@ -68,7 +71,7 @@ public class DistributorEmployeeWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 790, Short.MAX_VALUE)
+            .addGap(0, 760, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,86 +84,69 @@ public class DistributorEmployeeWorkAreaJPanel extends javax.swing.JPanel {
 
         mainMenu.setBackground(new java.awt.Color(255, 255, 204));
 
-        lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl1.setForeground(new java.awt.Color(0, 0, 102));
-        lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl1.setText("Main Menu");
-
-        btn1.setBackground(new java.awt.Color(0, 0, 102));
-        btn1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn1.setForeground(new java.awt.Color(255, 255, 255));
-        btn1.setText("Manage Warehouse");
-        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn1.addActionListener(new java.awt.event.ActionListener() {
+        btnManageWareHouse.setBackground(new java.awt.Color(0, 0, 102));
+        btnManageWareHouse.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnManageWareHouse.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageWareHouse.setText("Manage Warehouse");
+        btnManageWareHouse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnManageWareHouse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
+                btnManageWareHouseActionPerformed(evt);
             }
         });
 
-        btn2.setBackground(new java.awt.Color(0, 0, 102));
-        btn2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn2.setForeground(new java.awt.Color(255, 255, 255));
-        btn2.setText("Manufacture Shipped Orders");
-        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn2.addActionListener(new java.awt.event.ActionListener() {
+        btnManufactureShippedOrder.setBackground(new java.awt.Color(0, 0, 102));
+        btnManufactureShippedOrder.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnManufactureShippedOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnManufactureShippedOrder.setText("View Order By Manufacturer");
+        btnManufactureShippedOrder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnManufactureShippedOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2ActionPerformed(evt);
+                btnManufactureShippedOrderActionPerformed(evt);
             }
         });
 
-        btn3.setBackground(new java.awt.Color(0, 0, 102));
-        btn3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn3.setForeground(new java.awt.Color(255, 255, 255));
-        btn3.setText("Provider Orders");
-        btn3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn3.addActionListener(new java.awt.event.ActionListener() {
+        btnProviderOrder.setBackground(new java.awt.Color(0, 0, 102));
+        btnProviderOrder.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnProviderOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnProviderOrder.setText("Manage Provider Orders");
+        btnProviderOrder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProviderOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3ActionPerformed(evt);
+                btnProviderOrderActionPerformed(evt);
             }
         });
 
-        lbl2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl2.setForeground(new java.awt.Color(0, 0, 102));
-        lbl2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl2.setText("DISTRIBUTOR");
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDistributor.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblDistributor.setForeground(new java.awt.Color(0, 0, 102));
+        lblDistributor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDistributor.setText("DISTRIBUTOR");
 
         javax.swing.GroupLayout mainMenuLayout = new javax.swing.GroupLayout(mainMenu);
         mainMenu.setLayout(mainMenuLayout);
         mainMenuLayout.setHorizontalGroup(
             mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mainMenuLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbl2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnProviderOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnManageWareHouse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnManufactureShippedOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblDistributor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         mainMenuLayout.setVerticalGroup(
             mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(lbl2)
-                .addGap(27, 27, 27)
-                .addComponent(lbl1)
-                .addGap(31, 31, 31)
-                .addComponent(btn1)
+                .addComponent(lblDistributor)
+                .addGap(79, 79, 79)
+                .addComponent(btnManageWareHouse)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn2)
+                .addComponent(btnManufactureShippedOrder)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn3)
-                .addGap(33, 33, 33)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addComponent(btnProviderOrder)
+                .addContainerGap(222, Short.MAX_VALUE))
         );
 
         jSplitPane1.setTopComponent(mainMenu);
@@ -168,41 +154,39 @@ public class DistributorEmployeeWorkAreaJPanel extends javax.swing.JPanel {
         add(jSplitPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+    private void btnManageWareHouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageWareHouseActionPerformed
         // TODO add your handling code here:
         ManageWarehouseJPanel panel = new ManageWarehouseJPanel(workContainer, enterprise, distributorOrg);
         workContainer.add("ManageWarehouseJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
 
-    }//GEN-LAST:event_btn1ActionPerformed
+    }//GEN-LAST:event_btnManageWareHouseActionPerformed
 
-    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+    private void btnManufactureShippedOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManufactureShippedOrderActionPerformed
         // TODO add your handling code here:
         ManageOrdersfromManufacturerJPanel panel = new ManageOrdersfromManufacturerJPanel(workContainer, enterprise, distributorOrg);
         workContainer.add("ManageOrdersfromManufacturerJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btn2ActionPerformed
+    }//GEN-LAST:event_btnManufactureShippedOrderActionPerformed
 
-    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+    private void btnProviderOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProviderOrderActionPerformed
         // TODO add your handling code here:
         ManageProviderOrdersJPanel panel = new ManageProviderOrdersJPanel(workContainer, enterprise, distributorOrg, userAccount, business);
         workContainer.add("ManageProviderOrdersJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btn3ActionPerformed
+    }//GEN-LAST:event_btnProviderOrderActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn2;
-    private javax.swing.JButton btn3;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btnManageWareHouse;
+    private javax.swing.JButton btnManufactureShippedOrder;
+    private javax.swing.JButton btnProviderOrder;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JLabel lbl1;
-    private javax.swing.JLabel lbl2;
+    private javax.swing.JLabel lblDistributor;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JPanel workContainer;
     // End of variables declaration//GEN-END:variables

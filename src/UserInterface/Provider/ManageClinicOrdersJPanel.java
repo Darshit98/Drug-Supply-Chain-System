@@ -122,12 +122,13 @@ public class ManageClinicOrdersJPanel extends javax.swing.JPanel {
         lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(0, 0, 102));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Manage orders from Clinics");
+        lblTitle.setText("Manage Orders from Clinics");
 
         lblOrderStatus.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lblOrderStatus.setForeground(new java.awt.Color(0, 0, 102));
         lblOrderStatus.setText("Order Status:");
 
+        tblOrderDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         tblOrderDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

@@ -37,8 +37,8 @@ public class AdministeredDrugListJPanel extends javax.swing.JPanel {
     private void populateTable()
     {
         
-         int rowCount = tblvacc.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblvacc.getModel();
+         int rowCount = tblAdminDrug.getRowCount();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblAdminDrug.getModel();
         
         for(int i=rowCount-1 ; i>=0; i--){
             defaulttabelmodel.removeRow(i);
@@ -94,7 +94,7 @@ public class AdministeredDrugListJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblvacc = new javax.swing.JTable();
+        tblAdminDrug = new javax.swing.JTable();
         btnref = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
@@ -102,15 +102,15 @@ public class AdministeredDrugListJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Administered Drug List");
+        jLabel1.setText("Patient List");
 
-        tblvacc.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        tblvacc.setModel(new javax.swing.table.DefaultTableModel(
+        tblAdminDrug.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        tblAdminDrug.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Drug Code", "Drug Name", "Brand", "Batch Number", "Drug ID", "Patient", "Date", "SiteRoute", "Dose Number", "Status"
+                "Medicine Code", "Medicine Name", "Brand", "Batch Number", "Medicine ID", "Patient", "Date", "SiteRoute", "Dose Number", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -121,8 +121,8 @@ public class AdministeredDrugListJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblvacc.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblvacc);
+        tblAdminDrug.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblAdminDrug);
 
         btnref.setBackground(new java.awt.Color(0, 0, 102));
         btnref.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -157,7 +157,7 @@ public class AdministeredDrugListJPanel extends javax.swing.JPanel {
                 .addComponent(btnref)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -171,6 +171,6 @@ public class AdministeredDrugListJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnref;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblvacc;
+    private javax.swing.JTable tblAdminDrug;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,7 +6,6 @@ package UserInterface.Distributor;
 
 import Business.Enterprise.Enterprise;
 import Business.Organization.DistributorOrganization;
-import Business.Organization.ManufactureOrganization;
 import Business.Vaccine.VaccineDetails;
 import Business.Warehouse.Warehouse;
 import java.awt.CardLayout;
@@ -19,11 +18,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ManageWarehouseJPanel extends javax.swing.JPanel {
 
-    private JPanel workContainer;
-    private Enterprise enterprise;
-    private DistributorOrganization distributorOrganization;
+    private final JPanel workContainer;
+    private final Enterprise enterprise;
+    private final DistributorOrganization distributorOrganization;
     /**
      * Creates new form ManageWarehouseJPanel
+     * @param workContainer
+     * @param enterprise
+     * @param distributorOrganization
      */
     public ManageWarehouseJPanel(JPanel workContainer,Enterprise enterprise, DistributorOrganization distributorOrganization ) {
         initComponents();
@@ -36,7 +38,7 @@ public class ManageWarehouseJPanel extends javax.swing.JPanel {
     
     private void populateTable(){
         
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel) tblware.getModel();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel) tblWarehouseDetails.getModel();
         defaulttabelmodel.setRowCount(0);
         
         for(Warehouse warehouse : distributorOrganization.getWarehouseDir().getWarehouseList())
@@ -75,14 +77,14 @@ public class ManageWarehouseJPanel extends javax.swing.JPanel {
 
         lbl1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblware = new javax.swing.JTable();
+        tblWarehouseDetails = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         lbl2 = new javax.swing.JLabel();
         lbl3 = new javax.swing.JLabel();
-        txt1 = new javax.swing.JTextField();
-        btn1 = new javax.swing.JButton();
-        btn2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        txtLocation = new javax.swing.JTextField();
+        btnAddWareHouse = new javax.swing.JButton();
+        btnViewInventory = new javax.swing.JButton();
+        btnRemoveWarehouse = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -91,8 +93,8 @@ public class ManageWarehouseJPanel extends javax.swing.JPanel {
         lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl1.setText("Manage Warehouses");
 
-        tblware.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        tblware.setModel(new javax.swing.table.DefaultTableModel(
+        tblWarehouseDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        tblWarehouseDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -100,9 +102,10 @@ public class ManageWarehouseJPanel extends javax.swing.JPanel {
                 "ID", "Location", "Total Vaccines"
             }
         ));
-        tblware.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblware);
+        tblWarehouseDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblWarehouseDetails);
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         lbl2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -113,27 +116,38 @@ public class ManageWarehouseJPanel extends javax.swing.JPanel {
         lbl3.setForeground(new java.awt.Color(0, 0, 102));
         lbl3.setText("Location:");
 
-        txt1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtLocation.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
-        btn1.setBackground(new java.awt.Color(0, 0, 102));
-        btn1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn1.setForeground(new java.awt.Color(255, 255, 255));
-        btn1.setText("Add Warehouse");
-        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn1.addActionListener(new java.awt.event.ActionListener() {
+        btnAddWareHouse.setBackground(new java.awt.Color(0, 0, 102));
+        btnAddWareHouse.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnAddWareHouse.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddWareHouse.setText("Add Warehouse");
+        btnAddWareHouse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddWareHouse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
+                btnAddWareHouseActionPerformed(evt);
             }
         });
 
-        btn2.setBackground(new java.awt.Color(0, 0, 102));
-        btn2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn2.setForeground(new java.awt.Color(255, 255, 255));
-        btn2.setText("View Inventory");
-        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn2.addActionListener(new java.awt.event.ActionListener() {
+        btnViewInventory.setBackground(new java.awt.Color(0, 0, 102));
+        btnViewInventory.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnViewInventory.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewInventory.setText("View Inventory");
+        btnViewInventory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnViewInventory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2ActionPerformed(evt);
+                btnViewInventoryActionPerformed(evt);
+            }
+        });
+
+        btnRemoveWarehouse.setBackground(new java.awt.Color(0, 0, 102));
+        btnRemoveWarehouse.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnRemoveWarehouse.setForeground(new java.awt.Color(255, 255, 255));
+        btnRemoveWarehouse.setText("Remove Warehouse");
+        btnRemoveWarehouse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRemoveWarehouse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveWarehouseActionPerformed(evt);
             }
         });
 
@@ -145,23 +159,22 @@ public class ManageWarehouseJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1019, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                            .addComponent(txt1))
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lbl2)
+                        .addComponent(btnRemoveWarehouse, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 849, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnViewInventory, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbl3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnAddWareHouse, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                                    .addComponent(txtLocation)))
+                            .addComponent(lbl2))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -172,65 +185,81 @@ public class ManageWarehouseJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn2)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl3)
-                            .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(btn1))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnViewInventory)
+                    .addComponent(btnRemoveWarehouse))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(lbl2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl3)
+                    .addComponent(txtLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnAddWareHouse)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+    private void btnAddWareHouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddWareHouseActionPerformed
         // TODO add your handling code here:
 
-        String location = txt1.getText();
+        String location = txtLocation.getText();
         Warehouse warehouse = distributorOrganization.getWarehouseDir().addNewWareHouse();
         warehouse.setLocation(location);
         populateTable();
 
-    }//GEN-LAST:event_btn1ActionPerformed
+    }//GEN-LAST:event_btnAddWareHouseActionPerformed
 
-    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+    private void btnViewInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewInventoryActionPerformed
         // TODO add your handling code here:
 
-        int selectedRow = tblware.getSelectedRow();
+        int selectedRow = tblWarehouseDetails.getSelectedRow();
 
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Kindly select a Warehouse from table");
             return;
         }
 
-        Warehouse warehouse = (Warehouse)tblware.getValueAt(selectedRow, 0);
+        Warehouse warehouse = (Warehouse)tblWarehouseDetails.getValueAt(selectedRow, 0);
 
         ViewInventoryJPanel panel = new ViewInventoryJPanel(workContainer, warehouse);
         workContainer.add("ViewInventoryJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
 
-    }//GEN-LAST:event_btn2ActionPerformed
+    }//GEN-LAST:event_btnViewInventoryActionPerformed
+
+    private void btnRemoveWarehouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveWarehouseActionPerformed
+        // TODO add your handling code here:
+        int row = tblWarehouseDetails.getSelectedRow();
+        if(row<0) {
+            JOptionPane.showMessageDialog(null, "Please select a warehouse from the table and try again.");
+            return;
+        }
+
+        //Person person = (Person)tblPersonDetails.getValueAt(row, 0);
+        Warehouse warehouse = (Warehouse)tblWarehouseDetails.getValueAt(row, 0);
+        
+//        Organization organize = (Organization) tblPersonDetails.getValueAt(row, 4);
+//        organize.getPersonDirectory().removePerson(person);
+        distributorOrganization.getWarehouseDir().removeWarehouse(warehouse);
+//        populatePersonTable();
+        populateTable();
+    }//GEN-LAST:event_btnRemoveWarehouseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnAddWareHouse;
+    private javax.swing.JButton btnRemoveWarehouse;
+    private javax.swing.JButton btnViewInventory;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
     private javax.swing.JLabel lbl3;
-    private javax.swing.JTable tblware;
-    private javax.swing.JTextField txt1;
+    private javax.swing.JTable tblWarehouseDetails;
+    private javax.swing.JTextField txtLocation;
     // End of variables declaration//GEN-END:variables
 }

@@ -88,7 +88,6 @@ public class ManageCityListJPanel extends javax.swing.JPanel {
         txtCityName = new javax.swing.JTextField();
         btnAddCityName = new javax.swing.JButton();
         btnRemoveCity = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(204, 204, 255));
@@ -103,8 +102,9 @@ public class ManageCityListJPanel extends javax.swing.JPanel {
         lblState.setForeground(new java.awt.Color(0, 0, 102));
         lblState.setText("State:");
 
+        comboBoxStateList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxStateList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        comboBoxStateList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxStateList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxStateList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBoxStateList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,15 +158,8 @@ public class ManageCityListJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(0, 0, 102));
-        btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
-        btnBack.setText("<");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -182,7 +175,6 @@ public class ManageCityListJPanel extends javax.swing.JPanel {
                         .addComponent(lblState)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(comboBoxStateList, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnBack, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(lblCityName)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -203,8 +195,6 @@ public class ManageCityListJPanel extends javax.swing.JPanel {
                 .addGap(7, 7, 7)
                 .addComponent(lblTitle)
                 .addGap(18, 18, 18)
-                .addComponent(btnBack)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblState)
                     .addComponent(comboBoxStateList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -219,7 +209,7 @@ public class ManageCityListJPanel extends javax.swing.JPanel {
                     .addComponent(lblCityName)
                     .addComponent(txtCityName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAddCityName, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAddCityName, btnRemoveCity, lblCityName, txtCityName});
@@ -272,17 +262,9 @@ public class ManageCityListJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnRemoveCityActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        workContainer.remove(this);
-        CardLayout layout = (CardLayout) workContainer.getLayout();
-        layout.previous(workContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddCityName;
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnRemoveCity;
     private javax.swing.JComboBox comboBoxStateList;
     private javax.swing.JScrollPane jScrollPane1;

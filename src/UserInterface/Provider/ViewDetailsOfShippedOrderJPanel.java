@@ -106,7 +106,7 @@ public class ViewDetailsOfShippedOrderJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Drug Code", "Drug Name", "Brand", "Drug ID", "Batch ID", "Quantity", "Manufacture Date"
+                "Medicine Code", "Medicine Name", "Brand", "Medicine ID", "Batch ID", "Quantity", "Manufacture Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -123,7 +123,7 @@ public class ViewDetailsOfShippedOrderJPanel extends javax.swing.JPanel {
         btnStoreVaccine.setBackground(new java.awt.Color(0, 0, 102));
         btnStoreVaccine.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btnStoreVaccine.setForeground(new java.awt.Color(255, 255, 255));
-        btnStoreVaccine.setText("Store Vaccines");
+        btnStoreVaccine.setText("Store Medicines");
         btnStoreVaccine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStoreVaccineActionPerformed(evt);
@@ -178,8 +178,8 @@ public class ViewDetailsOfShippedOrderJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnStoreVaccine, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addComponent(btnStoreVaccine)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

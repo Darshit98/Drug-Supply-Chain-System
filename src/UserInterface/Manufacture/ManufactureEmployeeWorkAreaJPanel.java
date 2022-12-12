@@ -54,7 +54,7 @@ public class ManufactureEmployeeWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jSplitPane1.setBackground(new java.awt.Color(204, 204, 255));
+        jSplitPane1.setBackground(new java.awt.Color(0, 0, 102));
         jSplitPane1.setDividerLocation(210);
 
         workContainer.setBackground(new java.awt.Color(102, 153, 255));

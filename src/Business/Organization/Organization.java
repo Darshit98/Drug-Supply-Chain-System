@@ -31,10 +31,10 @@ public abstract class Organization {
     
     public enum OrganizationType{
         EnterpriseAdminOrg("Enterprise Admin Organization") ,
-        CDCOrg ("CDC Organization"),
+        FDAOrg ("FDA Organization"),
         ManufactureOrg("Manufacture Organization"),
         DistributorOrg("Distributor Organization"),
-        LocalHealthDepartmentOrg("Local Health Department"),
+        StateHealthDepartmentOrg("State Health Department"),
         HospitalOrg("Hospital Organization"),
         PatientOrganization("Patient Organization"),
         MedicalOrganization("Medical Organization"),

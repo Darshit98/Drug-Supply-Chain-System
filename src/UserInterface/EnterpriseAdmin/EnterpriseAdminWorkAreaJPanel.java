@@ -15,12 +15,16 @@ import javax.swing.JPanel;
  */
 public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
 
-    private JPanel userProcessContainer;
-    private Enterprise enterprise;
-    private UserAccount userAccount;
-    private EcoSystem business;
+    private final JPanel userProcessContainer;
+    private final Enterprise enterprise;
+    private final UserAccount userAccount;
+    private final EcoSystem business;
     /**
      * Creates new form EnterpriseAdminWorkAreaJPanel
+     * @param userProcessContainer
+     * @param enterprise
+     * @param userAccount
+     * @param business
      */
     public EnterpriseAdminWorkAreaJPanel(JPanel userProcessContainer, Enterprise enterprise, UserAccount userAccount, EcoSystem business ) {
         initComponents();
@@ -49,7 +53,7 @@ public class EnterpriseAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jSplitPane1.setBackground(new java.awt.Color(204, 204, 255));
+        jSplitPane1.setBackground(new java.awt.Color(0, 0, 102));
         jSplitPane1.setDividerLocation(180);
 
         mainMenuContainer.setBackground(new java.awt.Color(255, 255, 204));

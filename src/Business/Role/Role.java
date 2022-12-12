@@ -18,12 +18,12 @@ public abstract class Role {
     
     public enum RoleType{
         EnterpriseAdmin("Enterprise Admin"),
-        CDCEmployee("CDC Employee"),
+        FDAEmployee("FDA Employee"),
         Distributor("Distributor"),
         Provider("Provider"),
         Manufacturer("Manufacturer"),
         Patient("Patient"),
-        LocalHealthDepartment("Local Health Department"),
+        StateHealthDepartment("State Health Department"),
         MedicalOfficer("Medical Officer"),
         ClinicProvider("Clinc Provider");
         

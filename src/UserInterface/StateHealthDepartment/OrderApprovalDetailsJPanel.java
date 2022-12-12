@@ -7,10 +7,10 @@
 package UserInterface.StateHealthDepartment;
 
 import Business.EcoSystem;
-import Business.Enterprise.LocalHealthDepartment;
+import Business.Enterprise.StateHealthDepartment;
 import Business.Network.StateNetwork;
 import Business.Organization.Organization;
-import Business.Organization.LHDImmuneOrganization;
+import Business.Organization.SHDImmuneOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.ProviderVaccineOrderWorkRequest;
 import Business.WorkQueue.WorkRequest;
@@ -30,12 +30,12 @@ public class OrderApprovalDetailsJPanel extends javax.swing.JPanel {
      */
     private final JPanel workContainer;
     private final UserAccount userAccount;
-    private final LocalHealthDepartment enterprise;
-    private final LHDImmuneOrganization phdOrg;
+    private final StateHealthDepartment enterprise;
+    private final SHDImmuneOrganization phdOrg;
     private final EcoSystem business;
     private final StateNetwork state;
     
-    public OrderApprovalDetailsJPanel(JPanel workContainer, UserAccount userAccount, LocalHealthDepartment enterprise,LHDImmuneOrganization phdOrg, StateNetwork state,EcoSystem business) {
+    public OrderApprovalDetailsJPanel(JPanel workContainer, UserAccount userAccount, StateHealthDepartment enterprise,SHDImmuneOrganization phdOrg, StateNetwork state,EcoSystem business) {
         initComponents();
         this.workContainer = workContainer;
         this.userAccount = userAccount;
@@ -52,11 +52,11 @@ public class OrderApprovalDetailsJPanel extends javax.swing.JPanel {
         DefaultTableModel defaulttabelmodel = (DefaultTableModel) tblOrderDetails.getModel();
         defaulttabelmodel.setRowCount(0);
         
-         LHDImmuneOrganization pOrg = null;
+         SHDImmuneOrganization pOrg = null;
          
         for(Organization organize : enterprise.getOrganizationDirectory().getOrganizationList())
-        {   if(organize instanceof LHDImmuneOrganization)
-        {   pOrg = (LHDImmuneOrganization)organize;
+        {   if(organize instanceof SHDImmuneOrganization)
+        {   pOrg = (SHDImmuneOrganization)organize;
             for(WorkRequest workRequest : pOrg.getWorkQueue().getWorkRequestList())
             {   if(workRequest instanceof ProviderVaccineOrderWorkRequest)
             {ProviderVaccineOrderWorkRequest vaccineOrderWR = (ProviderVaccineOrderWorkRequest)workRequest;
@@ -163,13 +163,13 @@ public class OrderApprovalDetailsJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitle)
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnRefresh)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnViewAndApprove)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

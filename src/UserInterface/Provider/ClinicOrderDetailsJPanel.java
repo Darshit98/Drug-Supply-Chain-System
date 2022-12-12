@@ -9,7 +9,7 @@ package UserInterface.Provider;
 import Business.Network.StateNetwork;
 import Business.Order.OrderItem;
 import Business.Organization.Organization;
-import Business.Organization.LHDImmuneOrganization;
+import Business.Organization.SHDImmuneOrganization;
 import Business.WorkQueue.ProviderVaccineOrderWorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -63,8 +63,8 @@ public class ClinicOrderDetailsJPanel extends javax.swing.JPanel {
     
     private void populateOrderTable(){
         
-         int rowCount = tblorderdetail.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblorderdetail.getModel();
+         int rowCount = tblOrderDetails.getRowCount();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblOrderDetails.getModel();
         
         for(int i=rowCount-1 ; i>=0; i--){
             defaulttabelmodel.removeRow(i);
@@ -106,7 +106,7 @@ public class ClinicOrderDetailsJPanel extends javax.swing.JPanel {
         txtTotalAmount = new javax.swing.JTextField();
         txtOrderNumber = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblorderdetail = new javax.swing.JTable();
+        tblOrderDetails = new javax.swing.JTable();
         lblOrder = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         btnForwardOrderToLHD = new javax.swing.JButton();
@@ -137,13 +137,13 @@ public class ClinicOrderDetailsJPanel extends javax.swing.JPanel {
 
         txtOrderNumber.setEnabled(false);
 
-        tblorderdetail.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        tblorderdetail.setModel(new javax.swing.table.DefaultTableModel(
+        tblOrderDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        tblOrderDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Drug Code", "Drug Name", "Brand", "Drug ID", "Batch ID", "Price", "Quantity", "Manufacture date", "Amount"
+                "Medicine Code", "Medicine Name", "Brand", "Medicine ID", "Batch ID", "Price", "Quantity", "Manufacture date", "Amount"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -154,8 +154,8 @@ public class ClinicOrderDetailsJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblorderdetail.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(tblorderdetail);
+        tblOrderDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tblOrderDetails);
 
         lblOrder.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lblOrder.setForeground(new java.awt.Color(0, 0, 102));
@@ -174,7 +174,7 @@ public class ClinicOrderDetailsJPanel extends javax.swing.JPanel {
         btnForwardOrderToLHD.setBackground(new java.awt.Color(0, 0, 102));
         btnForwardOrderToLHD.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btnForwardOrderToLHD.setForeground(new java.awt.Color(255, 255, 255));
-        btnForwardOrderToLHD.setText("Forward the Order to LHD");
+        btnForwardOrderToLHD.setText("Forward the Order to SHD");
         btnForwardOrderToLHD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnForwardOrderToLHDActionPerformed(evt);
@@ -261,7 +261,7 @@ public class ClinicOrderDetailsJPanel extends javax.swing.JPanel {
         
         for(Organization org: state.getLocalHealthDepartment().getOrganizationDirectory().getOrganizationList())
                 {
-                    if(org instanceof LHDImmuneOrganization)
+                    if(org instanceof SHDImmuneOrganization)
                     {
                         org.getWorkQueue().addWorkRequest(request);
                     }
@@ -281,7 +281,7 @@ public class ClinicOrderDetailsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblOrderCost;
     private javax.swing.JLabel lblOrderDetails;
     private javax.swing.JLabel lblOrderNumber;
-    private javax.swing.JTable tblorderdetail;
+    private javax.swing.JTable tblOrderDetails;
     private javax.swing.JTextField txtOrderDetail;
     private javax.swing.JTextField txtOrderNumber;
     private javax.swing.JTextField txtTotalAmount;

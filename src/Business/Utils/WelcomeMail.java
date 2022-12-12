@@ -21,7 +21,7 @@ public class WelcomeMail {
     public static void sendEmailMessage(String emailId, String subject, String text) {
         String to = emailId;
         String from = "drugsupplychainsystem@gmail.com";
-        String pass = "llubxxbussvzwysz";
+        String pass = "dmbfvuavooqdynbj";
 
 
 

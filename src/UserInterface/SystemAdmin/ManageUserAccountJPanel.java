@@ -51,7 +51,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         lblTitle.setText("Manage User Account");
 
         btnMangeFDAAdmin.setBackground(new java.awt.Color(0, 0, 102));
-        btnMangeFDAAdmin.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnMangeFDAAdmin.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         btnMangeFDAAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnMangeFDAAdmin.setText("Manage FDA Admin");
         btnMangeFDAAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +61,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         });
 
         btnMangeDistributorAdmin.setBackground(new java.awt.Color(0, 0, 102));
-        btnMangeDistributorAdmin.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnMangeDistributorAdmin.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         btnMangeDistributorAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnMangeDistributorAdmin.setText("Manage Distributor Admin");
         btnMangeDistributorAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +71,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         });
 
         btnManageProviderAdmin.setBackground(new java.awt.Color(0, 0, 102));
-        btnManageProviderAdmin.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnManageProviderAdmin.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         btnManageProviderAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnManageProviderAdmin.setText("Manage Provider Admin");
         btnManageProviderAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +81,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         });
 
         btnManageSHAdmin.setBackground(new java.awt.Color(0, 0, 102));
-        btnManageSHAdmin.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnManageSHAdmin.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         btnManageSHAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnManageSHAdmin.setText("Manage State Health Admin");
         btnManageSHAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -95,15 +95,15 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(106, Short.MAX_VALUE)
+                .addContainerGap(72, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnMangeFDAAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnMangeDistributorAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnManageProviderAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnManageSHAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
             .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -114,15 +114,15 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitle)
-                .addGap(18, 18, 18)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnMangeFDAAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                     .addComponent(btnManageSHAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnMangeDistributorAdmin)
                     .addComponent(btnManageProviderAdmin))
-                .addContainerGap(281, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnManageProviderAdmin, btnMangeDistributorAdmin, btnMangeFDAAdmin});

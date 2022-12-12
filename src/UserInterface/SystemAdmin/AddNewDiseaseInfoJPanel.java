@@ -38,7 +38,7 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jdateUpdateDate = new com.toedter.calendar.JDateChooser();
+        jDateUpdateDate = new com.toedter.calendar.JDateChooser();
         lblLastUpdateDate = new javax.swing.JLabel();
         txtDiseaseCode = new javax.swing.JTextField();
         txtDiseaseName = new javax.swing.JTextField();
@@ -50,7 +50,7 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(204, 204, 255));
 
-        jdateUpdateDate.setDateFormatString(" MMM, d yyyy");
+        jDateUpdateDate.setDateFormatString(" MMM, d yyyy");
 
         lblLastUpdateDate.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lblLastUpdateDate.setForeground(new java.awt.Color(0, 0, 102));
@@ -109,7 +109,7 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtDiseaseName, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDiseaseCode, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jdateUpdateDate, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDateUpdateDate, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnAddDiseaseInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 223, Short.MAX_VALUE))
                     .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -136,13 +136,13 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblLastUpdateDate)
-                    .addComponent(jdateUpdateDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDateUpdateDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnAddDiseaseInformation)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAddDiseaseInformation, jdateUpdateDate, txtDiseaseCode, txtDiseaseName});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAddDiseaseInformation, jDateUpdateDate, txtDiseaseCode, txtDiseaseName});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -163,7 +163,7 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
 
         }
 
-        Date lastUpdatedDate = jdateUpdateDate.getDate();
+        Date lastUpdatedDate = jDateUpdateDate.getDate();
 
         for(Disease disease : business.getDiseaseDirectory().getdiseaseDirectory())
         {
@@ -182,7 +182,7 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Disease added!");
         txtDiseaseCode.setText("");
         txtDiseaseName.setText("");
-        jdateUpdateDate.setDate(null);
+        jDateUpdateDate.setDate(null);
         
         
     }//GEN-LAST:event_btnAddDiseaseInformationActionPerformed
@@ -198,7 +198,7 @@ public class AddNewDiseaseInfoJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddDiseaseInformation;
     private javax.swing.JButton btnBack;
-    private com.toedter.calendar.JDateChooser jdateUpdateDate;
+    private com.toedter.calendar.JDateChooser jDateUpdateDate;
     private javax.swing.JLabel lblDiseaseCode;
     private javax.swing.JLabel lblDiseaseName;
     private javax.swing.JLabel lblLastUpdateDate;

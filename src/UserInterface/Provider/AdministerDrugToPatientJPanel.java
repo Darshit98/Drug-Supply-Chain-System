@@ -30,14 +30,14 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AdministerDrugToPatientJPanel
      */
-    private JPanel workContainer;
+    private final JPanel workContainer;
 
-    private HospitalEnterprise hospital;
-    private UserAccount userAccount;
-    private HospitalOrganization hospitalOrg;
-    private EcoSystem business;
-    private Patient patient;
-    private StateNetwork state;
+    private final HospitalEnterprise hospital;
+    private final UserAccount userAccount;
+    private final HospitalOrganization hospitalOrg;
+    private final EcoSystem business;
+    private final Patient patient;
+    private final StateNetwork state;
     private int flagg;
     
     public AdministerDrugToPatientJPanel(JPanel workContainer, HospitalEnterprise hospital,HospitalOrganization hospitalOrg,UserAccount userAccount , EcoSystem business,Patient patient, StateNetwork state) {
@@ -199,7 +199,6 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
         comboBoxDrugBrand = new javax.swing.JComboBox();
         btnback = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
         comboBoxInjectingArm = new javax.swing.JComboBox();
         comboBoxStatus = new javax.swing.JComboBox();
 
@@ -227,8 +226,9 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
         lblDrugCode.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblDrugCode.setText("Drug Code:");
 
+        comboBoxDrugList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxDrugList.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        comboBoxDrugList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxDrugList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxDrugList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBoxDrugList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -254,8 +254,9 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
         lblBatchNumber.setForeground(new java.awt.Color(0, 0, 102));
         lblBatchNumber.setText("Batch Number:");
 
+        comboBoxBatchNumber.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxBatchNumber.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        comboBoxBatchNumber.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxBatchNumber.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxBatchNumber.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBoxBatchNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -296,8 +297,9 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
         lblBrand.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblBrand.setText("Brand:");
 
+        comboBoxDrugBrand.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxDrugBrand.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        comboBoxDrugBrand.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxDrugBrand.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxDrugBrand.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBoxDrugBrand.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,17 +307,22 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnback.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/ICONS/11122021icons/MicrosoftTeams-image (1).png"))); // NOI18N
+        btnback.setBackground(new java.awt.Color(0, 0, 102));
+        btnback.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnback.setForeground(new java.awt.Color(255, 255, 255));
+        btnback.setText("<");
         btnback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbackActionPerformed(evt);
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
+        comboBoxInjectingArm.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxInjectingArm.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        comboBoxInjectingArm.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxInjectingArm.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxInjectingArm.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Right", "Left" }));
         comboBoxInjectingArm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -323,8 +330,9 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        comboBoxStatus.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxStatus.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        comboBoxStatus.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxStatus.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Success", "Fail" }));
         comboBoxStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -339,7 +347,6 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator3)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblDrugDetails)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -352,12 +359,12 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
                             .addComponent(lblManufacturingDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblArm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtManufacturingDate, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                                .addComponent(comboBoxInjectingArm, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(comboBoxDrugList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(comboBoxDrugBrand, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtManufacturingDate)
+                            .addComponent(comboBoxInjectingArm, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(comboBoxDrugList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(comboBoxDrugBrand, 0, 159, Short.MAX_VALUE)
+                            .addComponent(btnAdministerDrug, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -379,17 +386,16 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(comboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE))))
+                                    .addComponent(comboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(85, 85, 85)
                                 .addComponent(lblPatient)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnAdministerDrug))
+                            .addComponent(btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -400,8 +406,10 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addContainerGap()
                 .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnback)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -412,7 +420,7 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblDrugDetails)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(comboBoxBatchNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -447,11 +455,7 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
                             .addComponent(lblInjectionStatus))))
                 .addGap(18, 18, 18)
                 .addComponent(btnAdministerDrug)
-                .addGap(141, 141, 141)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblArm, lblBatchNumber, lblBrand, lblDoseNumber, lblDrugCode, lblGivenBy, lblInjectionStatus, lblManufacturingDate});
@@ -654,7 +658,6 @@ public class AdministerDrugToPatientJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox comboBoxStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel lblArm;
     private javax.swing.JLabel lblBatchNumber;
     private javax.swing.JLabel lblBrand;

@@ -7,12 +7,12 @@
 package UserInterface.StateHealthDepartment;
 
 import Business.EcoSystem;
-import Business.Enterprise.LocalHealthDepartment;
+import Business.Enterprise.StateHealthDepartment;
 import Business.Network.StateNetwork;
 import Business.Order.OrderItem;
-import Business.Organization.CDCOrganization;
+import Business.Organization.FDAOrganization;
 import Business.Organization.Organization;
-import Business.Organization.LHDImmuneOrganization;
+import Business.Organization.SHDImmuneOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.ProviderVaccineOrderWorkRequest;
 import java.awt.CardLayout;
@@ -31,13 +31,13 @@ public class ViewOrderDetailsJPanel extends javax.swing.JPanel {
      */
     private final JPanel workContainer;
     private final UserAccount userAccount;
-    private final LocalHealthDepartment enterprise;
-    private final LHDImmuneOrganization lhdOrg;
+    private final StateHealthDepartment enterprise;
+    private final SHDImmuneOrganization lhdOrg;
     private final EcoSystem business;
     private final StateNetwork state;
     private final ProviderVaccineOrderWorkRequest request;
     
-    public ViewOrderDetailsJPanel(JPanel workContainer, UserAccount userAccount, LocalHealthDepartment enterprise,LHDImmuneOrganization lhdOrg, StateNetwork state,EcoSystem business, ProviderVaccineOrderWorkRequest request) {
+    public ViewOrderDetailsJPanel(JPanel workContainer, UserAccount userAccount, StateHealthDepartment enterprise,SHDImmuneOrganization lhdOrg, StateNetwork state,EcoSystem business, ProviderVaccineOrderWorkRequest request) {
         initComponents();
         this.workContainer = workContainer;
         this.userAccount = userAccount;
@@ -211,11 +211,11 @@ public class ViewOrderDetailsJPanel extends javax.swing.JPanel {
                     .addComponent(txtOrderNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblContractDetails)
                     .addComponent(txtContractDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnApproveOrder)
-                .addGap(181, 181, 181))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnApproveOrder, lblContractDetails, lblOrderNumber, txtContractDetails, txtOrderNumber});
@@ -244,10 +244,10 @@ public class ViewOrderDetailsJPanel extends javax.swing.JPanel {
         
         //fetch the cdc org and insert the request into its workQueue
         
-        CDCOrganization cdcOrg = null;
+        FDAOrganization cdcOrg = null;
         for(Organization org: business.getCdc().getOrganizationDirectory().getOrganizationList())
         {
-            if(org instanceof CDCOrganization)
+            if(org instanceof FDAOrganization)
             {
                 org.getWorkQueue().addWorkRequest(request);
             }

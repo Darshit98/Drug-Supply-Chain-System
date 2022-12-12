@@ -86,7 +86,6 @@ public class ManageStateJPanel extends javax.swing.JPanel {
         lblStateName = new javax.swing.JLabel();
         comboBoxAddedStateList = new javax.swing.JComboBox();
         btnAddState = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
         btnRemoveState = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
@@ -124,8 +123,9 @@ public class ManageStateJPanel extends javax.swing.JPanel {
         lblStateName.setForeground(new java.awt.Color(0, 0, 102));
         lblStateName.setText("State Name:");
 
+        comboBoxAddedStateList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxAddedStateList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        comboBoxAddedStateList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxAddedStateList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxAddedStateList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btnAddState.setBackground(new java.awt.Color(0, 0, 102));
@@ -135,16 +135,6 @@ public class ManageStateJPanel extends javax.swing.JPanel {
         btnAddState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddStateActionPerformed(evt);
-            }
-        });
-
-        btnBack.setBackground(new java.awt.Color(0, 0, 102));
-        btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
-        btnBack.setText("<");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
             }
         });
 
@@ -158,6 +148,7 @@ public class ManageStateJPanel extends javax.swing.JPanel {
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -174,14 +165,11 @@ public class ManageStateJPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnRemoveState, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblStateName)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(comboBoxAddedStateList, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAddState))
-                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblStateName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comboBoxAddedStateList, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAddState)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -190,8 +178,6 @@ public class ManageStateJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitle)
-                .addGap(18, 18, 18)
-                .addComponent(btnBack)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
@@ -203,7 +189,7 @@ public class ManageStateJPanel extends javax.swing.JPanel {
                     .addComponent(lblStateName)
                     .addComponent(comboBoxAddedStateList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAddState))
-                .addGap(254, 254, 254))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -228,14 +214,6 @@ public class ManageStateJPanel extends javax.swing.JPanel {
         populateTable();
     }//GEN-LAST:event_btnAddStateActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        workContainer.remove(this);
-        CardLayout layout = (CardLayout) workContainer.getLayout();
-        layout.previous(workContainer);
-        
-    }//GEN-LAST:event_btnBackActionPerformed
-
     private void btnRemoveStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveStateActionPerformed
         // TODO add your handling code here:
         int row = tblStateDetails.getSelectedRow();
@@ -252,7 +230,6 @@ public class ManageStateJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddState;
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnRemoveState;
     private javax.swing.JComboBox comboBoxAddedStateList;
     private javax.swing.JScrollPane jScrollPane1;

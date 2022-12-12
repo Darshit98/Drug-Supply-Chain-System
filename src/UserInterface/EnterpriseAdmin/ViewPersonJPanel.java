@@ -74,6 +74,8 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         lblPhone.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPhone.setText("Phone:");
 
+        txtPhone.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+
         lblViewUpdatePerson.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lblViewUpdatePerson.setForeground(new java.awt.Color(0, 0, 102));
         lblViewUpdatePerson.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -91,11 +93,14 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         lblFirstName.setMaximumSize(new java.awt.Dimension(89, 25));
         lblFirstName.setMinimumSize(new java.awt.Dimension(89, 25));
 
+        txtFirstName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtFirstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFirstNameActionPerformed(evt);
             }
         });
+
+        txtLastName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
 
         lblLastName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lblLastName.setForeground(new java.awt.Color(0, 0, 102));
@@ -111,6 +116,8 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
                 btnUpdatePersonActionPerformed(evt);
             }
         });
+
+        txtEmail.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
 
         btnBack.setBackground(new java.awt.Color(0, 0, 102));
         btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -132,6 +139,7 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         lblDepartment.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblDepartment.setText("Department:");
 
+        txtDepartment.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtDepartment.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -144,17 +152,11 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(12, 12, 12)
+                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
+                                .addContainerGap(162, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,8 +183,12 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
                                                 .addComponent(jDateDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(18, 18, 18)
-                                                .addComponent(btnUpdatePerson, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                        .addGap(0, 229, Short.MAX_VALUE)))
+                                                .addComponent(btnUpdatePerson, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 191, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -216,12 +222,12 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
                     .addComponent(lblDateOfBirth)
                     .addComponent(jDateDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnUpdatePerson)
-                .addGap(128, 128, 128))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblDateOfBirth, lblEmail, lblFirstName, lblLastName, lblPhone});

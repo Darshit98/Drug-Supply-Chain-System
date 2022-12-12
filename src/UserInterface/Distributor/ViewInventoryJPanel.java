@@ -20,20 +20,22 @@ public class ViewInventoryJPanel extends javax.swing.JPanel {
     
     /**
      * Creates new form ViewInventoryJPanel
+     * @param workContainer
+     * @param warehouse
      */
     public ViewInventoryJPanel(JPanel workContainer, Warehouse warehouse ) {
         initComponents();
         this.workContainer = workContainer;
         this.warehouse = warehouse;
-        txt1.setText(String.valueOf(warehouse.getId()));
-        txt2.setText(String.valueOf(warehouse.getLocation()));
+        txtWarehouseID.setText(String.valueOf(warehouse.getId()));
+        txtLocation.setText(String.valueOf(warehouse.getLocation()));
         populateTable();
 
     }
     
     private void populateTable(){
         
-         DefaultTableModel defaulttabelmodel = (DefaultTableModel) tblinven.getModel();
+         DefaultTableModel defaulttabelmodel = (DefaultTableModel) tblInventoryDetails.getModel();
         defaulttabelmodel.setRowCount(0);
         
         for(VaccineDetails product : warehouse.getVaccineInventoryList())
@@ -65,13 +67,14 @@ public class ViewInventoryJPanel extends javax.swing.JPanel {
 
         lbl1 = new javax.swing.JLabel();
         lbl2 = new javax.swing.JLabel();
-        txt1 = new javax.swing.JTextField();
+        txtWarehouseID = new javax.swing.JTextField();
         lbl3 = new javax.swing.JLabel();
-        txt2 = new javax.swing.JTextField();
+        txtLocation = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblinven = new javax.swing.JTable();
-        jSeparator1 = new javax.swing.JSeparator();
-        btn1 = new javax.swing.JButton();
+        tblInventoryDetails = new javax.swing.JTable();
+        btnBack = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(204, 204, 255));
 
         lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lbl1.setForeground(new java.awt.Color(0, 0, 102));
@@ -82,21 +85,21 @@ public class ViewInventoryJPanel extends javax.swing.JPanel {
         lbl2.setForeground(new java.awt.Color(0, 0, 102));
         lbl2.setText("Warehouse ID:");
 
-        txt1.setEnabled(false);
+        txtWarehouseID.setEnabled(false);
 
         lbl3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl3.setForeground(new java.awt.Color(0, 0, 102));
         lbl3.setText("Location:");
 
-        txt2.setEnabled(false);
+        txtLocation.setEnabled(false);
 
-        tblinven.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        tblinven.setModel(new javax.swing.table.DefaultTableModel(
+        tblInventoryDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        tblInventoryDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Vaccine Code", "Vaccine Name", "Brand", "Vaccine id", "Batch ID", "Price", "Quantity", "Manufacture date"
+                "Medicine Code", "Medicine Name", "Brand", "Medicine ID", "Batch ID", "Price", "Quantity", "Manufacture date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -107,17 +110,17 @@ public class ViewInventoryJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblinven.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(tblinven);
+        tblInventoryDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tblInventoryDetails);
 
-        btn1.setBackground(new java.awt.Color(0, 0, 102));
-        btn1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn1.setForeground(new java.awt.Color(255, 255, 255));
-        btn1.setText("<");
-        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn1.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(0, 0, 102));
+        btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<");
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
@@ -128,21 +131,20 @@ public class ViewInventoryJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
                     .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(lbl2)
                         .addGap(18, 18, 18)
-                        .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtWarehouseID, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addComponent(lbl3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -150,39 +152,36 @@ public class ViewInventoryJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbl1)
-                .addGap(18, 18, 18)
-                .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl2)
-                    .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtWarehouseID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl3)
-                    .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         workContainer.remove(this);
         CardLayout layout = (CardLayout) workContainer.getLayout();
         layout.previous(workContainer);
-    }//GEN-LAST:event_btn1ActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
+    private javax.swing.JButton btnBack;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
     private javax.swing.JLabel lbl3;
-    private javax.swing.JTable tblinven;
-    private javax.swing.JTextField txt1;
-    private javax.swing.JTextField txt2;
+    private javax.swing.JTable tblInventoryDetails;
+    private javax.swing.JTextField txtLocation;
+    private javax.swing.JTextField txtWarehouseID;
     // End of variables declaration//GEN-END:variables
 }

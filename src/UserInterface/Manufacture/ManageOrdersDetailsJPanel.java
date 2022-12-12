@@ -8,7 +8,6 @@ package UserInterface.Manufacture;
 
 import Business.EcoSystem;
 import Business.NationalEnterprise.Manufacturer;
-import Business.Order.Order;
 import Business.Organization.ManufactureOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
@@ -29,10 +28,10 @@ public class ManageOrdersDetailsJPanel extends javax.swing.JPanel {
      * Creates new form ManageOrdersDetailsJPanel
      */
     
-    private JPanel workContainer;
-    private Manufacturer manufacturer;
-    private UserAccount userAccount;
-    private EcoSystem business;
+    private final JPanel workContainer;
+    private final Manufacturer manufacturer;
+    private final UserAccount userAccount;
+    private final EcoSystem business;
     
     public ManageOrdersDetailsJPanel(JPanel workContainer, Manufacturer manufacturer, UserAccount userAccount, EcoSystem business) {
         initComponents();
@@ -188,6 +187,7 @@ public class ManageOrdersDetailsJPanel extends javax.swing.JPanel {
         lblOrderList.setForeground(new java.awt.Color(0, 0, 102));
         lblOrderList.setText("Orders From Distributor:");
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         tblOrderProcessed.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -264,7 +264,7 @@ public class ManageOrdersDetailsJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAssignOrder)
                     .addComponent(btnprocess))
-                .addGap(42, 42, 42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

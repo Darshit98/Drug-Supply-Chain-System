@@ -23,6 +23,9 @@
   <SubComponents>
     <Container class="javax.swing.JSplitPane" name="jSplitPane1">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="dividerLocation" type="int" value="210"/>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -93,28 +96,16 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnManageDrugCatalog" max="32767" attributes="0"/>
-                                  <Component id="btnManageDiseaseCatalog" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnManageUserAccount" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnManageManufacturer" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="btnManageProvider" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnManageState" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="btnManageCity" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="lblSysAdmin" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="btnManageDrugCatalog" max="32767" attributes="0"/>
+                          <Component id="btnManageDiseaseCatalog" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnManageUserAccount" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnManageManufacturer" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnManageProvider" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnManageState" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnManageCity" max="32767" attributes="0"/>
+                          <Component id="lblSysAdmin" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>

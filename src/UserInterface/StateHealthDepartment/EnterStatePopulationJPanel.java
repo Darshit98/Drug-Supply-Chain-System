@@ -66,6 +66,7 @@ public class EnterStatePopulationJPanel extends javax.swing.JPanel {
         lblUpdatePopulation.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lblUpdatePopulation.setText("Update Population:");
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         btnModifyPopulation.setBackground(new java.awt.Color(0, 0, 102));
@@ -108,6 +109,11 @@ public class EnterStatePopulationJPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblCurrentPopulation, lblUpdatePopulation});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCurrentPopulation, txtUpdatePopulation});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -117,16 +123,16 @@ public class EnterStatePopulationJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCurrentPopulation)
                     .addComponent(txtCurrentPopulation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUpdatePopulation)
                     .addComponent(txtUpdatePopulation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModifyPopulation))
-                .addGap(46, 46, 46)
+                .addGap(18, 18, 18)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnModifyPopulation, lblCurrentPopulation, lblUpdatePopulation, txtCurrentPopulation, txtUpdatePopulation});
@@ -145,21 +151,21 @@ public class EnterStatePopulationJPanel extends javax.swing.JPanel {
             int oldPopulation = state.getStatePopulation();
             int oldVaccineLeft = state.getVaccinesLeftForState();
            
-        int population = Integer.parseInt(txtUpdatePopulation.getText());
-        state.setStatePopulation(population);
-        
-        int populationChange = oldPopulation - population;
-        if(populationChange>=0)
-        {
-            state.setVaccinesLeftForState(oldVaccineLeft+populationChange);
-        }
-        else
-        {
-            state.setVaccinesLeftForState(population-oldPopulation+oldVaccineLeft);
-        }
-        
-        
-        txtCurrentPopulation.setText(String.valueOf(state.getStatePopulation()));
+            int population = Integer.parseInt(txtUpdatePopulation.getText());
+            state.setStatePopulation(population);
+
+            int populationChange = oldPopulation - population;
+            if(populationChange>=0)
+            {
+                state.setVaccinesLeftForState(oldVaccineLeft+populationChange);
+            }
+            else
+            {
+                state.setVaccinesLeftForState(population-oldPopulation+oldVaccineLeft);
+            }
+
+
+            txtCurrentPopulation.setText(String.valueOf(state.getStatePopulation()));
         }
         catch (Exception e)
         {

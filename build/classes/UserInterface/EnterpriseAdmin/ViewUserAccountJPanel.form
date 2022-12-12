@@ -21,39 +21,36 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblViewUpdateUserAccount" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblViewUpdateUserAccount" max="32767" attributes="0"/>
+                      <Component id="btnBack" min="-2" pref="64" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="450" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnBack" min="-2" pref="64" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="432" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblOrganization" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPerson" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblRole" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblUsername" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPassword" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnUpdateUserAccount" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtUserName" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtOrganization" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtPersonName" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtRole" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblOrganization" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblPerson" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblRole" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblUsername" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblPassword" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnUpdateUserAccount" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtUserName" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtOrganization" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtPersonName" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtRole" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -110,6 +107,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtUserName">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="14" style="0"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnBack">
       <Properties>
@@ -141,6 +143,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPassword">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="14" style="0"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblViewUpdateUserAccount">
       <Properties>
@@ -209,16 +216,25 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtOrganization">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="14" style="0"/>
+        </Property>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPersonName">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="14" style="0"/>
+        </Property>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtRole">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="14" style="0"/>
+        </Property>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>

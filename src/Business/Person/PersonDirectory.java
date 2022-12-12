@@ -33,7 +33,7 @@ public class PersonDirectory {
             person = new EnterpriseAdminPerson();
             personList.add(person);
         }
-        else if (type == Role.RoleType.CDCEmployee){
+        else if (type == Role.RoleType.FDAEmployee){
            person = new CDCEmployee();
             personList.add(person); 
         }
@@ -56,7 +56,7 @@ public class PersonDirectory {
            person = new Provider();
             personList.add(person); 
         }
-         else if (type == Role.RoleType.LocalHealthDepartment){
+         else if (type == Role.RoleType.StateHealthDepartment){
            person = new LocalHealthDepartmentEmployee();
             personList.add(person); 
         }

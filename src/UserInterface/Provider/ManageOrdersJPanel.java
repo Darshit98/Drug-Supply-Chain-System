@@ -52,8 +52,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     
     private void populateOrderTable(){
         
-        int rowCount = tblrorder.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblrorder.getModel();
+        int rowCount = tblOrderDetails.getRowCount();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblOrderDetails.getModel();
         
         for(int i=rowCount-1 ; i>=0; i--){
             defaulttabelmodel.removeRow(i);
@@ -97,8 +97,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     
     
     private void populateShipTable(){
-        int rowCount = tblship.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblship.getModel();
+        int rowCount = tblShippedOrder.getRowCount();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblShippedOrder.getModel();
         
         for(int i=rowCount-1 ; i>=0; i--){
             defaulttabelmodel.removeRow(i);
@@ -147,12 +147,12 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         lblOrderStatus = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblrorder = new javax.swing.JTable();
+        tblOrderDetails = new javax.swing.JTable();
         btnViewDetails = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         lblShippingOrder = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblship = new javax.swing.JTable();
+        tblShippedOrder = new javax.swing.JTable();
         btnViewInventory = new javax.swing.JButton();
         btnRefresh2 = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
@@ -168,8 +168,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         lblOrderStatus.setForeground(new java.awt.Color(0, 0, 102));
         lblOrderStatus.setText("Order Status:");
 
-        tblrorder.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        tblrorder.setModel(new javax.swing.table.DefaultTableModel(
+        tblOrderDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        tblOrderDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -185,8 +185,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblrorder.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblrorder);
+        tblOrderDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblOrderDetails);
 
         btnViewDetails.setBackground(new java.awt.Color(0, 0, 102));
         btnViewDetails.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -198,14 +198,15 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         lblShippingOrder.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lblShippingOrder.setForeground(new java.awt.Color(0, 0, 102));
         lblShippingOrder.setText("Shipped Orders:");
 
-        tblship.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        tblship.setModel(new javax.swing.table.DefaultTableModel(
+        tblShippedOrder.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        tblShippedOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -221,8 +222,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblship.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(tblship);
+        tblShippedOrder.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tblShippedOrder);
 
         btnViewInventory.setBackground(new java.awt.Color(0, 0, 102));
         btnViewInventory.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -283,7 +284,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(lblTitle)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -318,14 +319,14 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
     private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         // TODO add your handling code here:
-         int selectedRow = tblrorder.getSelectedRow();
+         int selectedRow = tblOrderDetails.getSelectedRow();
 
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select an Order from table");
             return;
         }
         
-        ProviderVaccineOrderWorkRequest request = (ProviderVaccineOrderWorkRequest)tblrorder.getValueAt(selectedRow, 0);
+        ProviderVaccineOrderWorkRequest request = (ProviderVaccineOrderWorkRequest)tblOrderDetails.getValueAt(selectedRow, 0);
         
         ViewDetailsOfPlacedOrderJPanel panel = new ViewDetailsOfPlacedOrderJPanel(workContainer, request);
         workContainer.add("ViewDetailsOfPlacedOrderJPanel", panel);
@@ -338,14 +339,14 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
     private void btnViewInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewInventoryActionPerformed
         // TODO add your handling code here:
-         int selectedRow = tblship.getSelectedRow();
+         int selectedRow = tblShippedOrder.getSelectedRow();
 
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select an Order from table");
             return;
         }
         
-        ShippingOrderWorkRequest request = (ShippingOrderWorkRequest)tblship.getValueAt(selectedRow, 0);
+        ShippingOrderWorkRequest request = (ShippingOrderWorkRequest)tblShippedOrder.getValueAt(selectedRow, 0);
         
         
         ViewDetailsOfShippedOrderJPanel panel = new ViewDetailsOfShippedOrderJPanel(workContainer, business , hospital, hospitalOrg, request);
@@ -366,7 +367,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblOrderStatus;
     private javax.swing.JLabel lblShippingOrder;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JTable tblrorder;
-    private javax.swing.JTable tblship;
+    private javax.swing.JTable tblOrderDetails;
+    private javax.swing.JTable tblShippedOrder;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,7 +14,7 @@ import Business.Order.OrderItem;
 import Business.Organization.HospitalOrganization;
 import Business.Organization.ManufactureOrganization;
 import Business.Organization.Organization;
-import Business.Organization.LHDImmuneOrganization;
+import Business.Organization.SHDImmuneOrganization;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.VaccineDetails;
 import Business.WorkQueue.ProviderVaccineOrderWorkRequest;
@@ -269,7 +269,9 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
         lblManufacturer.setForeground(new java.awt.Color(0, 0, 102));
         lblManufacturer.setText("Manufacturer:");
 
+        comboBoxManufacturerList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxManufacturerList.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        comboBoxManufacturerList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxManufacturerList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBoxManufacturerList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -291,7 +293,7 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Drug Code", "Drug Name", "Drug ID", "Lot Number", "Price", "Manufacture date"
+                "Medicine Code", "Medicine Name", "Medicine ID", "Lot Number", "Price", "Manufacture date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -304,6 +306,7 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblManufacturerDetails);
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         lblCart.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -316,7 +319,7 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Drug Code", "Drug Name", "Drug ID", "Lot Number", "Price", "Quantity", "Manufacture date", "Amount"
+                "Medicine Code", "Medicine Name", "Medicine ID", "Lot Number", "Price", "Quantity", "Manufacture date", "Amount"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -392,8 +395,9 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
         lblTypeOfContract.setForeground(new java.awt.Color(0, 0, 102));
         lblTypeOfContract.setText("Set Contract: ");
 
+        comboBoxTypeOfOrder.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxTypeOfOrder.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        comboBoxTypeOfOrder.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxTypeOfOrder.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxTypeOfOrder.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AsRequired", "Monthly", "Bi-Monthly" }));
         comboBoxTypeOfOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -509,47 +513,52 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
 
     private void btnAddToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToCartActionPerformed
         // TODO add your handling code here:
-        int quantity = (Integer) spinCount.getValue();
+        try{
+            int quantity = (Integer) spinCount.getValue();
 
-        //get the selected item
-        int selectRow = tblManufacturerDetails.getSelectedRow();
-        if (selectRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a Vaccine First!");
-            return;
-        }
-        VaccineDetails product = (VaccineDetails) tblManufacturerDetails.getValueAt(selectRow, 0);
-        
-        if (quantity <= 0 ) {
-            JOptionPane.showMessageDialog(null, "Please enter correct quantity");
-            return;
-        }
-        
-        
-        boolean flag = true;
-        //  ArrayList<OrderItem> orders = customer.getOrder().getOrderItemList();
-        ArrayList<OrderItem> orders = tempOrder.getItemList();
-        for (OrderItem oi : orders) {
-            if (oi.getVaccineDetails().equals(product)) {
-                int oldQuantity = oi.getQuantity();
-                int newQuantity = oldQuantity + quantity;
-                oi.setQuantity(newQuantity);
-                flag = false;
+            //get the selected item
+            int selectRow = tblManufacturerDetails.getSelectedRow();
+            if (selectRow < 0) {
+                JOptionPane.showMessageDialog(null, "Please select a Vaccine First!");
+                return;
             }
-        }
-       
-        if(flag){
-        //OrderItem orderItem = customer.getOrder().addOrderItem(product, quantity);
-        OrderItem orderItem = tempOrder.addNewOrderItem(quantity, product);
-        }
-     
+            VaccineDetails product = (VaccineDetails) tblManufacturerDetails.getValueAt(selectRow, 0);
 
-        isCheckout = false;
-        String msg = Integer.toString(quantity) + " " + product.getVaccineDefinition().getVaccineName() + " has added to cart!";
-        JOptionPane.showMessageDialog(null, msg);
-       
-       displayManufacturerVaccines();
-        refreshCartTable();
-        calulateTotalAmountOfOrder();
+            if (quantity <= 0 ) {
+                JOptionPane.showMessageDialog(null, "Please enter correct quantity");
+                return;
+            }
+
+
+            boolean flag = true;
+            //  ArrayList<OrderItem> orders = customer.getOrder().getOrderItemList();
+            ArrayList<OrderItem> orders = tempOrder.getItemList();
+            for (OrderItem oi : orders) {
+                if (oi.getVaccineDetails().equals(product)) {
+                    int oldQuantity = oi.getQuantity();
+                    int newQuantity = oldQuantity + quantity;
+                    oi.setQuantity(newQuantity);
+                    flag = false;
+                }
+            }
+
+            if(flag){
+            //OrderItem orderItem = customer.getOrder().addOrderItem(product, quantity);
+            OrderItem orderItem = tempOrder.addNewOrderItem(quantity, product);
+            }
+
+
+            isCheckout = false;
+            String msg = Integer.toString(quantity) + " " + product.getVaccineDefinition().getVaccineName() + " has added to cart!";
+            JOptionPane.showMessageDialog(null, msg);
+
+           displayManufacturerVaccines();
+            refreshCartTable();
+            calulateTotalAmountOfOrder();
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter numeric data for quantity.");
+        }
 
     }//GEN-LAST:event_btnAddToCartActionPerformed
     
@@ -575,28 +584,32 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
     
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
         // TODO add your handling code here:
-        //
-        int selectRow = tblCartDetails.getSelectedRow();
-        if (selectRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a vaccine from cart first!");
-            return;
-        }
-        //modify the item Quantity
-        OrderItem orderItem = (OrderItem) tblCartDetails.getValueAt(selectRow, 1);
-    
-        int oldQuantity = orderItem.getQuantity();
-        //get new quantity
-        int newQuantity = Integer.parseInt(txtQuantityCount.getText());
-       
-        orderItem.setQuantity(newQuantity);
-        String msg = "The quantity of " + orderItem.getVaccineDetails().getVaccineDefinition().getVaccineName() + " has changed from " + oldQuantity + " to " + newQuantity;
-        JOptionPane.showMessageDialog(null, msg);
-        
-        //orderItem.getVaccineProduct().setAvailablity(oldAvail + oldQuantity - newQuantity);//update the availability
+        try{
+            int selectRow = tblCartDetails.getSelectedRow();
+            if (selectRow < 0) {
+                JOptionPane.showMessageDialog(null, "Please select a vaccine from cart first!");
+                return;
+            }
+            //modify the item Quantity
+            OrderItem orderItem = (OrderItem) tblCartDetails.getValueAt(selectRow, 1);
 
-        //refresh the tables
-        displayManufacturerVaccines();
-        refreshCartTable();
+            int oldQuantity = orderItem.getQuantity();
+            //get new quantity
+            int newQuantity = Integer.parseInt(txtQuantityCount.getText());
+
+            orderItem.setQuantity(newQuantity);
+            String msg = "The quantity of " + orderItem.getVaccineDetails().getVaccineDefinition().getVaccineName() + " has changed from " + oldQuantity + " to " + newQuantity;
+            JOptionPane.showMessageDialog(null, msg);
+
+            //orderItem.getVaccineProduct().setAvailablity(oldAvail + oldQuantity - newQuantity);//update the availability
+
+            //refresh the tables
+            displayManufacturerVaccines();
+            refreshCartTable();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter numeric data to modify quantity.");
+        }
 
     }//GEN-LAST:event_btnModifyActionPerformed
 
@@ -680,7 +693,7 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
                 
                 for(Organization org: state.getLocalHealthDepartment().getOrganizationDirectory().getOrganizationList())
                 {
-                    if(org instanceof LHDImmuneOrganization)
+                    if(org instanceof SHDImmuneOrganization)
                     {
                         org.getWorkQueue().addWorkRequest(workRequest);
                     }

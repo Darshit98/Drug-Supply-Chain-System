@@ -34,8 +34,14 @@ public class ViewAsRequestedDetailsAndShipJPanel extends javax.swing.JPanel {
     private boolean flag;
     /**
      * Creates new form ViewAsRequestedDetailsAndShipJPanel
+     * @param workContainer
+     * @param userAccount
+     * @param business
+     * @param request
+     * @param distributorEnterprise
      */
     public ViewAsRequestedDetailsAndShipJPanel(JPanel workContainer, UserAccount userAccount,EcoSystem business, ProviderVaccineOrderWorkRequest request, Distributor distributorEnterprise) {
+
         initComponents();
         this.workContainer = workContainer;
         this.userAccount = userAccount;
@@ -55,13 +61,13 @@ public class ViewAsRequestedDetailsAndShipJPanel extends javax.swing.JPanel {
         {
             total = total + (oi.getVaccineDetails().getVaccinePrice()*oi.getQuantity());
         }
-        txt1.setText(String.valueOf(total));
+        txtTotalCost.setText(String.valueOf(total));
     }
      
      private void populateOrderTable(){
         
-         int rowCount = tblorder.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblorder.getModel();
+         int rowCount = tblOrderDetails.getRowCount();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblOrderDetails.getModel();
         
         for(int i=rowCount-1 ; i>=0; i--){
             defaulttabelmodel.removeRow(i);
@@ -99,20 +105,20 @@ public class ViewAsRequestedDetailsAndShipJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         lbl1 = new javax.swing.JLabel();
-        txt1 = new javax.swing.JTextField();
-        txt2 = new javax.swing.JTextField();
-        btn1 = new javax.swing.JButton();
+        txtTotalCost = new javax.swing.JTextField();
+        txtOrderNumber = new javax.swing.JTextField();
+        btnCheckInventory = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblorder = new javax.swing.JTable();
+        tblOrderDetails = new javax.swing.JTable();
         lbl2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblinven = new javax.swing.JTable();
+        tblInventoryDetails = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         lbl3 = new javax.swing.JLabel();
-        btn2 = new javax.swing.JButton();
+        btnShipOrder = new javax.swing.JButton();
         lbl4 = new javax.swing.JLabel();
         lbl5 = new javax.swing.JLabel();
-        btn3 = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -121,30 +127,30 @@ public class ViewAsRequestedDetailsAndShipJPanel extends javax.swing.JPanel {
         lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl1.setText("View order and ship");
 
-        txt1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        txt1.setEnabled(false);
+        txtTotalCost.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtTotalCost.setEnabled(false);
 
-        txt2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        txt2.setEnabled(false);
+        txtOrderNumber.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtOrderNumber.setEnabled(false);
 
-        btn1.setBackground(new java.awt.Color(0, 0, 102));
-        btn1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn1.setForeground(new java.awt.Color(255, 255, 255));
-        btn1.setText("Check Inventory");
-        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn1.addActionListener(new java.awt.event.ActionListener() {
+        btnCheckInventory.setBackground(new java.awt.Color(0, 0, 102));
+        btnCheckInventory.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnCheckInventory.setForeground(new java.awt.Color(255, 255, 255));
+        btnCheckInventory.setText("Check Inventory");
+        btnCheckInventory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCheckInventory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
+                btnCheckInventoryActionPerformed(evt);
             }
         });
 
-        tblorder.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        tblorder.setModel(new javax.swing.table.DefaultTableModel(
+        tblOrderDetails.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        tblOrderDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Vaccine Code", "Vaccine Name", "Brand", "Vaccine id", "Batch ID", "Price", "Quantity", "manufacture date", "Amount"
+                "Medicine Code", "Medicine Name", "Brand", "Medicine ID", "Batch ID", "Price", "Quantity", "Manufacture date", "Amount"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -155,20 +161,20 @@ public class ViewAsRequestedDetailsAndShipJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblorder.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(tblorder);
+        tblOrderDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tblOrderDetails);
 
         lbl2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl2.setForeground(new java.awt.Color(0, 0, 102));
-        lbl2.setText("Order Particulars:");
+        lbl2.setText("Order Particulars");
 
-        tblinven.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        tblinven.setModel(new javax.swing.table.DefaultTableModel(
+        tblInventoryDetails.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        tblInventoryDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Vaccine Code", "Vaccine Name", "Brand", "Warehouse Id", "Warehouse Location", "Vaccine Id", "BatchID", "Vaccines in Inventory", "Available?"
+                "Medicine Code", "Medicine Name", "Brand", "Warehouse Id", "Warehouse Location", "Medicine ID", "BatchID", "Medicines in Inventory", "Available?"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -179,23 +185,24 @@ public class ViewAsRequestedDetailsAndShipJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblinven.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblinven);
+        tblInventoryDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblInventoryDetails);
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         lbl3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl3.setForeground(new java.awt.Color(0, 0, 102));
-        lbl3.setText("Inventory Check:");
+        lbl3.setText("Inventory Check");
 
-        btn2.setBackground(new java.awt.Color(0, 0, 102));
-        btn2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn2.setForeground(new java.awt.Color(255, 255, 255));
-        btn2.setText("Ship order");
-        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn2.addActionListener(new java.awt.event.ActionListener() {
+        btnShipOrder.setBackground(new java.awt.Color(0, 0, 102));
+        btnShipOrder.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnShipOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnShipOrder.setText("Ship order");
+        btnShipOrder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnShipOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2ActionPerformed(evt);
+                btnShipOrderActionPerformed(evt);
             }
         });
 
@@ -207,14 +214,14 @@ public class ViewAsRequestedDetailsAndShipJPanel extends javax.swing.JPanel {
         lbl5.setForeground(new java.awt.Color(0, 0, 102));
         lbl5.setText("Order Number:");
 
-        btn3.setBackground(new java.awt.Color(0, 0, 102));
-        btn3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn3.setForeground(new java.awt.Color(255, 255, 255));
-        btn3.setText("<");
-        btn3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn3.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(0, 0, 102));
+        btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("<");
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3ActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
@@ -231,24 +238,24 @@ public class ViewAsRequestedDetailsAndShipJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl3)
-                            .addComponent(btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbl5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
-                        .addComponent(lbl4)
-                        .addGap(18, 18, 18)
-                        .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnShipOrder, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnCheckInventory, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lbl2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addComponent(lbl5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtOrderNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addComponent(lbl4)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtTotalCost, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -256,40 +263,38 @@ public class ViewAsRequestedDetailsAndShipJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbl1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl2)
+                    .addComponent(lbl5)
+                    .addComponent(txtOrderNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl4)
+                    .addComponent(txtTotalCost, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(lbl2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl4)
-                            .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl5))
-                        .addGap(15, 15, 15)))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(btn1)
+                .addComponent(btnCheckInventory)
                 .addGap(8, 8, 8)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl3)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(btn2)
-                .addGap(51, 51, 51))
+                .addComponent(btnShipOrder)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCheckInventory, lbl2, lbl3, lbl4, lbl5, txtOrderNumber});
+
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+    private void btnCheckInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckInventoryActionPerformed
         // TODO add your handling code here:
-        int rowCount = tblinven.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblinven.getModel();
+        int rowCount = tblInventoryDetails.getRowCount();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblInventoryDetails.getModel();
 
         for(int i=rowCount-1 ; i>=0; i--){
             defaulttabelmodel.removeRow(i);
@@ -360,9 +365,9 @@ public class ViewAsRequestedDetailsAndShipJPanel extends javax.swing.JPanel {
         }
 
         //populate the table
-    }//GEN-LAST:event_btn1ActionPerformed
+    }//GEN-LAST:event_btnCheckInventoryActionPerformed
 
-    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+    private void btnShipOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShipOrderActionPerformed
         // TODO add your handling code here:
         if(request.getStatus().equalsIgnoreCase("Shipped"))
         {
@@ -456,20 +461,20 @@ public class ViewAsRequestedDetailsAndShipJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Order Shipped!");
 
         //        RequestPayment();
-    }//GEN-LAST:event_btn2ActionPerformed
+    }//GEN-LAST:event_btnShipOrderActionPerformed
 
-    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         workContainer.remove(this);
         CardLayout layout = (CardLayout) workContainer.getLayout();
         layout.previous(workContainer);
-    }//GEN-LAST:event_btn3ActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn2;
-    private javax.swing.JButton btn3;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnCheckInventory;
+    private javax.swing.JButton btnShipOrder;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
@@ -478,9 +483,9 @@ public class ViewAsRequestedDetailsAndShipJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lbl3;
     private javax.swing.JLabel lbl4;
     private javax.swing.JLabel lbl5;
-    private javax.swing.JTable tblinven;
-    private javax.swing.JTable tblorder;
-    private javax.swing.JTextField txt1;
-    private javax.swing.JTextField txt2;
+    private javax.swing.JTable tblInventoryDetails;
+    private javax.swing.JTable tblOrderDetails;
+    private javax.swing.JTextField txtOrderNumber;
+    private javax.swing.JTextField txtTotalCost;
     // End of variables declaration//GEN-END:variables
 }

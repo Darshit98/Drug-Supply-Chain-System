@@ -6,11 +6,11 @@ package UserInterface.EnterpriseAdmin;
 
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.HospitalEnterprise;
-import Business.Enterprise.LocalHealthDepartment;
-import Business.NationalEnterprise.CDC;
+import Business.Enterprise.StateHealthDepartment;
+import Business.NationalEnterprise.FDA;
 import Business.NationalEnterprise.Distributor;
 import Business.NationalEnterprise.Manufacturer;
-import Business.Organization.CDCOrganization;
+import Business.Organization.FDAOrganization;
 import Business.Organization.HospitalOrganization;
 import Business.Organization.Organization;
 import Business.Organization.PatientOrganization;
@@ -22,6 +22,7 @@ import Business.Role.Role.RoleType;
 import Business.Utils.WelcomeMail;
 import java.awt.CardLayout;
 import java.util.Date;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 /**
@@ -208,11 +209,11 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
-                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2)
                         .addComponent(lbl5)
                         .addGap(3, 3, 3)
-                        .addComponent(txtDomain, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtDomain, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
@@ -229,7 +230,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                         .addComponent(lblClinicName, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
                         .addComponent(txtClinicName, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnAddPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAddPerson, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -289,74 +290,104 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         try{
             long phone = Long.parseLong(txtPhone.getText());
-
+            boolean bPhone = Pattern.matches("[0-9]{10}", Long.toString(phone));
+            if(!bPhone){
+                JOptionPane.showMessageDialog(this, "Cell Phone Number field should only have 10 digits (0-9). Alphabets and special characters are not allowed. Please try again!");
+                txtPhone.setText("");
+                return;
+            }
+            
             String firstName = txtFirstName.getText();
-            if(firstName.trim().equalsIgnoreCase(""))
-            {
-                JOptionPane.showMessageDialog(null, "Please enter first Name!");
+//            if(firstName.trim().equalsIgnoreCase("")){
+//                JOptionPane.showMessageDialog(null, "Please enter first Name!");
+//                return;
+//          }
+            boolean bFullName = Pattern.matches("^[A-Za-z0-9 ]*$", firstName);
+            if(!bFullName){
+                JOptionPane.showMessageDialog(this, "First name field should only have Alphanumeric characters. Special characters are not allowed. Please try again!");
+                txtFirstName.setText("");
                 return;
             }
-
             String lastName = txtLastName.getText();
-            if(lastName.trim().equalsIgnoreCase(""))
-            {
-                JOptionPane.showMessageDialog(null, "Please enter last Name!");
+//            if(lastName.trim().equalsIgnoreCase("")){
+//                JOptionPane.showMessageDialog(null, "Please enter last Name!");
+//                return;
+//            }
+            boolean bLastName = Pattern.matches("^[A-Za-z0-9 ]*$", lastName);
+            if(!bLastName){
+                JOptionPane.showMessageDialog(this, "Last name field should only have Alphanumeric characters. Special characters are not allowed. Please try again!");
+                txtLastName.setText("");
                 return;
             }
+            
             String email = txtEmail.getText()+"@"+txtDomain.getText();
-
+            boolean bEmail = Pattern.matches("^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$", email);
+        
+            if(!bEmail){
+                    JOptionPane.showMessageDialog(null, "Invalid email. Please try again!");
+                    txtEmail.setText("");
+                    txtDomain.setText("");
+                    return;
+            }
             Date dob = jDateDOB.getDate();
+            if (jDateDOB.getDate()== null )
+            {
+                   JOptionPane.showMessageDialog(null, "Enter Date");
+                   return;
+            }
             Organization organize = (Organization)comboBoxDepartmentList.getSelectedItem();
             Person person = null;
             Patient patient = null;
-            if(enterprise instanceof CDC){
-                if(organize instanceof CDCOrganization){
-                    person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.CDCEmployee);
+            if(enterprise instanceof FDA){
+                if(organize instanceof FDAOrganization){
+                    person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.FDAEmployee);
                 }
                 if(organize instanceof medicalOrganization){
                     person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.MedicalOfficer);
                 }
-
             }
-            if(enterprise instanceof Manufacturer)
-            { person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.Manufacturer);
+            if(enterprise instanceof Manufacturer){
+                person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.Manufacturer);
             }
-            if(enterprise instanceof Distributor)
-            { person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.Distributor);
+            if(enterprise instanceof Distributor){
+                person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.Distributor);
             }
-            if(enterprise instanceof LocalHealthDepartment)
-            { person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.LocalHealthDepartment);
+            if(enterprise instanceof StateHealthDepartment){
+                person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.StateHealthDepartment);
             }
-            if(enterprise instanceof HospitalEnterprise)
-            {
-                if(organize instanceof HospitalOrganization)
-                { person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.Provider);
+            if(enterprise instanceof HospitalEnterprise){
+                if(organize instanceof HospitalOrganization){
+                    person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.Provider);
                 }
-                if(organize instanceof PatientOrganization)
-                { patient = (Patient)organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.Patient);
-                  WelcomeMail.sendEmailMessage(email,"Welcome to Drug Sypply Chain System","Hi! You have been registered succesfully!");
+                if(organize instanceof PatientOrganization){
+                    patient = (Patient)organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.Patient);
+                    WelcomeMail.sendEmailMessage(email,"Welcome to Drug Sypply Chain System","Hi! You have been registered succesfully!");
                 }
-                if(organize instanceof ClinicOrganization)
-                { person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.ClinicProvider);
+                if(organize instanceof ClinicOrganization){
+                    person = organize.getPersonDirectory().createPerson(firstName, lastName, RoleType.ClinicProvider);
                 }
-
             }
-            if(person!=null)
-            {person.setDateOfBirth(dob);
+            if(person!=null){
+                person.setDateOfBirth(dob);
                 person.setEmail(email);
                 person.setPhone(phone);
             }
-            if(patient!=null)
-            {patient.setDateOfBirth(dob);
+            if(patient!=null){
+                patient.setDateOfBirth(dob);
                 patient.setEmail(email);
                 patient.setPhone(phone);
             }
 
-            JOptionPane.showMessageDialog(null, "Person Added!");
-
+            JOptionPane.showMessageDialog(null, "Person Added Successfully!");
+            txtFirstName.setText("");
+            txtLastName.setText("");
+            txtPhone.setText("");    
+            txtEmail.setText("");
+            txtDomain.setText("");
+            jDateDOB.setDate(null);
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Please enter numeric value for phone");
+            JOptionPane.showMessageDialog(null, "Please enter data in all the fields and try again.");
             //return;
         }
 

@@ -98,8 +98,9 @@ public class AddNewDrugJPanel extends javax.swing.JPanel {
         lblDrugName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblDrugName.setText("Drug Name:");
 
+        comboBoxDrugList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxDrugList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        comboBoxDrugList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxDrugList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxDrugList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblLotNumber.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -157,8 +158,9 @@ public class AddNewDrugJPanel extends javax.swing.JPanel {
         lblDepartment.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblDepartment.setText("Department:");
 
+        comboBoxDepartmentList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxDepartmentList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        comboBoxDepartmentList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxDepartmentList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxDepartmentList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -168,9 +170,9 @@ public class AddNewDrugJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 148, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,7 +182,7 @@ public class AddNewDrugJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(txtQuantity)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGap(5, 5, 5)
                                         .addComponent(lblVials))
                                     .addComponent(txtPrice)
                                     .addComponent(txtLotNumber)))
@@ -200,7 +202,7 @@ public class AddNewDrugJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btnAddDrug, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jDateManufactureDate, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE))))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 156, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -243,10 +245,10 @@ public class AddNewDrugJPanel extends javax.swing.JPanel {
                     .addComponent(jDateManufactureDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnAddDrug)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jDateManufactureDate, txtPrice});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAddDrug, comboBoxDepartmentList, comboBoxDrugList, jDateManufactureDate, lblDepartment, lblDrugName, lblLotNumber, lblManufactureDate, lblPrice, lblQuantity, lblVials, txtLotNumber, txtPrice, txtQuantity});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -282,7 +284,7 @@ public class AddNewDrugJPanel extends javax.swing.JPanel {
         product.setVaccinePrice(price);
         product.setManufacturerName(manufacturer.getName());
         
-        JOptionPane.showMessageDialog(null, "Vaccine Added!");
+        JOptionPane.showMessageDialog(null, "Drug Added!");
         
         }
         catch(Exception e)

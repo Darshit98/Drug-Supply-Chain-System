@@ -172,8 +172,14 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="comboBoxManufacturerList">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -226,9 +232,9 @@
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="6" rowCount="0">
-                <Column editable="false" title="Drug Code" type="java.lang.Object"/>
-                <Column editable="false" title="Drug Name" type="java.lang.Object"/>
-                <Column editable="false" title="Drug ID" type="java.lang.Object"/>
+                <Column editable="false" title="Medicine Code" type="java.lang.Object"/>
+                <Column editable="false" title="Medicine Name" type="java.lang.Object"/>
+                <Column editable="false" title="Medicine ID" type="java.lang.Object"/>
                 <Column editable="false" title="Lot Number" type="java.lang.Object"/>
                 <Column editable="false" title="Price" type="java.lang.Object"/>
                 <Column editable="false" title="Manufacture date" type="java.lang.Object"/>
@@ -277,6 +283,9 @@
     </Container>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
         </Property>
@@ -307,9 +316,9 @@
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="8" rowCount="0">
-                <Column editable="false" title="Drug Code" type="java.lang.Object"/>
-                <Column editable="false" title="Drug Name" type="java.lang.Object"/>
-                <Column editable="false" title="Drug ID" type="java.lang.Object"/>
+                <Column editable="false" title="Medicine Code" type="java.lang.Object"/>
+                <Column editable="false" title="Medicine Name" type="java.lang.Object"/>
+                <Column editable="false" title="Medicine ID" type="java.lang.Object"/>
                 <Column editable="false" title="Lot Number" type="java.lang.Object"/>
                 <Column editable="false" title="Price" type="java.lang.Object"/>
                 <Column editable="false" title="Quantity" type="java.lang.Object"/>
@@ -504,11 +513,14 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="comboBoxTypeOfOrder">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">

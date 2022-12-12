@@ -26,7 +26,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jSeparator1" max="32767" attributes="0"/>
                   <Component id="lblTitle" max="32767" attributes="0"/>
-                  <Component id="jScrollPane1" pref="638" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="640" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="btnRemoveAdmin" min="-2" max="-2" attributes="0"/>
@@ -44,7 +44,6 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="btnAddAdmin" pref="202" max="32767" attributes="0"/>
                                   <Component id="comboBoxProviderList" max="32767" attributes="0"/>
                                   <Component id="txtUserName" max="32767" attributes="0"/>
                                   <Component id="txtPassword" max="32767" attributes="0"/>
@@ -53,8 +52,9 @@
                               </Group>
                           </Group>
                           <Component id="btnBack" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="btnAddAdmin" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="288" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -191,6 +191,9 @@
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="0" red="0" type="rgb"/>
         </Property>
@@ -221,11 +224,14 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="comboBoxProviderList">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">

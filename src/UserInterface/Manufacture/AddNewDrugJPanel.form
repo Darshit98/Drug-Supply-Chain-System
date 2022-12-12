@@ -24,9 +24,9 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblTitle" pref="490" max="32767" attributes="0"/>
+                  <Component id="lblTitle" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="148" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -37,7 +37,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="txtQuantity" max="32767" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                       <Component id="lblVials" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="txtPrice" max="32767" attributes="0"/>
@@ -67,7 +67,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="156" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="btnBack" min="-2" pref="64" max="-2" attributes="0"/>
@@ -87,38 +87,38 @@
               <Component id="btnBack" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblDepartment" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="comboBoxDepartmentList" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblDepartment" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxDepartmentList" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="comboBoxDrugList" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblDrugName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxDrugList" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblDrugName" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtLotNumber" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblLotNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtLotNumber" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblLotNumber" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="txtPrice" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblPrice" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPrice" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblQuantity" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtQuantity" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblVials" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblQuantity" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtQuantity" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblVials" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblManufactureDate" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblManufactureDate" linkSize="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jDateManufactureDate" linkSize="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnAddDrug" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="127" max="32767" attributes="0"/>
+              <Component id="btnAddDrug" linkSize="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -150,11 +150,14 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="comboBoxDrugList">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -296,11 +299,14 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="comboBoxDepartmentList">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
