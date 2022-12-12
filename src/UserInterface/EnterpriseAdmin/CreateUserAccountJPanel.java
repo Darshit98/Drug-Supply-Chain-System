@@ -427,15 +427,14 @@ public class CreateUserAccountJPanel extends javax.swing.JPanel {
         String userName = txtUsername.getText();
         if(userName.trim().equalsIgnoreCase(""))
         {
-            JOptionPane.showMessageDialog(null, "Username cannot be blank..!!");
+            JOptionPane.showMessageDialog(null, "Username cannot be blank. Please try again.");
             return;
         }
+        
+        
         String password = txtPassword.getText();
-//        if(password.trim().equalsIgnoreCase(""))
-//        {
-//            JOptionPane.showMessageDialog(null, "Password cannot be blank..!!");
-//            return;
-//        }
+
+        
         boolean PASSWORD_PATTERN = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=~|?])(?=\\S+$).{8,}$", password);
         if(!PASSWORD_PATTERN){
             JOptionPane.showMessageDialog(null, "Please create a strong password. Password should be 8 characters long. It must contain alphanumeric characters in upper and lower case along with at least one special character from - !@#$%^&+=~|? ");

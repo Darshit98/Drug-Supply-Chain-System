@@ -153,20 +153,20 @@ public class MainFrame extends javax.swing.JFrame {
         lblProjectName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProjectName.setText("DRUG SUPPLY CHAIN SYSTEM");
 
-        lbl5100.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        lbl5100.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         lbl5100.setText("INFO 5100 FINAL PROJECT");
 
-        lblBy.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        lblBy.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         lblBy.setText("-By");
 
-        lblMember1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        lblMember1.setText("DARSHIT SHAH");
+        lblMember1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblMember1.setText("DARSHIT SHAH (002762097)");
 
-        lblMember2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        lblMember2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblMember2.setText("RIYA VIRANI (002747048)");
 
-        lblMember3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        lblMember3.setText("SWINI RODRIGUES");
+        lblMember3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblMember3.setText("SWINI RODRIGUES (002755764)");
 
         lblImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/ICONS/11122021icons/FrontPage1.jpg"))); // NOI18N
@@ -186,10 +186,10 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(lbl5100)
                 .addGap(18, 18, 18)
                 .addGroup(welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblBy, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblMember3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblMember1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblMember2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblMember2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblBy, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(326, 326, 326))
         );
         welcomeScreenLayout.setVerticalGroup(
