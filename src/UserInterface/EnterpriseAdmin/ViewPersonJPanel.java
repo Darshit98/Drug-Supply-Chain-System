@@ -9,6 +9,7 @@ import Business.Organization.Organization;
 import Business.Person.Person;
 import java.awt.CardLayout;
 import java.util.Date;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 /**
@@ -38,7 +39,7 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         txtPhone.setText(String.valueOf(person.getPhone()));
         jDateDOB.setDate(person.getDateOfBirth());
         txtDepartment.setText(org.getName());
-        
+        txtDepartment.setEditable(false);
         
     }
 
@@ -141,6 +142,11 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
 
         txtDepartment.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtDepartment.setEnabled(false);
+        txtDepartment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDepartmentActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -243,12 +249,15 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
     private void btnUpdatePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatePersonActionPerformed
         // TODO add your handling code here:
         try{
-            long phone = Long.parseLong(txtPhone.getText());
-
             String firstName = txtFirstName.getText();
-            if(firstName.trim().equalsIgnoreCase(""))
-            {
+            if(firstName.trim().equalsIgnoreCase("")){
                 JOptionPane.showMessageDialog(null, "Please enter First Name");
+                return;
+            }
+            boolean bFirstName = Pattern.matches("^[A-Za-z0-9 ]*$", firstName);
+            if(!bFirstName){
+                JOptionPane.showMessageDialog(this, "First name field should only have Alphanumeric characters. Special characters are not allowed. Please try again!");
+                txtFirstName.setText("");
                 return;
             }
             String lastName = txtLastName.getText();
@@ -257,18 +266,54 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Please enter Last Name");
                 return;
             }
+            boolean bLastName = Pattern.matches("^[A-Za-z0-9 ]*$", lastName);
+            if(!bLastName){
+                JOptionPane.showMessageDialog(this, "Last name field should only have Alphanumeric characters. Special characters are not allowed. Please try again!");
+                txtLastName.setText("");
+                return;
+            }
+            
             String email = txtEmail.getText();
-
+            boolean bEmail = Pattern.matches("^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$", email);
+        
+            if(!bEmail){
+                    JOptionPane.showMessageDialog(null, "Invalid email. Please try again!");
+                    txtEmail.setText("");
+                    return;
+            }
+            
+            long phone = Long.parseLong(txtPhone.getText());
+            boolean bPhone = Pattern.matches("[0-9]{10}", Long.toString(phone));
+            if(!bPhone){
+                JOptionPane.showMessageDialog(this, "Cell Phone Number field should only have 10 digits (0-9). Alphabets and special characters are not allowed. Please try again!");
+                txtPhone.setText("");
+                return;
+            }
+            
             Date dob = jDateDOB.getDate();
+            if (jDateDOB.getDate()== null )
+            {
+                   JOptionPane.showMessageDialog(null, "Enter your date of birth");
+                   return;
+            }
 
             person.setFirstName(firstName);
             person.setLastName(lastName);
             person.setDateOfBirth(dob);
             person.setEmail(email);
             person.setPhone(phone);
+            JOptionPane.showMessageDialog(null, "Person details updated successfully!");
+            txtFirstName.setText(person.getFirstName());
+            txtLastName.setText("");
+            txtEmail.setText("");
+            txtPhone.setText("");
+            jDateDOB.setDate(null);
+            txtDepartment.setText("");
+            txtDepartment.setText("");
+            
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Please enter numeric value for phone");
+            JOptionPane.showMessageDialog(null, "Please enter data in all the fields and try again!");
             //return;
         }
     }//GEN-LAST:event_btnUpdatePersonActionPerformed
@@ -279,6 +324,10 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) workContainer.getLayout();
         layout.previous(workContainer);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void txtDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDepartmentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDepartmentActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

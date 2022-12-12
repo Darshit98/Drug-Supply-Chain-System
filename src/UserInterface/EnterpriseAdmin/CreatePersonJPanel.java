@@ -289,30 +289,25 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
     private void btnAddPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPersonActionPerformed
         // TODO add your handling code here:
         try{
-            long phone = Long.parseLong(txtPhone.getText());
-            boolean bPhone = Pattern.matches("[0-9]{10}", Long.toString(phone));
-            if(!bPhone){
-                JOptionPane.showMessageDialog(this, "Cell Phone Number field should only have 10 digits (0-9). Alphabets and special characters are not allowed. Please try again!");
-                txtPhone.setText("");
-                return;
-            }
             
             String firstName = txtFirstName.getText();
-//            if(firstName.trim().equalsIgnoreCase("")){
-//                JOptionPane.showMessageDialog(null, "Please enter first Name!");
-//                return;
-//          }
-            boolean bFullName = Pattern.matches("^[A-Za-z0-9 ]*$", firstName);
-            if(!bFullName){
+
+            if(firstName.trim().equalsIgnoreCase("")){
+                JOptionPane.showMessageDialog(null, "Please enter First Name");
+                return;
+            }
+            boolean bFirstName = Pattern.matches("^[A-Za-z0-9 ]*$", firstName);
+            if(!bFirstName){
                 JOptionPane.showMessageDialog(this, "First name field should only have Alphanumeric characters. Special characters are not allowed. Please try again!");
                 txtFirstName.setText("");
                 return;
             }
             String lastName = txtLastName.getText();
-//            if(lastName.trim().equalsIgnoreCase("")){
-//                JOptionPane.showMessageDialog(null, "Please enter last Name!");
-//                return;
-//            }
+            if(lastName.trim().equalsIgnoreCase(""))
+            {
+                JOptionPane.showMessageDialog(null, "Please enter Last Name");
+                return;
+            }
             boolean bLastName = Pattern.matches("^[A-Za-z0-9 ]*$", lastName);
             if(!bLastName){
                 JOptionPane.showMessageDialog(this, "Last name field should only have Alphanumeric characters. Special characters are not allowed. Please try again!");
@@ -329,10 +324,18 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                     txtDomain.setText("");
                     return;
             }
+            long phone = Long.parseLong(txtPhone.getText());
+            boolean bPhone = Pattern.matches("[0-9]{10}", Long.toString(phone));
+            if(!bPhone){
+                JOptionPane.showMessageDialog(this, "Cell Phone Number field should only have 10 digits (0-9). Alphabets and special characters are not allowed. Please try again!");
+                txtPhone.setText("");
+                return;
+            }
+            
             Date dob = jDateDOB.getDate();
             if (jDateDOB.getDate()== null )
             {
-                   JOptionPane.showMessageDialog(null, "Enter Date");
+                   JOptionPane.showMessageDialog(null, "Enter your date of birth");
                    return;
             }
             Organization organize = (Organization)comboBoxDepartmentList.getSelectedItem();

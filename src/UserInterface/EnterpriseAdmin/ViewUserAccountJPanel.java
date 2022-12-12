@@ -12,6 +12,7 @@ import Business.Network.StateNetwork;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 /**
@@ -344,21 +345,23 @@ public class ViewUserAccountJPanel extends javax.swing.JPanel {
         String userName = txtUserName.getText();
         if(userName.trim().equalsIgnoreCase(""))
         {
-            JOptionPane.showMessageDialog(null, "Username cannot be blank..!!");
+            JOptionPane.showMessageDialog(null, "Username cannot be blank. Please try again.");
             return;
         }
         String password = txtPassword.getText();
-        if(password.trim().equalsIgnoreCase(""))
-        {
-            JOptionPane.showMessageDialog(null, "Password cannot be blank..!!");
+        
+
+        boolean PASSWORD_PATTERN = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=~|?])(?=\\S+$).{8,}$", password);
+        if(!PASSWORD_PATTERN){
+            JOptionPane.showMessageDialog(null, "Please create a strong password. Password should be 8 characters long. It must contain alphanumeric characters in upper and lower case along with at least one special character from - !@#$%^&+=~|? ");
+            txtPassword.setText("");
             return;
         }
-
         boolean check = checkIfUserAccountExists(userName);
 
         if(check == true)
         {
-            JOptionPane.showMessageDialog(null, "Username Exists please choose another username");
+            JOptionPane.showMessageDialog(null, "Username exists. Please choose another username.");
             return;
         }
 
@@ -366,6 +369,9 @@ public class ViewUserAccountJPanel extends javax.swing.JPanel {
         userAcc.setPassword(password);
 
         panel.populateUserAccountTable();
+        JOptionPane.showMessageDialog(null, "User details updated successfully!");
+        txtUserName.setText("");
+        txtPassword.setText("");
     }//GEN-LAST:event_btnUpdateUserAccountActionPerformed
 
 
