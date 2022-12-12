@@ -207,6 +207,8 @@ public class ViewUserAccountJPanel extends javax.swing.JPanel {
         lblUsername.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUsername.setText("Username:");
 
+        txtUserName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+
         btnBack.setBackground(new java.awt.Color(0, 0, 102));
         btnBack.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
@@ -221,6 +223,8 @@ public class ViewUserAccountJPanel extends javax.swing.JPanel {
         lblPassword.setForeground(new java.awt.Color(0, 0, 102));
         lblPassword.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPassword.setText("Password:");
+
+        txtPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
 
         lblViewUpdateUserAccount.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lblViewUpdateUserAccount.setForeground(new java.awt.Color(0, 0, 102));
@@ -252,10 +256,13 @@ public class ViewUserAccountJPanel extends javax.swing.JPanel {
         lblRole.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblRole.setText("Role:");
 
+        txtOrganization.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtOrganization.setEnabled(false);
 
+        txtPersonName.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtPersonName.setEnabled(false);
 
+        txtRole.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtRole.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -263,32 +270,30 @@ public class ViewUserAccountJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblViewUpdateUserAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblViewUpdateUserAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 432, Short.MAX_VALUE)))
+                        .addGap(0, 450, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblOrganization)
+                            .addComponent(lblPerson)
+                            .addComponent(lblRole)
+                            .addComponent(lblUsername)
+                            .addComponent(lblPassword))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnUpdateUserAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtUserName)
+                            .addComponent(txtPassword)
+                            .addComponent(txtOrganization)
+                            .addComponent(txtPersonName)
+                            .addComponent(txtRole, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblOrganization)
-                    .addComponent(lblPerson)
-                    .addComponent(lblRole)
-                    .addComponent(lblUsername)
-                    .addComponent(lblPassword))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnUpdateUserAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtUserName)
-                    .addComponent(txtPassword)
-                    .addComponent(txtOrganization)
-                    .addComponent(txtPersonName)
-                    .addComponent(txtRole, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblOrganization, lblPassword, lblPerson, lblRole, lblUsername});

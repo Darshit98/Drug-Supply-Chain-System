@@ -4,7 +4,7 @@
  */
 package Business.Enterprise;
 
-import Business.NationalEnterprise.CDC;
+import Business.NationalEnterprise.FDA;
 import Business.NationalEnterprise.Distributor;
 import Business.NationalEnterprise.Manufacturer;
 import java.util.ArrayList;
@@ -39,9 +39,9 @@ public class EnterpriseDirectory {
             enterprise = new HospitalEnterprise(name);
             enterpriseDirectory.add(enterprise);
         }
-        else if(type == Enterprise.EnterpriseType.CDC){
+        else if(type == Enterprise.EnterpriseType.FDA){
             
-            enterprise = new CDC(name);
+            enterprise = new FDA(name);
             enterpriseDirectory.add(enterprise);
         }
         else if(type == Enterprise.EnterpriseType.Distributor){
@@ -54,9 +54,9 @@ public class EnterpriseDirectory {
             enterprise = new Manufacturer(name);
             enterpriseDirectory.add(enterprise);
         }
-        else if(type == Enterprise.EnterpriseType.LocalHealthDepartment){
+        else if(type == Enterprise.EnterpriseType.StateHealthDepartment){
             
-            enterprise = new LocalHealthDepartment(name);
+            enterprise = new StateHealthDepartment(name);
             enterpriseDirectory.add(enterprise);
         }
         return enterprise;

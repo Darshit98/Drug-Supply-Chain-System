@@ -14,7 +14,7 @@ import Business.Order.OrderItem;
 import Business.Organization.HospitalOrganization;
 import Business.Organization.ManufactureOrganization;
 import Business.Organization.Organization;
-import Business.Organization.LHDImmuneOrganization;
+import Business.Organization.SHDImmuneOrganization;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.VaccineDetails;
 import Business.WorkQueue.ProviderVaccineOrderWorkRequest;
@@ -291,7 +291,7 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Drug Code", "Drug Name", "Drug ID", "Lot Number", "Price", "Manufacture date"
+                "Medicine Code", "Medicine Name", "Medicine ID", "Lot Number", "Price", "Manufacture date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -304,6 +304,7 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblManufacturerDetails);
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         lblCart.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -316,7 +317,7 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Drug Code", "Drug Name", "Drug ID", "Lot Number", "Price", "Quantity", "Manufacture date", "Amount"
+                "Medicine Code", "Medicine Name", "Medicine ID", "Lot Number", "Price", "Quantity", "Manufacture date", "Amount"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -392,8 +393,9 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
         lblTypeOfContract.setForeground(new java.awt.Color(0, 0, 102));
         lblTypeOfContract.setText("Set Contract: ");
 
+        comboBoxTypeOfOrder.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxTypeOfOrder.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        comboBoxTypeOfOrder.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxTypeOfOrder.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxTypeOfOrder.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AsRequired", "Monthly", "Bi-Monthly" }));
         comboBoxTypeOfOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -680,7 +682,7 @@ public class PlaceDrugOrderJPanel extends javax.swing.JPanel {
                 
                 for(Organization org: state.getLocalHealthDepartment().getOrganizationDirectory().getOrganizationList())
                 {
-                    if(org instanceof LHDImmuneOrganization)
+                    if(org instanceof SHDImmuneOrganization)
                     {
                         org.getWorkQueue().addWorkRequest(workRequest);
                     }

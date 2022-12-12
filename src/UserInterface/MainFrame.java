@@ -55,17 +55,18 @@ public class MainFrame extends javax.swing.JFrame {
         btnLogoutUser = new javax.swing.JButton();
         container = new javax.swing.JPanel();
         welcomeScreen = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblProjectName = new javax.swing.JLabel();
         lbl5100 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lblBy = new javax.swing.JLabel();
+        lblMember1 = new javax.swing.JLabel();
+        lblMember2 = new javax.swing.JLabel();
+        lblMember3 = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1500, 900));
 
+        jSplitPane1.setBackground(new java.awt.Color(0, 0, 102));
         jSplitPane1.setDividerLocation(210);
 
         loginPanel.setBackground(new java.awt.Color(255, 255, 204));
@@ -145,22 +146,22 @@ public class MainFrame extends javax.swing.JFrame {
 
         welcomeScreen.setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("DRUG SUPPLY CHAIN SYSTEM");
+        lblProjectName.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        lblProjectName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblProjectName.setText("DRUG SUPPLY CHAIN SYSTEM");
 
         lbl5100.setText("INFO 5100 FINAL PROJECT");
 
-        jLabel3.setText("-By");
+        lblBy.setText("-By");
 
-        jLabel4.setText("DARSHIT SHAH");
+        lblMember1.setText("DARSHIT SHAH");
 
-        jLabel5.setText("RIYA VIRANI");
+        lblMember2.setText("RIYA VIRANI");
 
-        jLabel6.setText("SWINI RODRIGUES");
+        lblMember3.setText("SWINI RODRIGUES");
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/ceiv.jpg"))); // NOI18N
+        lblImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/ceiv.jpg"))); // NOI18N
 
         javax.swing.GroupLayout welcomeScreenLayout = new javax.swing.GroupLayout(welcomeScreen);
         welcomeScreen.setLayout(welcomeScreenLayout);
@@ -169,16 +170,16 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, welcomeScreenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
+                    .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblProjectName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, welcomeScreenLayout.createSequentialGroup()
                         .addComponent(lbl5100)
                         .addGap(18, 18, 18)
                         .addGroup(welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lblBy, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblMember3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblMember1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblMember2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -186,19 +187,19 @@ public class MainFrame extends javax.swing.JFrame {
             welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(welcomeScreenLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jLabel1)
+                .addComponent(lblProjectName)
                 .addGap(47, 47, 47)
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
+                .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, 861, Short.MAX_VALUE)
                 .addGap(35, 35, 35)
                 .addGroup(welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl5100)
-                    .addComponent(jLabel3))
+                    .addComponent(lblBy))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
+                .addComponent(lblMember1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
+                .addComponent(lblMember2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addComponent(lblMember3)
                 .addGap(61, 61, 61))
         );
 
@@ -361,7 +362,8 @@ public class MainFrame extends javax.swing.JFrame {
         if(userAccount == null)
         {
             JOptionPane.showMessageDialog(null, "Please enter correct credentials..!!");
-            
+            txtUsername.setText("");
+            txtPassword.setText("");
         }
         
         else
@@ -440,15 +442,15 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnLoginUser;
     private javax.swing.JButton btnLogoutUser;
     private javax.swing.JPanel container;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lbl5100;
+    private javax.swing.JLabel lblBy;
+    private javax.swing.JLabel lblImage;
+    private javax.swing.JLabel lblMember1;
+    private javax.swing.JLabel lblMember2;
+    private javax.swing.JLabel lblMember3;
     private javax.swing.JLabel lblPasswordField;
+    private javax.swing.JLabel lblProjectName;
     private javax.swing.JLabel lblUsernameField;
     private javax.swing.JLabel lblWelcomePage;
     private javax.swing.JPanel loginPanel;

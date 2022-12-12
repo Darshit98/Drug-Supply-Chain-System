@@ -31,8 +31,8 @@ public class ManageProviderAdminUserAccountJPanel extends javax.swing.JPanel {
      * Creates new form ManageProviderAdminUserAccountJPanel
      */
     
-    private JPanel workContainer;
-    private EcoSystem business;
+    private final JPanel workContainer;
+    private final EcoSystem business;
     public ManageProviderAdminUserAccountJPanel(JPanel workContainer, EcoSystem business) {
         initComponents();
         this.workContainer = workContainer;
@@ -295,6 +295,7 @@ public class ManageProviderAdminUserAccountJPanel extends javax.swing.JPanel {
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         lblNewAdmin.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -306,8 +307,9 @@ public class ManageProviderAdminUserAccountJPanel extends javax.swing.JPanel {
         lblProviderEnterprise.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblProviderEnterprise.setText("Provider Enterprise:");
 
+        comboBoxProviderList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxProviderList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        comboBoxProviderList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxProviderList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxProviderList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblUserName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -367,7 +369,7 @@ public class ManageProviderAdminUserAccountJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
                     .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnRemoveAdmin))
@@ -383,14 +385,14 @@ public class ManageProviderAdminUserAccountJPanel extends javax.swing.JPanel {
                                     .addComponent(lblLastName))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnAddAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                                     .addComponent(comboBoxProviderList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txtUserName)
                                     .addComponent(txtPassword)
                                     .addComponent(txtFirstName)
                                     .addComponent(txtLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)))
-                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 288, Short.MAX_VALUE)))
+                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAddAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 

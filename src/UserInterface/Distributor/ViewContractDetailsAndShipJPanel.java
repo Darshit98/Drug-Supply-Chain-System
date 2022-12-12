@@ -26,14 +26,19 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
 
-    private JPanel workContainer;
-    private Distributor distributorEnterprise;
-    private UserAccount userAccount;
-    private EcoSystem business;
-    private ProviderVaccineOrderWorkRequest request;
+    private final JPanel workContainer;
+    private final Distributor distributorEnterprise;
+    private final UserAccount userAccount;
+    private final EcoSystem business;
+    private final ProviderVaccineOrderWorkRequest request;
     private boolean flag;
     /**
      * Creates new form ViewContractDetailsAndShipJPanel
+     * @param workContainer
+     * @param userAccount
+     * @param business
+     * @param request
+     * @param distributorEnterprise
      */
     public ViewContractDetailsAndShipJPanel( JPanel workContainer, UserAccount userAccount,EcoSystem business, ProviderVaccineOrderWorkRequest request, Distributor distributorEnterprise ) {
         initComponents();
@@ -42,7 +47,7 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
         this.business = business;
         this.request = request;
         this.distributorEnterprise = distributorEnterprise;
-        txt1.setText(String.valueOf(request.getVaccineOrder().getOrderNumber()));
+        txtOrderNumber.setText(String.valueOf(request.getVaccineOrder().getOrderNumber()));
         displayContractDetails();
         calculateTotalCostOfOrder();
         populateOrderTable();
@@ -54,11 +59,11 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
     private void displayContractDetails(){
         
         if(request.ishalfmonthContract())
-            txt3.setText("Half Monthly");
+            txtContract.setText("Half Monthly");
         if(request.isfullMonthContract())
-            txt3.setText("Monthly");
+            txtContract.setText("Monthly");
         if(request.isasReq())
-            txt3.setText("As Required");
+            txtContract.setText("As Required");
         
     }
     
@@ -70,14 +75,14 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
         {
             total = total + (oi.getVaccineDetails().getVaccinePrice()*oi.getQuantity());
         }
-        txt2.setText(String.valueOf(total));
+        txtTotalCost.setText(String.valueOf(total));
     }
     
     
     private void populateOrderTable(){
         
-         int rowCount = tblorder.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblorder.getModel();
+         int rowCount = tblOrderDetails.getRowCount();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblOrderDetails.getModel();
         
         for(int i=rowCount-1 ; i>=0; i--){
             defaulttabelmodel.removeRow(i);
@@ -114,21 +119,23 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
 
         lbl1 = new javax.swing.JLabel();
         lbl2 = new javax.swing.JLabel();
-        txt1 = new javax.swing.JTextField();
+        txtOrderNumber = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblorder = new javax.swing.JTable();
+        tblOrderDetails = new javax.swing.JTable();
         lbl3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblinven = new javax.swing.JTable();
+        tblInventoryDetails = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         lbl4 = new javax.swing.JLabel();
-        btn1 = new javax.swing.JButton();
+        btnShipOrder = new javax.swing.JButton();
         lbl5 = new javax.swing.JLabel();
-        txt2 = new javax.swing.JTextField();
-        btn2 = new javax.swing.JButton();
+        txtTotalCost = new javax.swing.JTextField();
+        btnCheckInventory = new javax.swing.JButton();
         lbl6 = new javax.swing.JLabel();
-        txt3 = new javax.swing.JTextField();
+        txtContract = new javax.swing.JTextField();
         btn3 = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(204, 204, 255));
 
         lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lbl1.setForeground(new java.awt.Color(0, 51, 102));
@@ -139,14 +146,14 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
         lbl2.setForeground(new java.awt.Color(0, 51, 102));
         lbl2.setText("Order Number:");
 
-        txt1.setEnabled(false);
+        txtOrderNumber.setEnabled(false);
 
-        tblorder.setModel(new javax.swing.table.DefaultTableModel(
+        tblOrderDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Vaccine Code", "Vaccine Name", "Brand", "Vaccine id", "Batch ID", "Price", "Quantity", "manufacture date", "Amount"
+                "Medicine Code", "Medicine Name", "Brand", "Medicine ID", "Batch ID", "Price", "Quantity", "Manufacture date", "Amount"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -157,19 +164,19 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblorder.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(tblorder);
+        tblOrderDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tblOrderDetails);
 
         lbl3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl3.setForeground(new java.awt.Color(0, 51, 102));
         lbl3.setText("Order Particulars:");
 
-        tblinven.setModel(new javax.swing.table.DefaultTableModel(
+        tblInventoryDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Vaccine Code", "Vaccine Name", "Brand", "Warehouse Id", "Warehouse Location", "Vaccine Id", "BatchID", "Vaccines in Inventory", "Available?"
+                "Medicine Code", "Medicine Name", "Brand", "Warehouse Id", "Warehouse Location", "Medicine ID", "BatchID", "Medicines in Inventory", "Available?"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -180,40 +187,41 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblinven.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblinven);
+        tblInventoryDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblInventoryDetails);
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 51, 102));
 
         lbl4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl4.setForeground(new java.awt.Color(0, 51, 102));
         lbl4.setText("Inventory Check:");
 
-        btn1.setBackground(new java.awt.Color(0, 0, 102));
-        btn1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn1.setForeground(new java.awt.Color(255, 255, 255));
-        btn1.setText("Ship order");
-        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn1.addActionListener(new java.awt.event.ActionListener() {
+        btnShipOrder.setBackground(new java.awt.Color(0, 0, 102));
+        btnShipOrder.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnShipOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnShipOrder.setText("Ship order");
+        btnShipOrder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnShipOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
+                btnShipOrderActionPerformed(evt);
             }
         });
 
         lbl5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lbl5.setForeground(new java.awt.Color(0, 51, 102));
-        lbl5.setText("Total Cost of the Order:");
+        lbl5.setText("Total Cost of Order:");
 
-        txt2.setEnabled(false);
+        txtTotalCost.setEnabled(false);
 
-        btn2.setBackground(new java.awt.Color(0, 0, 102));
-        btn2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn2.setForeground(new java.awt.Color(255, 255, 255));
-        btn2.setText("Check Inventory");
-        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn2.addActionListener(new java.awt.event.ActionListener() {
+        btnCheckInventory.setBackground(new java.awt.Color(0, 0, 102));
+        btnCheckInventory.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnCheckInventory.setForeground(new java.awt.Color(255, 255, 255));
+        btnCheckInventory.setText("Check Inventory");
+        btnCheckInventory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCheckInventory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2ActionPerformed(evt);
+                btnCheckInventoryActionPerformed(evt);
             }
         });
 
@@ -221,7 +229,7 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
         lbl6.setForeground(new java.awt.Color(0, 51, 102));
         lbl6.setText("Contract :");
 
-        txt3.setEnabled(false);
+        txtContract.setEnabled(false);
 
         btn3.setBackground(new java.awt.Color(0, 0, 102));
         btn3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -248,18 +256,18 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lbl2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt1)
-                        .addGap(18, 18, 18)
+                        .addComponent(txtOrderNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                         .addComponent(lbl5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTotalCost, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(lbl6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtContract, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btn1))
+                        .addComponent(btnShipOrder))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl3)
@@ -268,7 +276,7 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn2)))
+                        .addComponent(btnCheckInventory)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -282,18 +290,18 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lbl6)
-                        .addComponent(txt3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtContract, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTotalCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lbl5))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lbl2)
-                        .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtOrderNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn2)
+                .addComponent(btnCheckInventory)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -301,12 +309,12 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn1)
-                .addGap(55, 55, 55))
+                .addComponent(btnShipOrder)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+    private void btnShipOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShipOrderActionPerformed
 
         // TODO add your handling code here:
 
@@ -397,12 +405,12 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
 
         JOptionPane.showMessageDialog(null, "Order Shipped!");
 
-    }//GEN-LAST:event_btn1ActionPerformed
+    }//GEN-LAST:event_btnShipOrderActionPerformed
 
-    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+    private void btnCheckInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckInventoryActionPerformed
         // TODO add your handling code here:
-        int rowCount = tblinven.getRowCount();
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblinven.getModel();
+        int rowCount = tblInventoryDetails.getRowCount();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblInventoryDetails.getModel();
 
         for(int i=rowCount-1 ; i>=0; i--){
             defaulttabelmodel.removeRow(i);
@@ -473,7 +481,7 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
             return;
         }
 
-    }//GEN-LAST:event_btn2ActionPerformed
+    }//GEN-LAST:event_btnCheckInventoryActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
         // TODO add your handling code here:
@@ -484,9 +492,9 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn2;
     private javax.swing.JButton btn3;
+    private javax.swing.JButton btnCheckInventory;
+    private javax.swing.JButton btnShipOrder;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
@@ -496,10 +504,10 @@ public class ViewContractDetailsAndShipJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lbl4;
     private javax.swing.JLabel lbl5;
     private javax.swing.JLabel lbl6;
-    private javax.swing.JTable tblinven;
-    private javax.swing.JTable tblorder;
-    private javax.swing.JTextField txt1;
-    private javax.swing.JTextField txt2;
-    private javax.swing.JTextField txt3;
+    private javax.swing.JTable tblInventoryDetails;
+    private javax.swing.JTable tblOrderDetails;
+    private javax.swing.JTextField txtContract;
+    private javax.swing.JTextField txtOrderNumber;
+    private javax.swing.JTextField txtTotalCost;
     // End of variables declaration//GEN-END:variables
 }

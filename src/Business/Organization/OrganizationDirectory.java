@@ -30,8 +30,8 @@ public class OrganizationDirectory {
             organization = new EnterpriseAdminOrganization();
             organizationList.add(organization);
         }
-        else if (type.getValue().equals(OrganizationType.CDCOrg.getValue())){
-            organization = new CDCOrganization();
+        else if (type.getValue().equals(OrganizationType.FDAOrg.getValue())){
+            organization = new FDAOrganization();
             organizationList.add(organization);
         }
         else if (type.getValue().equals(OrganizationType.DistributorOrg.getValue())){
@@ -50,8 +50,8 @@ public class OrganizationDirectory {
             organization = new PatientOrganization();
             organizationList.add(organization);
         }
-        else if (type.getValue().equals(OrganizationType.LocalHealthDepartmentOrg.getValue())){
-            organization = new LHDImmuneOrganization();
+        else if (type.getValue().equals(OrganizationType.StateHealthDepartmentOrg.getValue())){
+            organization = new SHDImmuneOrganization();
             organizationList.add(organization);
         }
         else if (type.getValue().equals(OrganizationType.ClinicOrganization.getValue())){

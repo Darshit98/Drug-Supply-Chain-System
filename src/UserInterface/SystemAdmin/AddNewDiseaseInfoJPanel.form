@@ -35,7 +35,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txtDiseaseName" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
                           <Component id="txtDiseaseCode" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
-                          <Component id="jdateUpdateDate" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="jDateUpdateDate" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
                           <Component id="btnAddDiseaseInformation" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="223" max="32767" attributes="0"/>
@@ -70,7 +70,7 @@
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblLastUpdateDate" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jdateUpdateDate" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jDateUpdateDate" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnAddDiseaseInformation" linkSize="1" min="-2" max="-2" attributes="0"/>
@@ -80,7 +80,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="com.toedter.calendar.JDateChooser" name="jdateUpdateDate">
+    <Component class="com.toedter.calendar.JDateChooser" name="jDateUpdateDate">
       <Properties>
         <Property name="dateFormatString" type="java.lang.String" value=" MMM, d yyyy"/>
       </Properties>

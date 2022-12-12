@@ -26,6 +26,12 @@ public class ClinicWorkAreaJPanel extends javax.swing.JPanel {
     private final StateNetwork state;
     /**
      * Creates new form ClinicWorkAreaJPanel
+     * @param userProcessContainer
+     * @param userAccount
+     * @param enterprise
+     * @param organization
+     * @param business
+     * @param state
      */
     
     
@@ -50,63 +56,57 @@ public class ClinicWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         mainMenujPanel = new javax.swing.JPanel();
-        btn1 = new javax.swing.JButton();
-        btn2 = new javax.swing.JButton();
-        lbl1 = new javax.swing.JLabel();
-        btn3 = new javax.swing.JButton();
-        lbl3 = new javax.swing.JLabel();
+        btnPlaceMedicineOrder = new javax.swing.JButton();
+        btnAdministerMedicine = new javax.swing.JButton();
+        btnNewPatient = new javax.swing.JButton();
+        lblClinic = new javax.swing.JLabel();
         workContainer = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
-        jSplitPane1.setBackground(new java.awt.Color(204, 204, 255));
+        jSplitPane1.setBackground(new java.awt.Color(0, 0, 102));
         jSplitPane1.setDividerLocation(170);
 
         mainMenujPanel.setBackground(new java.awt.Color(255, 255, 204));
 
-        btn1.setBackground(new java.awt.Color(0, 0, 102));
-        btn1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn1.setForeground(new java.awt.Color(255, 255, 255));
-        btn1.setText("Place Vaccine Order");
-        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn1.addActionListener(new java.awt.event.ActionListener() {
+        btnPlaceMedicineOrder.setBackground(new java.awt.Color(0, 0, 102));
+        btnPlaceMedicineOrder.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnPlaceMedicineOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlaceMedicineOrder.setText("Place Medicine Order");
+        btnPlaceMedicineOrder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPlaceMedicineOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
+                btnPlaceMedicineOrderActionPerformed(evt);
             }
         });
 
-        btn2.setBackground(new java.awt.Color(0, 0, 102));
-        btn2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn2.setForeground(new java.awt.Color(255, 255, 255));
-        btn2.setText("Administer Vaccine");
-        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn2.addActionListener(new java.awt.event.ActionListener() {
+        btnAdministerMedicine.setBackground(new java.awt.Color(0, 0, 102));
+        btnAdministerMedicine.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnAdministerMedicine.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdministerMedicine.setText("Administer Medicine");
+        btnAdministerMedicine.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAdministerMedicine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2ActionPerformed(evt);
+                btnAdministerMedicineActionPerformed(evt);
             }
         });
 
-        lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl1.setForeground(new java.awt.Color(0, 0, 102));
-        lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl1.setText("Main Menu:");
-
-        btn3.setBackground(new java.awt.Color(0, 0, 102));
-        btn3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn3.setForeground(new java.awt.Color(255, 255, 255));
-        btn3.setText("Register New Patient");
-        btn3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn3.addActionListener(new java.awt.event.ActionListener() {
+        btnNewPatient.setBackground(new java.awt.Color(0, 0, 102));
+        btnNewPatient.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnNewPatient.setForeground(new java.awt.Color(255, 255, 255));
+        btnNewPatient.setText("Register New Patient");
+        btnNewPatient.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnNewPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3ActionPerformed(evt);
+                btnNewPatientActionPerformed(evt);
             }
         });
 
-        lbl3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl3.setForeground(new java.awt.Color(0, 0, 102));
-        lbl3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl3.setText("CLINIC");
+        lblClinic.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblClinic.setForeground(new java.awt.Color(0, 0, 102));
+        lblClinic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblClinic.setText("CLINIC");
 
         javax.swing.GroupLayout mainMenujPanelLayout = new javax.swing.GroupLayout(mainMenujPanel);
         mainMenujPanel.setLayout(mainMenujPanelLayout);
@@ -115,27 +115,24 @@ public class ClinicWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(mainMenujPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(mainMenujPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbl3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblClinic, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnNewPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPlaceMedicineOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAdministerMedicine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         mainMenujPanelLayout.setVerticalGroup(
             mainMenujPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenujPanelLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(lbl3)
-                .addGap(24, 24, 24)
-                .addComponent(lbl1)
+                .addComponent(lblClinic)
+                .addGap(57, 57, 57)
+                .addComponent(btnPlaceMedicineOrder)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn1)
+                .addComponent(btnAdministerMedicine)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn3)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addComponent(btnNewPatient)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(mainMenujPanel);
@@ -151,40 +148,39 @@ public class ClinicWorkAreaJPanel extends javax.swing.JPanel {
         add(jSplitPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+    private void btnPlaceMedicineOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceMedicineOrderActionPerformed
         // TODO add your handling code here:
 
-        PlaceVaccineOrderClinicJPanel panel = new PlaceVaccineOrderClinicJPanel(workContainer, enterprise, organization, userAccount, business, state);
+        PlaceDrugOrderClinicJPanel panel = new PlaceDrugOrderClinicJPanel(workContainer, enterprise, organization, userAccount, business, state);
         workContainer.add("PlaceVaccineOrderJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btn1ActionPerformed
+    }//GEN-LAST:event_btnPlaceMedicineOrderActionPerformed
 
-    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+    private void btnAdministerMedicineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministerMedicineActionPerformed
         // TODO add your handling code here:
-        AdministerVaccineClinicJPanel panel = new AdministerVaccineClinicJPanel(workContainer, enterprise, organization, userAccount, business, state);
+        AdministerDrugClinicJPanel panel = new AdministerDrugClinicJPanel(workContainer, enterprise, organization, userAccount, business, state);
         workContainer.add("AdministerVaccineJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btn2ActionPerformed
+    }//GEN-LAST:event_btnAdministerMedicineActionPerformed
 
-    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+    private void btnNewPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewPatientActionPerformed
         // TODO add your handling code here:
         RegisterNewPatientJPanel panel = new RegisterNewPatientJPanel(workContainer, enterprise, organization, userAccount, business);
         workContainer.add("RegisterNewPatientJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btn3ActionPerformed
+    }//GEN-LAST:event_btnNewPatientActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn2;
-    private javax.swing.JButton btn3;
+    private javax.swing.JButton btnAdministerMedicine;
+    private javax.swing.JButton btnNewPatient;
+    private javax.swing.JButton btnPlaceMedicineOrder;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JLabel lbl1;
-    private javax.swing.JLabel lbl3;
+    private javax.swing.JLabel lblClinic;
     private javax.swing.JPanel mainMenujPanel;
     private javax.swing.JPanel workContainer;
     // End of variables declaration//GEN-END:variables

@@ -55,7 +55,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jSplitPane1.setBackground(new java.awt.Color(204, 204, 255));
+        jSplitPane1.setBackground(new java.awt.Color(0, 0, 102));
 
         workContainer.setBackground(new java.awt.Color(204, 204, 255));
         workContainer.setLayout(new java.awt.CardLayout());

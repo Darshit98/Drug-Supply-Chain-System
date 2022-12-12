@@ -15,10 +15,7 @@ import Business.Vaccine.AdministeredVaccineDetails;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.pdf.PdfPTable;
-import com.lowagie.text.pdf.PdfWriter;
 import java.awt.print.PrinterException;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -119,7 +116,7 @@ public class PatientAdministeredVaccineListJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Vaccine Code", "Vaccine Name", "Brand", "Batch Number", "Vaccine Id", "Date", "SiteRoute", "Dose Number", "Status"
+                "Medicine Code", "Medicine Name", "Brand", "Batch Number", "Medicine ID", "Date", "SiteRoute", "Dose Number", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {

@@ -6,16 +6,16 @@ package UserInterface.EnterpriseAdmin;
 
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.HospitalEnterprise;
-import Business.Enterprise.LocalHealthDepartment;
-import Business.NationalEnterprise.CDC;
+import Business.Enterprise.StateHealthDepartment;
+import Business.NationalEnterprise.FDA;
 import Business.NationalEnterprise.Distributor;
 import Business.NationalEnterprise.Manufacturer;
-import Business.Organization.CDCOrganization;
+import Business.Organization.FDAOrganization;
 import Business.Organization.DistributorOrganization;
 import Business.Organization.HospitalOrganization;
 import Business.Organization.ManufactureOrganization;
 import Business.Organization.Organization;
-import Business.Organization.LHDImmuneOrganization;
+import Business.Organization.SHDImmuneOrganization;
 import Business.Organization.PatientOrganization;
 import Business.Organization.ClinicOrganization;
 import Business.Organization.medicalOrganization;
@@ -58,9 +58,9 @@ public class ManageDepartmentJPanel extends javax.swing.JPanel {
     
     private void populateCombo(){
         comboBoxOrganizationList.removeAllItems();
-        if(enterprise instanceof CDC)
+        if(enterprise instanceof FDA)
         {   
-            comboBoxOrganizationList.addItem(Organization.OrganizationType.CDCOrg);
+            comboBoxOrganizationList.addItem(Organization.OrganizationType.FDAOrg);
             comboBoxOrganizationList.addItem(Organization.OrganizationType.MedicalOrganization);
         }
         if(enterprise instanceof Manufacturer)
@@ -72,9 +72,9 @@ public class ManageDepartmentJPanel extends javax.swing.JPanel {
             comboBoxOrganizationList.addItem(Organization.OrganizationType.DistributorOrg);
             
         }
-        if( enterprise instanceof LocalHealthDepartment)
+        if( enterprise instanceof StateHealthDepartment)
         {
-            comboBoxOrganizationList.addItem(Organization.OrganizationType.LocalHealthDepartmentOrg);
+            comboBoxOrganizationList.addItem(Organization.OrganizationType.StateHealthDepartmentOrg);
         }
         
         if( enterprise instanceof HospitalEnterprise)
@@ -195,6 +195,7 @@ public class ManageDepartmentJPanel extends javax.swing.JPanel {
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 51, 102));
 
         lblAddOrganization.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -261,8 +262,11 @@ public class ManageDepartmentJPanel extends javax.swing.JPanel {
                     .addComponent(txtClinicName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnAddOrganization)
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAddOrganization, comboBoxOrganizationList, lblAddOrganization, lblClinicName, lblOrganizationType, txtClinicName});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -282,12 +286,12 @@ public class ManageDepartmentJPanel extends javax.swing.JPanel {
         boolean corg =false;
         boolean morg =false;
 
-        if( enterprise instanceof CDC)
+        if( enterprise instanceof FDA)
         {
 
             for(Organization organize : enterprise.getOrganizationDirectory().getOrganizationList())
             {
-                if(organize instanceof CDCOrganization)
+                if(organize instanceof FDAOrganization)
                 {
                     corg=true;
                 }
@@ -297,7 +301,7 @@ public class ManageDepartmentJPanel extends javax.swing.JPanel {
                 }
 
             }
-            if(corg==true && type.equals(Organization.OrganizationType.CDCOrg))
+            if(corg==true && type.equals(Organization.OrganizationType.FDAOrg))
             {
                 JOptionPane.showMessageDialog(null, "Department Exists!");
                 return;
@@ -333,11 +337,11 @@ public class ManageDepartmentJPanel extends javax.swing.JPanel {
             }
 
         }
-        if( enterprise instanceof LocalHealthDepartment)
+        if( enterprise instanceof StateHealthDepartment)
         {
             for(Organization org : enterprise.getOrganizationDirectory().getOrganizationList())
             {
-                if(org instanceof LHDImmuneOrganization)
+                if(org instanceof SHDImmuneOrganization)
                 {
                     JOptionPane.showMessageDialog(null, "Department Exists!");
                     return;

@@ -5,7 +5,7 @@
 
 package Business.Network;
 
-import Business.Enterprise.LocalHealthDepartment;
+import Business.Enterprise.StateHealthDepartment;
 import java.util.ArrayList;
 
 /**
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class StateNetwork {
     
     private ArrayList<CityNetwork> cityList;
-    private LocalHealthDepartment localHealthDepartment;
+    private StateHealthDepartment localHealthDepartment;
     private String stateName;
     private int statePopulation;
     private int vaccinesLeftForState;
@@ -24,7 +24,7 @@ public class StateNetwork {
     public StateNetwork() {
         
         this.cityList = new ArrayList<>();
-        localHealthDepartment = new LocalHealthDepartment(stateName);
+        localHealthDepartment = new StateHealthDepartment(stateName);
         statePopulation = 0;
         vaccinesLeftForState = statePopulation;
     }
@@ -53,11 +53,11 @@ public class StateNetwork {
         this.cityList = cityList;
     }
 
-    public LocalHealthDepartment getLocalHealthDepartment() {
+    public StateHealthDepartment getLocalHealthDepartment() {
         return localHealthDepartment;
     }
 
-    public void setLocalHealthDepartment(LocalHealthDepartment localHealthDepartment) {
+    public void setLocalHealthDepartment(StateHealthDepartment localHealthDepartment) {
         this.localHealthDepartment = localHealthDepartment;
     }
     

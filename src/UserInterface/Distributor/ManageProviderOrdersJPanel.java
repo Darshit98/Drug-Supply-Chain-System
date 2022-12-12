@@ -28,6 +28,11 @@ public class ManageProviderOrdersJPanel extends javax.swing.JPanel {
     private final EcoSystem business;
     /**
      * Creates new form ManageProviderOrdersJPanel
+     * @param workContainer
+     * @param enterprise
+     * @param distributorOrg
+     * @param userAccount
+     * @param business
      */
     public ManageProviderOrdersJPanel(JPanel workContainer,Distributor enterprise,DistributorOrganization distributorOrg, UserAccount userAccount,EcoSystem business) {
         initComponents();
@@ -42,7 +47,7 @@ public class ManageProviderOrdersJPanel extends javax.swing.JPanel {
     
     private void populateContractTable(){
         
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel) tblcont.getModel();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel) tblControlOrder.getModel();
         defaulttabelmodel.setRowCount(0);
         
          DistributorOrganization distOrg = null;
@@ -83,7 +88,7 @@ public class ManageProviderOrdersJPanel extends javax.swing.JPanel {
     
     private void populateAdhocTable(){
         
-        DefaultTableModel defaulttabelmodel = (DefaultTableModel) tblnormal.getModel();
+        DefaultTableModel defaulttabelmodel = (DefaultTableModel) tblAsRequiredOrders.getModel();
         defaulttabelmodel.setRowCount(0);
         
          DistributorOrganization distOrg = null;
@@ -138,28 +143,28 @@ public class ManageProviderOrdersJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl1 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblcont = new javax.swing.JTable();
-        btn1 = new javax.swing.JButton();
+        tblControlOrder = new javax.swing.JTable();
+        btnRefresh1 = new javax.swing.JButton();
         lbl2 = new javax.swing.JLabel();
-        btn2 = new javax.swing.JButton();
+        btnViewDetailsAndShip = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblnormal = new javax.swing.JTable();
-        lbl3 = new javax.swing.JLabel();
-        btn3 = new javax.swing.JButton();
-        btn4 = new javax.swing.JButton();
+        tblAsRequiredOrders = new javax.swing.JTable();
+        lblAsReqOrders = new javax.swing.JLabel();
+        btnRefresh2 = new javax.swing.JButton();
+        btnViewDetailsShip = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
-        lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        lbl1.setForeground(new java.awt.Color(0, 0, 102));
-        lbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl1.setText("Manage Provider Orders");
+        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(0, 0, 102));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Manage Provider Orders");
 
-        tblcont.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        tblcont.setModel(new javax.swing.table.DefaultTableModel(
+        tblControlOrder.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        tblControlOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -175,17 +180,17 @@ public class ManageProviderOrdersJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblcont.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblcont);
+        tblControlOrder.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblControlOrder);
 
-        btn1.setBackground(new java.awt.Color(0, 0, 102));
-        btn1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn1.setForeground(new java.awt.Color(255, 255, 255));
-        btn1.setText("Refresh");
-        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn1.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh1.setBackground(new java.awt.Color(0, 0, 102));
+        btnRefresh1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnRefresh1.setForeground(new java.awt.Color(255, 255, 255));
+        btnRefresh1.setText("Refresh");
+        btnRefresh1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRefresh1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
+                btnRefresh1ActionPerformed(evt);
             }
         });
 
@@ -193,21 +198,22 @@ public class ManageProviderOrdersJPanel extends javax.swing.JPanel {
         lbl2.setForeground(new java.awt.Color(0, 51, 102));
         lbl2.setText("Orders type:");
 
-        btn2.setBackground(new java.awt.Color(0, 0, 102));
-        btn2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn2.setForeground(new java.awt.Color(255, 255, 255));
-        btn2.setText("View Details and Ship");
-        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn2.addActionListener(new java.awt.event.ActionListener() {
+        btnViewDetailsAndShip.setBackground(new java.awt.Color(0, 0, 102));
+        btnViewDetailsAndShip.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnViewDetailsAndShip.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewDetailsAndShip.setText("View Details and Ship");
+        btnViewDetailsAndShip.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnViewDetailsAndShip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2ActionPerformed(evt);
+                btnViewDetailsAndShipActionPerformed(evt);
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
-        tblnormal.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        tblnormal.setModel(new javax.swing.table.DefaultTableModel(
+        tblAsRequiredOrders.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        tblAsRequiredOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -223,32 +229,32 @@ public class ManageProviderOrdersJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblnormal.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(tblnormal);
+        tblAsRequiredOrders.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tblAsRequiredOrders);
 
-        lbl3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        lbl3.setForeground(new java.awt.Color(0, 51, 102));
-        lbl3.setText("AsRequired Orders:");
+        lblAsReqOrders.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        lblAsReqOrders.setForeground(new java.awt.Color(0, 51, 102));
+        lblAsReqOrders.setText("AsRequired Orders:");
 
-        btn3.setBackground(new java.awt.Color(0, 0, 102));
-        btn3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn3.setForeground(new java.awt.Color(255, 255, 255));
-        btn3.setText("Refresh");
-        btn3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn3.addActionListener(new java.awt.event.ActionListener() {
+        btnRefresh2.setBackground(new java.awt.Color(0, 0, 102));
+        btnRefresh2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnRefresh2.setForeground(new java.awt.Color(255, 255, 255));
+        btnRefresh2.setText("Refresh");
+        btnRefresh2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRefresh2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3ActionPerformed(evt);
+                btnRefresh2ActionPerformed(evt);
             }
         });
 
-        btn4.setBackground(new java.awt.Color(0, 0, 102));
-        btn4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        btn4.setForeground(new java.awt.Color(255, 255, 255));
-        btn4.setText("View Details and Ship >>");
-        btn4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn4.addActionListener(new java.awt.event.ActionListener() {
+        btnViewDetailsShip.setBackground(new java.awt.Color(0, 0, 102));
+        btnViewDetailsShip.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnViewDetailsShip.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewDetailsShip.setText("View Details and Ship");
+        btnViewDetailsShip.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnViewDetailsShip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn4ActionPerformed(evt);
+                btnViewDetailsShipActionPerformed(evt);
             }
         });
 
@@ -260,110 +266,115 @@ public class ManageProviderOrdersJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
-                    .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lbl2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn1))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                        .addComponent(btnRefresh1))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl3)
+                        .addComponent(lblAsReqOrders)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn3)
+                        .addComponent(btnRefresh2)
                         .addGap(9, 9, 9))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 610, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btn4, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(btnViewDetailsAndShip, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnViewDetailsShip, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbl1)
+                .addComponent(lblTitle)
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn1)
+                    .addComponent(btnRefresh1)
                     .addComponent(lbl2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn2)
+                .addComponent(btnViewDetailsAndShip)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl3)
-                    .addComponent(btn3))
+                    .addComponent(lblAsReqOrders)
+                    .addComponent(btnRefresh2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn4)
+                .addComponent(btnViewDetailsShip)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnRefresh1, lbl2});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnRefresh2, lblAsReqOrders});
+
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+    private void btnRefresh1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefresh1ActionPerformed
         // TODO add your handling code here:
         populateContractTable();
-    }//GEN-LAST:event_btn1ActionPerformed
+    }//GEN-LAST:event_btnRefresh1ActionPerformed
 
-    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+    private void btnViewDetailsAndShipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsAndShipActionPerformed
         // TODO add your handling code here:
 
-        int selectedRow = tblcont.getSelectedRow();
+        int selectedRow = tblControlOrder.getSelectedRow();
 
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Kindly select an Order from table");
             return;
         }
 
-        ProviderVaccineOrderWorkRequest request = (ProviderVaccineOrderWorkRequest)tblcont.getValueAt(selectedRow, 0);
+        ProviderVaccineOrderWorkRequest request = (ProviderVaccineOrderWorkRequest)tblControlOrder.getValueAt(selectedRow, 0);
 
         ViewContractDetailsAndShipJPanel panel = new ViewContractDetailsAndShipJPanel(workContainer, userAccount, business, request, enterprise);
         workContainer.add("ViewContractDetailsAndShipJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btn2ActionPerformed
+    }//GEN-LAST:event_btnViewDetailsAndShipActionPerformed
 
-    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+    private void btnRefresh2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefresh2ActionPerformed
         // TODO add your handling code here:
         populateContractTable();
-    }//GEN-LAST:event_btn3ActionPerformed
+    }//GEN-LAST:event_btnRefresh2ActionPerformed
 
-    private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
+    private void btnViewDetailsShipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsShipActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tblnormal.getSelectedRow();
+        int selectedRow = tblAsRequiredOrders.getSelectedRow();
 
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Kindly select an Order from table");
             return;
         }
 
-        ProviderVaccineOrderWorkRequest request = (ProviderVaccineOrderWorkRequest)tblnormal.getValueAt(selectedRow, 0);
+        ProviderVaccineOrderWorkRequest request = (ProviderVaccineOrderWorkRequest)tblAsRequiredOrders.getValueAt(selectedRow, 0);
 
         ViewAsRequestedDetailsAndShipJPanel panel = new ViewAsRequestedDetailsAndShipJPanel(workContainer, userAccount, business, request, enterprise);
         workContainer.add("ViewAdhocDetailsAndShipJPanel", panel);
         CardLayout layout = (CardLayout)workContainer.getLayout();
         layout.next(workContainer);
-    }//GEN-LAST:event_btn4ActionPerformed
+    }//GEN-LAST:event_btnViewDetailsShipActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn2;
-    private javax.swing.JButton btn3;
-    private javax.swing.JButton btn4;
+    private javax.swing.JButton btnRefresh1;
+    private javax.swing.JButton btnRefresh2;
+    private javax.swing.JButton btnViewDetailsAndShip;
+    private javax.swing.JButton btnViewDetailsShip;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
-    private javax.swing.JLabel lbl3;
-    private javax.swing.JTable tblcont;
-    private javax.swing.JTable tblnormal;
+    private javax.swing.JLabel lblAsReqOrders;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblAsRequiredOrders;
+    private javax.swing.JTable tblControlOrder;
     // End of variables declaration//GEN-END:variables
 }

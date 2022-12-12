@@ -274,6 +274,7 @@ public class ManageManufactureAdminUserAccountJPanel extends javax.swing.JPanel 
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         lblFirstName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N

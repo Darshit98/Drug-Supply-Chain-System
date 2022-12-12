@@ -18,7 +18,7 @@ public class ConfigureASystem {
         EcoSystem business = EcoSystem.getInstance();
         Person person = null;
         //Creating sysadmin user account
-        UserAccount sysAdmin = business.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", person, new SystemAdminRole());       
+        UserAccount sysAdmin = business.getUserAccountDirectory().createUserAccount("dsadmin", "dsadmin", person, new SystemAdminRole());       
         return business;
     }
 }

@@ -29,6 +29,8 @@ public class ManageDistributorAdminUserAccountJPanel extends javax.swing.JPanel 
     private final EcoSystem business;
     /**
      * Creates new form ManageDistributorUserAccountJPanel
+     * @param workContainer
+     * @param business
      */
     public ManageDistributorAdminUserAccountJPanel(JPanel workContainer, EcoSystem business) {
         initComponents();
@@ -202,20 +204,20 @@ public class ManageDistributorAdminUserAccountJPanel extends javax.swing.JPanel 
 
         lblTitle = new javax.swing.JLabel();
         lblLastName = new javax.swing.JLabel();
-        txtfname = new javax.swing.JTextField();
+        txtFirstName = new javax.swing.JTextField();
         lblFirstName = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         btnback = new javax.swing.JButton();
         btnRemoveAdmin = new javax.swing.JButton();
         btnCreateDistributorAdmin = new javax.swing.JButton();
-        txtpass = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDistributorAdmin = new javax.swing.JTable();
         lblPassword = new javax.swing.JLabel();
         lblAdminList = new javax.swing.JLabel();
-        txtuname = new javax.swing.JTextField();
+        txtUserName = new javax.swing.JTextField();
         lblUsername = new javax.swing.JLabel();
-        txtlname = new javax.swing.JTextField();
+        txtLastName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
@@ -230,13 +232,14 @@ public class ManageDistributorAdminUserAccountJPanel extends javax.swing.JPanel 
         lblLastName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblLastName.setText("Last Name:");
 
-        txtfname.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtFirstName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
         lblFirstName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lblFirstName.setForeground(new java.awt.Color(0, 0, 102));
         lblFirstName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblFirstName.setText("First Name:");
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         btnback.setBackground(new java.awt.Color(0, 0, 102));
@@ -269,7 +272,7 @@ public class ManageDistributorAdminUserAccountJPanel extends javax.swing.JPanel 
             }
         });
 
-        txtpass.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtPassword.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
         tblDistributorAdmin.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         tblDistributorAdmin.setModel(new javax.swing.table.DefaultTableModel(
@@ -300,14 +303,14 @@ public class ManageDistributorAdminUserAccountJPanel extends javax.swing.JPanel 
         lblAdminList.setForeground(new java.awt.Color(0, 0, 102));
         lblAdminList.setText("List of Admins:");
 
-        txtuname.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtUserName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
         lblUsername.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(0, 0, 102));
         lblUsername.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUsername.setText("UserName:");
 
-        txtlname.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtLastName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -322,19 +325,19 @@ public class ManageDistributorAdminUserAccountJPanel extends javax.swing.JPanel 
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblFirstName)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtfname))
+                                .addComponent(txtFirstName))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblLastName)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtlname, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblUsername)
                                     .addComponent(lblPassword))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtpass)
-                                    .addComponent(txtuname)))
+                                    .addComponent(txtPassword)
+                                    .addComponent(txtUserName)))
                             .addComponent(btnCreateDistributorAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -342,9 +345,10 @@ public class ManageDistributorAdminUserAccountJPanel extends javax.swing.JPanel 
                     .addComponent(jSeparator1)
                     .addComponent(jScrollPane1)
                     .addComponent(btnRemoveAdmin, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblAdminList)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAdminList)
+                            .addComponent(btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -369,21 +373,21 @@ public class ManageDistributorAdminUserAccountJPanel extends javax.swing.JPanel 
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFirstName)
-                    .addComponent(txtfname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLastName)
-                    .addComponent(txtlname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblUsername)
-                            .addComponent(txtuname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblPassword)
-                            .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(btnCreateDistributorAdmin)
                         .addContainerGap())
@@ -414,25 +418,25 @@ public class ManageDistributorAdminUserAccountJPanel extends javax.swing.JPanel 
     private void btnCreateDistributorAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDistributorAdminActionPerformed
         // TODO add your handling code here:
 
-        String firstName = txtfname.getText();
+        String firstName = txtFirstName.getText();
         if(firstName.trim().equalsIgnoreCase(""))
         {
             JOptionPane.showMessageDialog(null, "Please enter First Name!");
             return;
         }
-        String lastName = txtlname.getText();
+        String lastName = txtLastName.getText();
         if(lastName.trim().equalsIgnoreCase(""))
         {
             JOptionPane.showMessageDialog(null, "Please enter last Name!");
             return;
         }
-        String username = txtuname.getText();
+        String username = txtUserName.getText();
         if(username.trim().equalsIgnoreCase(""))
         {
             JOptionPane.showMessageDialog(null, "Please enter Username!");
             return;
         }
-        String password = txtpass.getText();
+        String password = txtPassword.getText();
         if(password.trim().equalsIgnoreCase(""))
         {
             JOptionPane.showMessageDialog(null, "Please enter Password!");
@@ -469,9 +473,9 @@ public class ManageDistributorAdminUserAccountJPanel extends javax.swing.JPanel 
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JTable tblDistributorAdmin;
-    private javax.swing.JTextField txtfname;
-    private javax.swing.JTextField txtlname;
-    private javax.swing.JTextField txtpass;
-    private javax.swing.JTextField txtuname;
+    private javax.swing.JTextField txtFirstName;
+    private javax.swing.JTextField txtLastName;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 }

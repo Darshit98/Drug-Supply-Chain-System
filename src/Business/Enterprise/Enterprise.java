@@ -49,10 +49,10 @@ public abstract class Enterprise  extends Organization{
     public enum EnterpriseType
     {
         Hospital ("Hospital"),
-        CDC("CDC"),
+        FDA("FDA"),
         Manufacturer("Manufacturer"),
         Distributor("Distributor"),
-        LocalHealthDepartment("Local Health Department");
+        StateHealthDepartment("State Health Department");
         private String value;
         
         private EnterpriseType(String value){

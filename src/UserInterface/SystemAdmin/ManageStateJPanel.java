@@ -124,8 +124,9 @@ public class ManageStateJPanel extends javax.swing.JPanel {
         lblStateName.setForeground(new java.awt.Color(0, 0, 102));
         lblStateName.setText("State Name:");
 
+        comboBoxAddedStateList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxAddedStateList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        comboBoxAddedStateList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxAddedStateList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxAddedStateList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btnAddState.setBackground(new java.awt.Color(0, 0, 102));
@@ -158,6 +159,7 @@ public class ManageStateJPanel extends javax.swing.JPanel {
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -203,7 +205,7 @@ public class ManageStateJPanel extends javax.swing.JPanel {
                     .addComponent(lblStateName)
                     .addComponent(comboBoxAddedStateList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAddState))
-                .addGap(254, 254, 254))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

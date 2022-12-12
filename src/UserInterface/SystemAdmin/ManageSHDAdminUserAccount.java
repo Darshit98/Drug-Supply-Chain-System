@@ -29,6 +29,8 @@ public class ManageSHDAdminUserAccount extends javax.swing.JPanel {
     private final EcoSystem business;
     /**
      * Creates new form ManageLHDUserAccount
+     * @param workContainer
+     * @param business
      */
     public ManageSHDAdminUserAccount(JPanel workContainer, EcoSystem business) {
         initComponents();
@@ -41,8 +43,8 @@ public class ManageSHDAdminUserAccount extends javax.swing.JPanel {
     }
     
     private void populateTable(){
-        int rowCount = tblLHDAdminDetails.getRowCount();
-         DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblLHDAdminDetails.getModel();
+        int rowCount = tblSHDAdminDetails.getRowCount();
+         DefaultTableModel defaulttabelmodel = (DefaultTableModel)tblSHDAdminDetails.getModel();
         
         //delete rows
         for(int i=rowCount-1 ; i>=0; i--){
@@ -226,7 +228,7 @@ public class ManageSHDAdminUserAccount extends javax.swing.JPanel {
         lblAdminList = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblLHDAdminDetails = new javax.swing.JTable();
+        tblSHDAdminDetails = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JTextField();
         btnRemoveAdmin = new javax.swing.JButton();
@@ -268,8 +270,8 @@ public class ManageSHDAdminUserAccount extends javax.swing.JPanel {
 
         txtUserName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
-        tblLHDAdminDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        tblLHDAdminDetails.setModel(new javax.swing.table.DefaultTableModel(
+        tblSHDAdminDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        tblSHDAdminDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -285,8 +287,8 @@ public class ManageSHDAdminUserAccount extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tblLHDAdminDetails.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblLHDAdminDetails);
+        tblSHDAdminDetails.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblSHDAdminDetails);
 
         jLabel8.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 102));
@@ -315,6 +317,7 @@ public class ManageSHDAdminUserAccount extends javax.swing.JPanel {
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         btnBack.setBackground(new java.awt.Color(0, 0, 102));
@@ -332,8 +335,9 @@ public class ManageSHDAdminUserAccount extends javax.swing.JPanel {
         lblSHDept.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblSHDept.setText("State Health Department:");
 
+        comboBoxDepartmentList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxDepartmentList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        comboBoxDepartmentList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxDepartmentList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxDepartmentList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -424,14 +428,14 @@ public class ManageSHDAdminUserAccount extends javax.swing.JPanel {
 
     private void btnRemoveAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveAdminActionPerformed
         // TODO add your handling code here:
-        int row = tblLHDAdminDetails.getSelectedRow();
+        int row = tblSHDAdminDetails.getSelectedRow();
         if(row<0) {
             JOptionPane.showMessageDialog(null, "Please select an Admin from table");
             return;
         }
 
-        UserAccount ua = (UserAccount)tblLHDAdminDetails.getValueAt(row, 0);
-        StateNetwork state = (StateNetwork)tblLHDAdminDetails.getValueAt(row, 3);
+        UserAccount ua = (UserAccount)tblSHDAdminDetails.getValueAt(row, 0);
+        StateNetwork state = (StateNetwork)tblSHDAdminDetails.getValueAt(row, 3);
         state.getLocalHealthDepartment().getUserAccountDirectory().removeUserAccount(ua);
         populateTable();
     }//GEN-LAST:event_btnRemoveAdminActionPerformed
@@ -502,7 +506,7 @@ public class ManageSHDAdminUserAccount extends javax.swing.JPanel {
     private javax.swing.JLabel lblAdminList;
     private javax.swing.JLabel lblSHDept;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JTable tblLHDAdminDetails;
+    private javax.swing.JTable tblSHDAdminDetails;
     private javax.swing.JTextField txtFirstName;
     private javax.swing.JTextField txtLastName;
     private javax.swing.JTextField txtPassword;

@@ -22,28 +22,6 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblSatelliteClinicName" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblPerson" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblRole" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblUserName" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblPassword" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblOrganization" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnCreateUserAccount" alignment="0" max="32767" attributes="0"/>
-                  <Component id="comboBoxPersonList" alignment="0" max="32767" attributes="0"/>
-                  <Component id="comboBoxRoleList" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtUsername" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
-                  <Component id="comboBoxOrganizationList" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtClinicName" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Component id="btnBack" min="-2" pref="64" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
@@ -51,6 +29,35 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblTitle" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace pref="120" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="btnCreateUserAccount" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="lblSatelliteClinicName" linkSize="1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtClinicName" linkSize="4" min="-2" pref="174" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblPerson" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblRole" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblUserName" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPassword" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblOrganization" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="comboBoxPersonList" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                          <Component id="comboBoxRoleList" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtUsername" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtPassword" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                          <Component id="comboBoxOrganizationList" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="120" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -62,43 +69,37 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="btnBack" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblOrganization" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="comboBoxOrganizationList" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblSatelliteClinicName" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtClinicName" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="comboBoxPersonList" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPerson" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="comboBoxRoleList" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblRole" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtUsername" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblUserName" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnCreateUserAccount" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblOrganization" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxOrganizationList" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="comboBoxPersonList" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPerson" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="comboBoxRoleList" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblRole" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtUsername" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUserName" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtPassword" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPassword" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblSatelliteClinicName" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtClinicName" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnCreateUserAccount" linkSize="5" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -131,11 +132,14 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="comboBoxOrganizationList">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -164,11 +168,14 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="comboBoxPersonList">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -194,11 +201,14 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="comboBoxRoleList">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="0" red="0" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -209,6 +219,9 @@
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxRoleListActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblUserName">
       <Properties>

@@ -16,6 +16,7 @@ import Business.Person.Person;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 /**
@@ -244,8 +245,9 @@ public class CreateUserAccountJPanel extends javax.swing.JPanel {
         lblOrganization.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblOrganization.setText("Organization:");
 
+        comboBoxOrganizationList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxOrganizationList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        comboBoxOrganizationList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxOrganizationList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxOrganizationList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBoxOrganizationList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,8 +260,9 @@ public class CreateUserAccountJPanel extends javax.swing.JPanel {
         lblPerson.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPerson.setText("Person:");
 
+        comboBoxPersonList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxPersonList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        comboBoxPersonList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxPersonList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxPersonList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblRole.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -267,9 +270,15 @@ public class CreateUserAccountJPanel extends javax.swing.JPanel {
         lblRole.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblRole.setText("Role:");
 
+        comboBoxRoleList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxRoleList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        comboBoxRoleList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxRoleList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxRoleList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxRoleList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxRoleListActionPerformed(evt);
+            }
+        });
 
         lblUserName.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         lblUserName.setForeground(new java.awt.Color(0, 0, 102));
@@ -321,34 +330,40 @@ public class CreateUserAccountJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSatelliteClinicName)
-                    .addComponent(lblPerson, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblRole, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblUserName, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblPassword, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblOrganization, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCreateUserAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(comboBoxPersonList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(comboBoxRoleList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtUsername)
-                    .addComponent(txtPassword)
-                    .addComponent(comboBoxOrganizationList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtClinicName, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(120, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnCreateUserAccount)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblSatelliteClinicName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtClinicName, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPerson, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblRole, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblUserName, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblPassword, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblOrganization, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comboBoxPersonList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(comboBoxRoleList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtUsername)
+                            .addComponent(txtPassword)
+                            .addComponent(comboBoxOrganizationList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblOrganization, lblPassword, lblPerson, lblRole, lblSatelliteClinicName, lblUserName});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {comboBoxOrganizationList, comboBoxPersonList, comboBoxRoleList, txtClinicName, txtPassword, txtUsername});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,36 +373,36 @@ public class CreateUserAccountJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBack)
                 .addGap(5, 5, 5)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblOrganization)
-                            .addComponent(comboBoxOrganizationList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblSatelliteClinicName)
-                            .addComponent(txtClinicName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(comboBoxPersonList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPerson))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(comboBoxRoleList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblRole))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblUserName))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPassword))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCreateUserAccount)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblOrganization)
+                    .addComponent(comboBoxOrganizationList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxPersonList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPerson))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxRoleList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblRole))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUserName))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPassword))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSatelliteClinicName)
+                    .addComponent(txtClinicName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnCreateUserAccount)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCreateUserAccount, comboBoxOrganizationList, comboBoxPersonList, comboBoxRoleList, lblOrganization, lblPassword, lblPerson, lblRole, lblSatelliteClinicName, lblUserName, txtClinicName, txtPassword, txtUsername});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void comboBoxOrganizationListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxOrganizationListActionPerformed
@@ -416,11 +431,18 @@ public class CreateUserAccountJPanel extends javax.swing.JPanel {
             return;
         }
         String password = txtPassword.getText();
-        if(password.trim().equalsIgnoreCase(""))
-        {
-            JOptionPane.showMessageDialog(null, "Password cannot be blank..!!");
+//        if(password.trim().equalsIgnoreCase(""))
+//        {
+//            JOptionPane.showMessageDialog(null, "Password cannot be blank..!!");
+//            return;
+//        }
+        boolean PASSWORD_PATTERN = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=~|?])(?=\\S+$).{8,}$", password);
+        if(!PASSWORD_PATTERN){
+            JOptionPane.showMessageDialog(null, "Please create a strong password. Password should be 8 characters long. It must contain alphanumeric characters in upper and lower case along with at least one special character from - !@#$%^&+=~|? ");
+            txtPassword.setText("");
             return;
         }
+        
         Organization organization = (Organization) comboBoxOrganizationList.getSelectedItem();
         Person person = (Person) comboBoxPersonList.getSelectedItem();
         Role role = (Role) comboBoxRoleList.getSelectedItem();
@@ -430,6 +452,7 @@ public class CreateUserAccountJPanel extends javax.swing.JPanel {
         if(check == true)
         {
             JOptionPane.showMessageDialog(null, "Username alreaday exists, choose different username");
+            txtUsername.setText("");
             return;
         }
 
@@ -438,6 +461,8 @@ public class CreateUserAccountJPanel extends javax.swing.JPanel {
             if(userAcc.getPerson().equals(person))
             {
                 JOptionPane.showMessageDialog(null, "Credentials for the person already exists..!!");
+                txtUsername.setText("");
+                txtPassword.setText("");
                 return;
             }
         }
@@ -445,6 +470,9 @@ public class CreateUserAccountJPanel extends javax.swing.JPanel {
 
         panel.populateUserAccountTable();
         JOptionPane.showMessageDialog(null, "User Account Created!");
+        txtUsername.setText("");
+        txtPassword.setText("");
+        
     }//GEN-LAST:event_btnCreateUserAccountActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -453,6 +481,10 @@ public class CreateUserAccountJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) workContainer.getLayout();
         layout.previous(workContainer);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void comboBoxRoleListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxRoleListActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxRoleListActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

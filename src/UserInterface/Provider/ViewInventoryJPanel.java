@@ -102,7 +102,7 @@ public class ViewInventoryJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Drug Code", "Drug Name", "Brand", "Vaccine ID", "Batch ID", "Quantity", "Manufacture Date"
+                "Medicine Code", "Medicine Name", "Brand", "Medicine ID", "Batch ID", "Quantity", "Manufacture Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {

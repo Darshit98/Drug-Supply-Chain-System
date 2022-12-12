@@ -103,8 +103,9 @@ public class ManageCityListJPanel extends javax.swing.JPanel {
         lblState.setForeground(new java.awt.Color(0, 0, 102));
         lblState.setText("State:");
 
+        comboBoxStateList.setBackground(new java.awt.Color(0, 0, 102));
         comboBoxStateList.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        comboBoxStateList.setForeground(new java.awt.Color(0, 0, 102));
+        comboBoxStateList.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxStateList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBoxStateList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,6 +168,9 @@ public class ManageCityListJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 102));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 102));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

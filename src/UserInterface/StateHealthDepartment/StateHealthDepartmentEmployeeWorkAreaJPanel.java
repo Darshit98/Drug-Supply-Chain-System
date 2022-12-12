@@ -7,9 +7,9 @@
 package UserInterface.StateHealthDepartment;
 
 import Business.EcoSystem;
-import Business.Enterprise.LocalHealthDepartment;
+import Business.Enterprise.StateHealthDepartment;
 import Business.Network.StateNetwork;
-import Business.Organization.LHDImmuneOrganization;
+import Business.Organization.SHDImmuneOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -21,14 +21,14 @@ import javax.swing.JPanel;
 public class StateHealthDepartmentEmployeeWorkAreaJPanel extends javax.swing.JPanel {
 
    
-    private JPanel userProcessContainer;
-    private UserAccount userAccount;
-    private LocalHealthDepartment enterprise;
-    private LHDImmuneOrganization lhdOrg;
-    private EcoSystem business;
-    private StateNetwork state;
+    private final JPanel userProcessContainer;
+    private final UserAccount userAccount;
+    private final StateHealthDepartment enterprise;
+    private final SHDImmuneOrganization lhdOrg;
+    private final EcoSystem business;
+    private final StateNetwork state;
     
-    public StateHealthDepartmentEmployeeWorkAreaJPanel(JPanel userProcessContainer,UserAccount userAccount, LocalHealthDepartment enterprise, LHDImmuneOrganization lhdOrg,EcoSystem business, StateNetwork state  ) {
+    public StateHealthDepartmentEmployeeWorkAreaJPanel(JPanel userProcessContainer,UserAccount userAccount, StateHealthDepartment enterprise, SHDImmuneOrganization lhdOrg,EcoSystem business, StateNetwork state  ) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
@@ -51,7 +51,7 @@ public class StateHealthDepartmentEmployeeWorkAreaJPanel extends javax.swing.JPa
 
         setLayout(new java.awt.BorderLayout());
 
-        jSplitPane1.setBackground(new java.awt.Color(204, 204, 255));
+        jSplitPane1.setBackground(new java.awt.Color(0, 0, 102));
         jSplitPane1.setDividerLocation(240);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));

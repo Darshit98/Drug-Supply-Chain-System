@@ -5,7 +5,7 @@
 package Business;
 
 import Business.Disease.DiseaseDirectory;
-import Business.NationalEnterprise.CDC;
+import Business.NationalEnterprise.FDA;
 import Business.NationalEnterprise.Distributor;
 import Business.NationalEnterprise.ManufacturerDirectory;
 import Business.Network.StateNetwork;
@@ -25,7 +25,7 @@ public class EcoSystem extends Organization{
     private static EcoSystem business;
     
     private ArrayList<StateNetwork> stateDirectory;
-    private CDC cdc;
+    private FDA cdc;
     private ManufacturerDirectory manufacturerDirectory;
     private Distributor distributor;
     private VaccineDirectory vaccineDirectory;
@@ -45,7 +45,7 @@ public class EcoSystem extends Organization{
         super(null); 
       
       this.stateDirectory = new ArrayList<StateNetwork>();
-      cdc = new CDC("CDC");
+      cdc = new FDA("CDC");
       manufacturerDirectory = new ManufacturerDirectory();
       distributor = new Distributor("Vaccine Distributor");
       vaccineDirectory = new VaccineDirectory();
@@ -71,7 +71,7 @@ public class EcoSystem extends Organization{
         return stateDirectory;
     }
 
-    public CDC getCdc() {
+    public FDA getCdc() {
         return cdc;
     }
 
