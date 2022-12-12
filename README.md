@@ -20,5 +20,6 @@ The events mentioned below happen in sequence –
 7. The providers add the received drugs to their inventory. 
 8. The providers can then administer this drug to the patients. 
 
-ObjectModel.png
+![ObjectModel](https://user-images.githubusercontent.com/113062089/206961397-3ae13660-e924-4122-b8b3-1344cfc81e64.png)
+
 
