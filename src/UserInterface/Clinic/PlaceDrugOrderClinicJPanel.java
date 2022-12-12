@@ -468,7 +468,7 @@ public class PlaceDrugOrderClinicJPanel extends javax.swing.JPanel {
 
         int selectRow = tblDrugDetails.getSelectedRow();
         if (selectRow < 0) {
-            JOptionPane.showMessageDialog(null, "Kindly select a Vaccine First!");
+            JOptionPane.showMessageDialog(null, "Kindly select a drug first!");
             return;
         }
         VaccineDetails product = (VaccineDetails) tblDrugDetails.getValueAt(selectRow, 0);
@@ -476,7 +476,7 @@ public class PlaceDrugOrderClinicJPanel extends javax.swing.JPanel {
         
         //condition for -ve 
         if (quantity <= 0 ) {
-            JOptionPane.showMessageDialog(null, "Incorrect Quantity, Please enter it again !");
+            JOptionPane.showMessageDialog(null, "Incorrect quantity. Please try again!");
             return;
         }
   
@@ -496,7 +496,7 @@ public class PlaceDrugOrderClinicJPanel extends javax.swing.JPanel {
         }
          
         isCheckout = false;
-        String msg = Integer.toString(quantity) + " " + product.getVaccineDefinition().getVaccineName() + " has added to cart!";
+        String msg = Integer.toString(quantity) + " " + product.getVaccineDefinition().getVaccineName() + " has been added to cart!";
         JOptionPane.showMessageDialog(null, msg);
   
        displayManufacturerVaccines();
@@ -524,31 +524,35 @@ public class PlaceDrugOrderClinicJPanel extends javax.swing.JPanel {
     
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
         // TODO add your handling code here:
-        //
-        int selectRow = tblCartDetails.getSelectedRow();
-        if (selectRow < 0) {
-            JOptionPane.showMessageDialog(null, "Kindly select a vaccine first from cart!");
-            return;
-        }
+        try{
+            int selectRow = tblCartDetails.getSelectedRow();
+            if (selectRow < 0) {
+                JOptionPane.showMessageDialog(null, "Kindly select a vaccine first from cart!");
+                return;
+            }
 
-        OrderItem orderItem = (OrderItem) tblCartDetails.getValueAt(selectRow, 1);
-        int oldQuantity = orderItem.getQuantity();
-        int newQuantity = Integer.parseInt(txtQuantity.getText());
-        
-        
-        orderItem.setQuantity(newQuantity);
-        String msg = "The quantity of " + orderItem.getVaccineDetails().getVaccineDefinition().getVaccineName() + " has changed from " + oldQuantity + " to " + newQuantity;
-        JOptionPane.showMessageDialog(null, msg);
-        
-        displayManufacturerVaccines();
-        refreshCartTable();
+            OrderItem orderItem = (OrderItem) tblCartDetails.getValueAt(selectRow, 1);
+            int oldQuantity = orderItem.getQuantity();
+            int newQuantity = Integer.parseInt(txtQuantity.getText());
+
+
+            orderItem.setQuantity(newQuantity);
+            String msg = "The quantity of " + orderItem.getVaccineDetails().getVaccineDefinition().getVaccineName() + " has changed from " + oldQuantity + " to " + newQuantity;
+            JOptionPane.showMessageDialog(null, msg);
+
+            displayManufacturerVaccines();
+            refreshCartTable();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter numeric data to update quantity.");
+        }
     }//GEN-LAST:event_btnModifyActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
         // TODO add your handling code here:
         int selectRow = tblCartDetails.getSelectedRow();
         if (selectRow < 0) {
-            JOptionPane.showMessageDialog(null, "Kindly select a Vaccine First!");
+            JOptionPane.showMessageDialog(null, "Kindly select a drug first!");
             return;
         }
         OrderItem oi = (OrderItem) tblCartDetails.getValueAt(selectRow, 1);
@@ -614,11 +618,11 @@ public class PlaceDrugOrderClinicJPanel extends javax.swing.JPanel {
                     }
                 }
   
-                JOptionPane.showMessageDialog(null, "Order has been successfuly added!");
+                JOptionPane.showMessageDialog(null, "Order has been added successfuly!");
             
         }
         else
-        {JOptionPane.showMessageDialog(null, "Cannot checkout due to error !");
+        {JOptionPane.showMessageDialog(null, "Cannot checkout due to error!");
         }
         
         isCheckout = true;

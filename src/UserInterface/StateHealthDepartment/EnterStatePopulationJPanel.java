@@ -109,6 +109,11 @@ public class EnterStatePopulationJPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblCurrentPopulation, lblUpdatePopulation});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCurrentPopulation, txtUpdatePopulation});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -146,21 +151,21 @@ public class EnterStatePopulationJPanel extends javax.swing.JPanel {
             int oldPopulation = state.getStatePopulation();
             int oldVaccineLeft = state.getVaccinesLeftForState();
            
-        int population = Integer.parseInt(txtUpdatePopulation.getText());
-        state.setStatePopulation(population);
-        
-        int populationChange = oldPopulation - population;
-        if(populationChange>=0)
-        {
-            state.setVaccinesLeftForState(oldVaccineLeft+populationChange);
-        }
-        else
-        {
-            state.setVaccinesLeftForState(population-oldPopulation+oldVaccineLeft);
-        }
-        
-        
-        txtCurrentPopulation.setText(String.valueOf(state.getStatePopulation()));
+            int population = Integer.parseInt(txtUpdatePopulation.getText());
+            state.setStatePopulation(population);
+
+            int populationChange = oldPopulation - population;
+            if(populationChange>=0)
+            {
+                state.setVaccinesLeftForState(oldVaccineLeft+populationChange);
+            }
+            else
+            {
+                state.setVaccinesLeftForState(population-oldPopulation+oldVaccineLeft);
+            }
+
+
+            txtCurrentPopulation.setText(String.valueOf(state.getStatePopulation()));
         }
         catch (Exception e)
         {

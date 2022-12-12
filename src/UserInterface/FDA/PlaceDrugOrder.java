@@ -279,7 +279,7 @@ public class PlaceDrugOrder extends javax.swing.JPanel {
         addcount.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
 
         btnAddToCart.setBackground(new java.awt.Color(0, 0, 102));
-        btnAddToCart.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnAddToCart.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btnAddToCart.setForeground(new java.awt.Color(255, 255, 255));
         btnAddToCart.setText("Add to Cart");
         btnAddToCart.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -290,7 +290,7 @@ public class PlaceDrugOrder extends javax.swing.JPanel {
         });
 
         btnUpdate.setBackground(new java.awt.Color(0, 0, 102));
-        btnUpdate.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnUpdate.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
         btnUpdate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -305,7 +305,7 @@ public class PlaceDrugOrder extends javax.swing.JPanel {
         lbl8.setText("Quantity:");
 
         btnCancelOrder.setBackground(new java.awt.Color(0, 0, 102));
-        btnCancelOrder.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnCancelOrder.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btnCancelOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelOrder.setText("Cancel Order");
         btnCancelOrder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -316,7 +316,7 @@ public class PlaceDrugOrder extends javax.swing.JPanel {
         });
 
         btnRemove.setBackground(new java.awt.Color(0, 0, 102));
-        btnRemove.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnRemove.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btnRemove.setForeground(new java.awt.Color(255, 255, 255));
         btnRemove.setText("Remove");
         btnRemove.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -327,7 +327,7 @@ public class PlaceDrugOrder extends javax.swing.JPanel {
         });
 
         btnCheckout.setBackground(new java.awt.Color(0, 0, 102));
-        btnCheckout.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnCheckout.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btnCheckout.setForeground(new java.awt.Color(255, 255, 255));
         btnCheckout.setText("Check Out");
         btnCheckout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -378,7 +378,7 @@ public class PlaceDrugOrder extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnCancelOrder)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnCheckout))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(256, 256, 256))))
@@ -388,7 +388,7 @@ public class PlaceDrugOrder extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addcount, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnAddToCart, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnAddToCart))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblManufacturer)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -402,6 +402,9 @@ public class PlaceDrugOrder extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAddToCart, btnCancelOrder, btnCheckout, btnRemove, btnUpdate});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -462,49 +465,54 @@ public class PlaceDrugOrder extends javax.swing.JPanel {
 
     private void btnAddToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToCartActionPerformed
         // TODO add your handling code here:
-        int quantity = (Integer) addcount.getValue();
+        try{
+            int quantity = (Integer) addcount.getValue();
 
-        int selectRow = tblOrderDrug.getSelectedRow();
-        if (selectRow < 0) {
-            JOptionPane.showMessageDialog(null, "Kindly first select a vaccine!");
-            return;
-        }
-        VaccineDetails product = (VaccineDetails) tblOrderDrug.getValueAt(selectRow, 0);
-
-        if (quantity <= 0 || quantity > product.getAvailablity()) {
-            JOptionPane.showMessageDialog(null, "Incorect Quantity, Please enter it again !");
-            return;
-        }
- 
-        boolean flag = true;
-       
-        ArrayList<OrderItem> orders = cartOrder;
-        for (OrderItem oi : orders) {
-            if (oi.getVaccineDetails().equals(product)) {
-                int oldQuantity = oi.getQuantity();
-                int newQuantity = oldQuantity + quantity;
-                oi.setQuantity(newQuantity);
-                flag = false;
+            int selectRow = tblOrderDrug.getSelectedRow();
+            if (selectRow < 0) {
+                JOptionPane.showMessageDialog(null, "Kindly first select a vaccine!");
+                return;
             }
+            VaccineDetails product = (VaccineDetails) tblOrderDrug.getValueAt(selectRow, 0);
+
+            if (quantity <= 0 || quantity > product.getAvailablity()) {
+                JOptionPane.showMessageDialog(null, "Incorect Quantity, Please enter it again !");
+                return;
+            }
+
+            boolean flag = true;
+
+            ArrayList<OrderItem> orders = cartOrder;
+            for (OrderItem oi : orders) {
+                if (oi.getVaccineDetails().equals(product)) {
+                    int oldQuantity = oi.getQuantity();
+                    int newQuantity = oldQuantity + quantity;
+                    oi.setQuantity(newQuantity);
+                    flag = false;
+                }
+            }
+
+
+            if(flag==true)
+            {OrderItem orderItem = new OrderItem();
+            orderItem.setVaccineDetails(product);
+            orderItem.setQuantity(quantity);
+            cartOrder.add(orderItem);
+
+            }
+
+            String msg = Integer.toString(quantity) + " " + product.getVaccineDefinition().getVaccineName() + " has added to cart!";
+            JOptionPane.showMessageDialog(null, msg);
+
+            product.setAvailablity(product.getAvailablity()-quantity);
+
+            displayManufacturerVaccines();
+            refreshCartTable();
+            calulateTotalAmountOfOrder();
         }
-           
-        
-        if(flag==true)
-        {OrderItem orderItem = new OrderItem();
-        orderItem.setVaccineDetails(product);
-        orderItem.setQuantity(quantity);
-        cartOrder.add(orderItem);
-        
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter numeric data for quantity.");
         }
-   
-        String msg = Integer.toString(quantity) + " " + product.getVaccineDefinition().getVaccineName() + " has added to cart!";
-        JOptionPane.showMessageDialog(null, msg);
-        
-        product.setAvailablity(product.getAvailablity()-quantity);
-        
-       displayManufacturerVaccines();
-        refreshCartTable();
-        calulateTotalAmountOfOrder();
     }//GEN-LAST:event_btnAddToCartActionPerformed
 
     private void calulateTotalAmountOfOrder(){
@@ -526,31 +534,35 @@ public class PlaceDrugOrder extends javax.swing.JPanel {
     
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
-        //
-        int selectRow = tblCartDetails.getSelectedRow();
-        if (selectRow < 0) {
-            JOptionPane.showMessageDialog(null, "Kindly first select a vaccine from the cart !");
-            return;
+        try{
+            int selectRow = tblCartDetails.getSelectedRow();
+            if (selectRow < 0) {
+                JOptionPane.showMessageDialog(null, "Kindly first select a vaccine from the cart !");
+                return;
+            }
+
+            OrderItem orderItem = (OrderItem) tblCartDetails.getValueAt(selectRow, 1);
+
+            int oldQuantity = orderItem.getQuantity();
+            int oldAvail = orderItem.getVaccineDetails().getAvailablity();
+
+            int newQuantity = Integer.parseInt(txt2.getText());
+
+            if (newQuantity <= 0 || newQuantity > oldQuantity + oldAvail) {
+                JOptionPane.showMessageDialog(null, "Incorect Quantity, Please enter it again");
+                return;
+            }
+            orderItem.setQuantity(newQuantity);
+            String msg = "The quantity of " + orderItem.getVaccineDetails().getVaccineDefinition().getVaccineName() + " has changed from " + oldQuantity + " to " + newQuantity;
+            JOptionPane.showMessageDialog(null, msg);
+            orderItem.getVaccineDetails().setAvailablity(oldAvail + oldQuantity - newQuantity);
+
+            displayManufacturerVaccines();
+            refreshCartTable();
         }
-      
-        OrderItem orderItem = (OrderItem) tblCartDetails.getValueAt(selectRow, 1);
-        
-        int oldQuantity = orderItem.getQuantity();
-        int oldAvail = orderItem.getVaccineDetails().getAvailablity();
-
-        int newQuantity = Integer.parseInt(txt2.getText());
-
-        if (newQuantity <= 0 || newQuantity > oldQuantity + oldAvail) {
-            JOptionPane.showMessageDialog(null, "Incorect Quantity, Please enter it again");
-            return;
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter numeric data to update quantity.");
         }
-        orderItem.setQuantity(newQuantity);
-        String msg = "The quantity of " + orderItem.getVaccineDetails().getVaccineDefinition().getVaccineName() + " has changed from " + oldQuantity + " to " + newQuantity;
-        JOptionPane.showMessageDialog(null, msg);
-        orderItem.getVaccineDetails().setAvailablity(oldAvail + oldQuantity - newQuantity);
-
-        displayManufacturerVaccines();
-        refreshCartTable();
 
     }//GEN-LAST:event_btnUpdateActionPerformed
 

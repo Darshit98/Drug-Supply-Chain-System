@@ -71,7 +71,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         loginPanel.setBackground(new java.awt.Color(255, 255, 204));
 
-        lblWelcomePage.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        lblWelcomePage.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         lblWelcomePage.setForeground(new java.awt.Color(0, 51, 102));
         lblWelcomePage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWelcomePage.setText("WELCOME");
@@ -125,7 +125,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(loginPanelLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(lblWelcomePage)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
                 .addComponent(lblUsernameField)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -133,55 +133,64 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(lblPasswordField)
                 .addGap(16, 16, 16)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
                 .addComponent(btnLoginUser)
                 .addGap(18, 18, 18)
                 .addComponent(btnLogoutUser)
-                .addContainerGap(295, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
+
+        loginPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnLoginUser, btnLogoutUser, lblPasswordField, lblUsernameField, lblWelcomePage, txtPassword, txtUsername});
 
         jSplitPane1.setLeftComponent(loginPanel);
 
         container.setLayout(new java.awt.CardLayout());
 
-        welcomeScreen.setBackground(new java.awt.Color(204, 204, 255));
+        welcomeScreen.setBackground(new java.awt.Color(198, 223, 255));
 
-        lblProjectName.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        lblProjectName.setFont(new java.awt.Font("Futura", 1, 36)); // NOI18N
+        lblProjectName.setForeground(new java.awt.Color(0, 0, 102));
         lblProjectName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProjectName.setText("DRUG SUPPLY CHAIN SYSTEM");
 
+        lbl5100.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lbl5100.setText("INFO 5100 FINAL PROJECT");
 
+        lblBy.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblBy.setText("-By");
 
+        lblMember1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblMember1.setText("DARSHIT SHAH");
 
-        lblMember2.setText("RIYA VIRANI");
+        lblMember2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        lblMember2.setText("RIYA VIRANI (002747048)");
 
+        lblMember3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblMember3.setText("SWINI RODRIGUES");
 
         lblImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/ceiv.jpg"))); // NOI18N
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/ICONS/11122021icons/FrontPage1.jpg"))); // NOI18N
 
         javax.swing.GroupLayout welcomeScreenLayout = new javax.swing.GroupLayout(welcomeScreen);
         welcomeScreen.setLayout(welcomeScreenLayout);
         welcomeScreenLayout.setHorizontalGroup(
             welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, welcomeScreenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblProjectName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, welcomeScreenLayout.createSequentialGroup()
-                        .addComponent(lbl5100)
-                        .addGap(18, 18, 18)
-                        .addGroup(welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblBy, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblMember3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblMember1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblMember2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+            .addGroup(welcomeScreenLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblProjectName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(welcomeScreenLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(lbl5100)
+                .addGap(18, 18, 18)
+                .addGroup(welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblBy, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMember3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblMember1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblMember2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(326, 326, 326))
         );
         welcomeScreenLayout.setVerticalGroup(
             welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,19 +198,21 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(lblProjectName)
                 .addGap(47, 47, 47)
-                .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, 861, Short.MAX_VALUE)
-                .addGap(35, 35, 35)
+                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(welcomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl5100)
+                    .addComponent(lbl5100, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblBy))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblMember1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblMember2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblMember3)
                 .addGap(61, 61, 61))
         );
+
+        welcomeScreenLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lbl5100, lblBy, lblMember1, lblMember2, lblMember3});
 
         container.add(welcomeScreen, "card2");
 
