@@ -23,3 +23,4 @@ The events mentioned below happen in sequence –
 ![ObjectModel](https://user-images.githubusercontent.com/113062089/206961397-3ae13660-e924-4122-b8b3-1344cfc81e64.png)
 
 
+![UML](https://user-images.githubusercontent.com/113062089/206963068-ba35d583-4598-4544-b84b-3294c1b48359.png)
